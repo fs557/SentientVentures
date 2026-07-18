@@ -12,7 +12,9 @@ verifiable behavior, and restrained use of Codex subagents.
 
 ## Project conventions
 
-- Primary language: Python 3.11 or the version declared by the project.
+- Backend language: Python 3.11 or the version selected in PLAN.md.
+- Frontend and shared web packages: TypeScript using the version selected in PLAN.md.
+- Do not force frontend functionality into Python merely because the backend uses Python.
 - Follow the existing architecture and naming conventions before
   introducing new ones.
 - Keep secrets out of source code, logs, tests, and documentation.
