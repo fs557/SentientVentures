@@ -1,0 +1,23 @@
+name: codex-agents
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pytest
+  - pytest-asyncio
+  - fastapi
+  - uvicorn
+  - pydantic
+  - requests
+  - httpx
+  - aiofiles
+  - pip:
+    # Frontend Frameworks für modernes UI (Tesla Style / Frosted Glass)
+    - reflex
+    - flet
+    # AI & Agent Tools
+    - openai
+    - anthropic
+    - python-dotenv
