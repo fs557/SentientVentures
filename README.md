@@ -6,15 +6,15 @@ SentientVentures is a powerful, locally-hosted platform designed to assist ventu
 
 ---
 
-## 📸 Preview & Mockups
+## 📸 Preview & Screenshots
 
-### 1. Venture Capital Evaluation Dashboard
-Structured startup metrics, overall scores, and category evaluations (Management, Idea, Market, Financials) matched with active data consistency verification statuses.
-![Venture Capital Evaluation Dashboard](assets/startup_evaluation_dashboard.jpg)
+### 1. Founder Portal
+Interface where founders submit their company information, pitch decks, and CVs.
+![Founder Portal](assets/preview/founder_portal.png)
 
-### 2. Founder Connection Network Graph
-Interactive, physics-driven force-directed graph displaying direct (1-hop) founder connections through joint projects, academic institutions, and shared hackathons.
-![Founder Connection Network Graph](assets/dashboard_network_graph.jpg)
+### 2. Investor Portal (VC Dashboard)
+VC evaluator view highlighting scorecards, structured criteria details, and database check verification statuses.
+![Investor Portal](assets/preview/investor_portal.png)
 
 ---
 
