@@ -1,132 +1,165 @@
 # SentientVentures
 
-> **Next-Generation Startup Evaluation & Founder Background Analysis Platform**
+SentientVentures is a local-first venture intelligence platform that turns a founder submission into a structured, evidence-linked investment review. It combines pitch-deck and CV ingestion, a bounded LLM council, founder background verification, and relationship intelligence in one workflow for investors.
 
-SentientVentures is a powerful, locally-hosted platform designed to assist venture capitalists in evaluating early-stage startups. By combining pitch deck assessment, SQL database cross-referencing, and interactive network graphing, VCs can perform deep due diligence and verify founder background claims instantly.
+The platform is designed to make early-stage diligence easier to inspect: every company is assessed against a fixed 75-criterion registry, scored across Idea, Market, Financials, and Management, and presented with confidence, arguments, risks, missing information, and source references.
 
----
+## Product tour
 
-## 📸 Preview & Screenshots
+### Founder submission
 
-### 1. Founder Portal
-Interface where founders submit their company information, pitch decks, and CVs.
-![Founder Portal](assets/preview/founder_portal.png)
+Founders provide company details, a pitch deck, identity information, and supporting material through a focused submission portal.
 
-### 2. Investor Portal (VC Dashboard)
-VC evaluator view highlighting scorecards, structured criteria details, and database check verification statuses.
-![Investor Portal](assets/preview/investor_portal.png)
+![Founder submission portal](assets/preview/founder-submission-portal.jpeg)
 
----
+### Investment overview
 
-## 🚀 Key Features
+The investor dashboard brings the company thesis, proposed terms, category scores, founder overview, investment arguments, risks, and diligence priorities into one decision surface.
 
-* **Start-to-Finish Startup Evaluation**: Evaluates pitch decks, CVs, and company submissions across 75 distinct criteria spanning Management, Idea, Market, and Financials.
-* **Database Founder Cross-Referencing**: Queries the SQL database `assets/DATABASE/hack_nation_people.sqlite` automatically to verify founder profiles, studies, and project links.
-* **Academic Background Verification (Dual-State Inquiry)**:
-  * **Verified (Disabled - Gray)**: Auto-disabled when the founder's academic credentials and university listed in the database match the claims made in the pitch deck.
-  * **Send Inquiry (Enabled - Orange)**: Automatically alerts and activates when there is a mismatch (e.g. founder claims a Stanford/Oxford degree, but public records indicate Harvard/INSEAD), permitting VCs to send verification emails directly.
-* **Founder Network Graph**: Reconstructs direct connection maps on the fly using **Python's `networkx`** on the backend and renders an interactive, physics-driven SVG graph on the frontend. Nodes represent:
-  * **Founders** (green)
-  * **Universities** (cyan)
-  * **Projects** (gold)
-  * **Hackathons** (orange)
-  * **Alumni & Teammates** (silver)
+![Investment overview dashboard](assets/preview/investment-overview-dashboard.jpeg)
 
----
+### Evidence-led company record
 
-## 🧠 LLM Council & OSINT Data Strategy
+Submitted facts are organized into an expandable company record. Unavailable or unsupported values remain visible as missing information instead of being silently invented.
 
-### 🗳️ The LLM Council Architecture
-SentientVentures evaluates pitch decks and company profiles using a **multi-agent LLM Council**:
-* **Parallel Jury Panel**: Rather than relying on a single prompt, a panel of specialized LLM judges evaluates the company across 75 structured criteria.
-* **Source Attribution & Citation**: The council maps citations back to specific PDF document pages (e.g. pitch deck pages) to prevent hallucinations.
-* **Deterministic Consensus**: An aggregator computes category scores and overall consensus metrics based on the jury's evaluations, generating a standardized report that is validated by the system.
+![Evidence-led company record](assets/preview/evidence-led-company-record.jpeg)
 
-### 🌐 OSINT & Database Expansion
-The local SQLite database (`hack_nation_people.sqlite`) currently contains a relatively **limited seed database** of founders, alumni, and projects:
-* **Extension via OSINT**: To reach full potential, the database can and should be expanded by integrating Open Source Intelligence (OSINT) scrapers.
-* **Target Data Sources**: Automated pipelines can import public profiles from LinkedIn, GitHub commits, university graduation rosters, and public hackathon registries.
-* **Verification Loop**: Augmenting the database directly improves the accuracy of background verification and provides VCs with a richer, more connected founder network graph.
+### Criterion-level market evaluation
 
----
+Each criterion includes a score, confidence level, assessment, positive case, negative case, and supporting evidence so reviewers can inspect how the conclusion was reached.
 
-## 🛠️ Architecture & Monorepo Components
+![Market evaluation criteria](assets/preview/market-evaluation-criteria.jpeg)
 
-SentientVentures is organized as a pnpm monorepo consisting of:
+### Founder and management verification
 
-* **Founder Portal** (Port `8080`): Submission portal for founders to upload pitch decks, resumes, and enter company profiles.
-* **VC Dashboard** (Port `8081`): The evaluator dashboard featuring structured evaluation categories, database integrations, and network graphs.
-* **API Service** (Port `8000`): FastAPI backend handling PDF processing, metadata scoring, and SQLite directory queries.
-* **Contracts Package**: Shared TypeScript contracts defining schemas and models between services.
+Management diligence cross-references founders with the local people database, including universities, fields of study, locations, and prior projects.
 
----
+![Management database verification](assets/preview/management-database-verification.jpeg)
 
-## 📦 Getting Started
+### Founder relationship intelligence
+
+The interactive network graph exposes direct links between founders, alumni, collaborators, projects, and hackathons to surface relevant background and shared history.
+
+![Founder network graph](assets/preview/founder-network-graph.jpeg)
+
+### Geographic founder discovery
+
+The world map groups founders by resolved city coordinates and scales locations using active founder scores. Investors can move from a map marker directly into a founder profile.
+
+![Founder world map](assets/preview/founder-world-map.jpeg)
+
+### Founder profile intelligence
+
+Profiles combine verified background data, an active founder score and timeline, contributions, external links, and a personal connection network.
+
+![Founder profile intelligence](assets/preview/founder-profile-intelligence.jpeg)
+
+## How the service works
+
+1. **Submit** — the founder portal accepts a pitch-deck PDF, founder details, a CV or LinkedIn URL, and optional supporting PDFs.
+2. **Extract** — the FastAPI service validates uploads, extracts native PDF text, optionally falls back to OCR, and records provenance for each fact.
+3. **Evaluate** — the LLM council reviews the evidence against 75 registered criteria across the company, idea, market, financial, and management views.
+4. **Validate** — the API enforces strict schemas, score bounds, exact criterion coverage, and citation grounding before publishing any result.
+5. **Investigate** — the dashboard connects the evaluation to founder records, prior projects, network relationships, and geographic distribution.
+
+## LLM council
+
+The council is a deliberately bounded **Pro / Contra / Judge** workflow:
+
+- The **Pro analyst** identifies the strongest evidence-supported investment case.
+- The **Contra analyst** identifies risks, contradictions, and missing information.
+- The **Judge** reconciles both views and returns all 75 criteria in a strict schema.
+- A single **repair pass** may correct an invalid response; results that still fail validation are rejected.
+
+The model receives normalized fact records rather than unrestricted source documents. Published citations must exactly match recorded provenance, including the source document and page where available. Scores use a 1–100 scale and are withheld when criterion-specific evidence is insufficient. Server-owned fields such as company identity, source set, category, and publication time cannot be selected by the model.
+
+Live processing currently supports the OpenAI Responses API when `SV_LLM_PROVIDER=openai` is configured. Without a valid provider, the worker fails closed at council preparation rather than fabricating an investment result. A deterministic no-network provider is available only for tests and explicit demo mode.
+
+## Platform capabilities
+
+- **Structured venture evaluation** across 75 versioned criteria
+- **Evidence and page-level provenance** for published assessments
+- **Investment terms and category scorecards** for rapid comparison
+- **Founder background verification** against a local SQLite people graph
+- **Project, university, alumni, and hackathon connections** in an interactive network
+- **Geographic founder discovery** using a checked-in GeoNames-derived city lookup
+- **Safe local persistence** with atomic publication and retryable processing jobs
+- **Shared contracts** between the Python API and TypeScript applications
+
+## Architecture
+
+| Component | Port | Responsibility |
+| --- | ---: | --- |
+| Founder portal | `8080` | Submission form, uploads, and processing status |
+| VC dashboard | `8081` | Company review, criterion detail, scores, evidence, and founder intelligence |
+| Founder world map | `8082` | Geographic discovery and profile deep links |
+| FastAPI service | `8000` | Validation, PDF extraction, council orchestration, persistence, and read APIs |
+| `@sv/contracts` | — | Versioned schemas and generated TypeScript contracts |
+| `@sv/ui` | — | Shared interface components |
+
+Submission data is stored under `data/companies/<company-slug>/`, with separate directories for source documents, extracted facts, evaluations, and logs. The current system is intended for local use by trusted operators; authentication, a distributed queue, and a production database are not yet implemented.
+
+## Getting started
 
 ### Prerequisites
 
-* **Conda** (for managing the Python environment)
-* **Node.js** (v18+)
-* **pnpm** (v9+)
+- Conda
+- Node.js 18 or newer
+- pnpm 9
 
-### Installation & Launch
+### Install
 
-1. **Clone the repository and set up the Python Environment**:
-   ```bash
-   conda env create -f environment.yml
-   conda activate codex-agents
-   ```
+```bash
+conda env create -f environment.yml
+conda activate codex-agents
+pnpm install
+cp .env.example .env
+```
 
-2. **Install Node dependencies**:
-   ```bash
-   pnpm install
-   ```
+To enable the live council, set the following values in `.env`:
 
-3. **Configure Environment Variables**:
-   ```bash
-   cp .env.example .env
-   ```
-   *Edit `.env` as required (e.g. adding LLM keys or customizing database paths).*
+```dotenv
+SV_LLM_PROVIDER=openai
+SV_LLM_MODEL=<supported-model>
+OPENAI_API_KEY=<your-key>
+```
 
-4. **Start the Monorepo services in development mode**:
-   ```bash
-   pnpm dev
-   ```
-   *This starts the API (8000), Founder Portal (8080), VC Dashboard (8081), and World Map (8082) concurrently.*
+Never place credentials in variables prefixed with `VITE_`; those values are exposed to browser code.
 
----
+### Run the complete stack
 
-## 🗺️ Founder World Map (Port 8082)
+```bash
+pnpm dev
+```
 
-An interactive, high-performance world map application is built on port `8082` using React and **Leaflet.js** (dark-themed tile layout):
-- **Dynamic City Markers**: Visualizes founders at WGS84 coordinates from the checked-in GeoNames-derived city lookup (`assets/DATABASE/location_coordinates.csv`), which is loaded into the `location_coordinates` SQLite table. Profiles with missing or unresolved locations are excluded instead of being assigned fabricated coordinates. Founders at the same resolved city coordinates are grouped in one marker.
-- **Score-Proportional Scaling**: The circle marker radius scales dynamically according to the founder's active founder score.
-- **Direct VC Integration**: Clicking "View Profile" on any marker opens the VC Dashboard (`http://localhost:8081`) with a `?founder={id}` query parameter, which automatically displays the founder's profile modal.
+Open:
 
-The city lookup is derived from the [GeoNames `cities500` data dump](https://download.geonames.org/export/dump/), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). To refresh it, download `cities500.zip` locally and run:
+- Founder portal: <http://localhost:8080>
+- VC dashboard: <http://localhost:8081>
+- Founder world map: <http://localhost:8082>
+- API documentation: <http://localhost:8000/docs>
+- Health check: <http://localhost:8000/health>
+
+## Validation
+
+```bash
+pnpm typecheck
+pnpm test:web
+pnpm test:contracts
+conda run -n codex-agents pytest
+pnpm test:e2e
+```
+
+## Data attribution
+
+Founder locations use a lookup derived from the [GeoNames `cities500` data dump](https://download.geonames.org/export/dump/), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Refresh it with:
 
 ```bash
 python scripts/generate_location_coordinates.py --geonames-zip /path/to/cities500.zip
 ```
 
----
+## Documentation
 
-## 🧪 Testing
-
-We ensure robustness by validating changes across all components. Run the test suite:
-
-```bash
-pnpm typecheck                    # TypeScript syntax check
-pnpm test:web                     # Frontend component and unit tests
-pnpm test:contracts               # Shared contracts verification
-conda run -n codex-agents pytest  # Backend API unit/integration tests
-pnpm test:e2e                     # Playwright integration & navigation tests
-```
-
----
-
-## 📂 Additional Documentation
-
-* 📝 [Architecture Guidelines](docs/architecture.md)
-* ⚙️ [Operations & Deployment](docs/operations.md)
-* 📜 [Markdown Evaluation Contracts](docs/markdown-contract.md)
+- [Architecture](docs/architecture.md)
+- [Operations](docs/operations.md)
+- [Evaluation Markdown contract](docs/markdown-contract.md)
