@@ -78,10 +78,10 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
   useEffect(() => {
     if (nodes.length === 0 || loading) return;
 
-    const repulsionStrength = 180;
+    const repulsionStrength = 800;
     const attractionStrength = 0.04;
-    const desiredLength = 80;
-    const gravity = 0.015;
+    const desiredLength = 180;
+    const gravity = 0.004;
     const damping = 0.85;
 
     const runSimulation = () => {

@@ -112,3 +112,43 @@ button, select { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .app-shell *, .app-shell *::before, .app-shell *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Premium Tab Selection Styling */
+.person-tabs {
+  display: inline-flex;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--sv-line);
+  padding: 0.3rem;
+  border-radius: 12px;
+  width: fit-content;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.person-tabs button {
+  background: transparent;
+  border: none;
+  color: var(--sv-muted);
+  padding: 0.6rem 1.4rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.person-tabs button:hover {
+  color: var(--sv-ink);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.person-tabs button.is-active {
+  color: #071c15;
+  background: linear-gradient(135deg, #83dfbf, #56c39e);
+  box-shadow: 0 4px 14px rgba(114, 214, 180, 0.28);
+  font-weight: 700;
+}
+
