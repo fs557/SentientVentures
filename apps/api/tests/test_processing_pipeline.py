@@ -9,7 +9,7 @@ import pytest
 
 fitz = pytest.importorskip("fitz")
 
-from src.core.facts import extract_facts
+from src.core.facts import FactRecord, extract_facts, investment_terms
 from src.core.pdf_extract import PdfExtractionError, extract_pdf
 from src.core.submissions import PendingDocument, SubmissionRepository
 from src.providers.council import DeterministicFakeProvider
@@ -118,6 +118,25 @@ def test_fact_records_have_document_provenance_and_explicit_missing_information(
     missing = next(item for item in facts if item.field == "investment.equity_offered")
     assert missing.status == "missing_information"
     assert missing.value is None and not missing.evidence and missing.missing_reason
+
+
+def test_investment_terms_accept_us_and_german_grouping() -> None:
+    def fact(identifier: str, field: str, value: str) -> FactRecord:
+        subject = "investment" if field.startswith("investment.") else "company"
+        return FactRecord(identifier, subject, field, value, "fact", (
+            {"kind": "fact", "documentId": "doc_550e8400-e29b-41d4-a716-446655440000", "page": 1, "text": value},
+        ), ("doc_550e8400-e29b-41d4-a716-446655440000",))  # type: ignore[arg-type]
+
+    terms = investment_terms([
+        fact("amount", "investment.requested", "EUR 100.000"),
+        fact("equity", "investment.equity_offered", "1%"),
+        fact("valuation", "company.valuation", "EUR 9,900,000"),
+    ])
+    assert terms == {
+        "amount": 100000.0, "currency": "EUR", "equityPercentage": 1.0,
+        "preMoneyValuation": 9900000.0, "postMoneyValuation": 10000000.0,
+        "impliedValuation": 10000000.0, "useOfFunds": [],
+    }
 
 
 def test_worker_persists_stage_artifacts_and_marks_corrupt_documents_failed(tmp_path: Path) -> None:

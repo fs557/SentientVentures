@@ -25,6 +25,7 @@ The API reads the environment keys listed in `packages/config/src/index.ts`. The
 - `SV_LLM_PROVIDER`
 - `SV_LLM_MODEL`
 - `SV_LLM_TIMEOUT_SECONDS`
+- `SV_LLM_MAX_OUTPUT_TOKENS`
 - `SV_ENABLE_DEV_RESET`
 - `SV_DEMO_RESET_TOKEN`
 

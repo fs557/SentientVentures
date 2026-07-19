@@ -10,6 +10,7 @@ import pytest
 from src.api.companies import CompanyRepository, FixtureIndexError, FixtureRepository, LiveCompanyRepository
 from src.core.council import CouncilError, run_council
 from src.core.facts import FactRecord
+from src.core.registry import REGISTRY
 from src.core.scoring import category_scores, overall_score
 from src.core.storage import CompanyRef, atomic_write_json, write_evaluation_set
 from src.core.submissions import SubmissionRepository
@@ -38,6 +39,31 @@ def test_fake_council_generates_all_registry_documents_without_network() -> None
     assert set(documents) == {"home", "idea", "market", "financial", "management"}
     assert all(document.items for document in documents.values())
     assert all(item.score is None and item.confidence is None for document in documents.values() for item in document.items)
+
+
+def test_structured_provider_scores_are_built_with_server_owned_evidence() -> None:
+    class StructuredProvider(DeterministicFakeProvider):
+        def respond(self, role: str, prompt: str, payload: dict[str, object]) -> dict[str, object]:
+            if role not in {"judge", "repair"}:
+                return super().respond(role, prompt, payload)
+            return {"evaluations": [{
+                "id": entry.id,
+                "score": 72 if entry.score_required and not entry.portfolio_required else None,
+                "confidence": 68 if entry.score_required and not entry.portfolio_required else None,
+                "assessment": "The submitted evidence supports a bounded assessment.",
+                "positiveArguments": ["The submitted material provides direct support."],
+                "negativeArguments": ["Independent validation remains outstanding."],
+                "evidenceFactIds": ["fact.company"],
+                "missingInformation": [],
+            } for entry in REGISTRY]}
+
+    documents, repairs = run_council(_metadata(), _facts(), StructuredProvider())
+    assert repairs == 0
+    assert documents["idea"].items[0].score == 72
+    assert documents["idea"].items[0].confidence == 68
+    assert documents["home"].items[0].score is None
+    assert next(item for item in documents["market"].items if item.id == "market.portfolio_fit").score is None
+    assert documents["idea"].items[0].evidence[0].document_id == "doc_550e8400-e29b-41d4-a716-446655440000"
 
 
 def test_council_permits_exactly_one_contract_repair() -> None:

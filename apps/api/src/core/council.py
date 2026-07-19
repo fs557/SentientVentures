@@ -7,8 +7,9 @@ from typing import Any, Mapping
 
 from ..providers.council import CouncilProvider, ProviderUnavailable
 from .facts import FactRecord
-from .markdown import EvaluationDocument, EvidenceReference, parse_evaluation_document
-from .registry import CATEGORIES, REGISTRY, Category, entries_for_category
+from .markdown import EvaluationDocument, EvaluationItem, EvidenceReference, parse_evaluation_document
+from .registry import CATEGORIES, REGISTRY, REGISTRY_BY_ID, Category, entries_for_category
+from .scoring import is_valid_score
 
 
 class CouncilError(RuntimeError):
@@ -23,7 +24,7 @@ def _timestamp() -> str:
 
 def _safe_text(value: object, limit: int = 500) -> str:
     # Treat source material as data, not instructions; retain only printable text.
-    text = str(value).replace("\x00", " ").replace("\r", " ").replace("\n", " ").strip()
+    text = str(value).replace("\x00", " ").replace("\r", " ").replace("\n", " ").replace("<", "‹").replace(">", "›").strip()
     return " ".join(text.split())[:limit] or "No direct evidence was provided."
 
 
@@ -75,6 +76,100 @@ def _draft_documents(metadata: Mapping[str, Any], facts: list[FactRecord]) -> di
         documents[category] = {"schemaVersion": 1, "registryVersion": 1, "company": company, "slug": slug,
                                "category": category, "generatedAt": _timestamp(), "sourceDocuments": source_documents, "items": items}
     return documents
+
+
+def _fact_reference(fact: FactRecord) -> EvidenceReference | None:
+    for evidence in fact.evidence:
+        kind = evidence.get("kind")
+        document_id = evidence.get("documentId")
+        text = evidence.get("text")
+        page = evidence.get("page")
+        if kind in {"fact", "inference"} and isinstance(document_id, str) and isinstance(text, str):
+            return EvidenceReference(kind, document_id, _safe_text(text), page if isinstance(page, int) else None)
+    return None
+
+
+def _provider_documents(
+    value: object, metadata: Mapping[str, Any], facts: list[FactRecord],
+) -> dict[Category, EvaluationDocument]:
+    """Build canonical documents from bounded criterion proposals and known facts."""
+    if not isinstance(value, Mapping) or not isinstance(value.get("evaluations"), list):
+        raise CouncilError("COUNCIL_OUTPUT_INVALID")
+    evaluations = value["evaluations"]
+    if len(evaluations) != len(REGISTRY):
+        raise CouncilError("COUNCIL_OUTPUT_INVALID")
+    expected_ids = [entry.id for entry in REGISTRY]
+    supplied_ids = [item.get("id") if isinstance(item, Mapping) else None for item in evaluations]
+    if any(not isinstance(item_id, str) for item_id in supplied_ids):
+        raise CouncilError("COUNCIL_OUTPUT_INVALID")
+    supplied_id_set = set(supplied_ids)
+    if len(supplied_id_set) != len(expected_ids) or supplied_id_set != set(expected_ids):
+        raise CouncilError("COUNCIL_OUTPUT_INVALID")
+    evaluations_by_id = {str(item["id"]): item for item in evaluations if isinstance(item, Mapping)}
+    facts_by_id = {fact.id: fact for fact in facts if fact.status in {"fact", "inference"} and fact.evidence}
+    fallback_reference = _reference(facts)
+    items_by_category: dict[Category, list[EvaluationItem]] = {category: [] for category in CATEGORIES}
+    for expected_id in expected_ids:
+        raw = evaluations_by_id[expected_id]
+        if not isinstance(raw, Mapping):
+            raise CouncilError("COUNCIL_OUTPUT_INVALID")
+        item_id = str(raw["id"])
+        entry = REGISTRY_BY_ID[item_id]
+        fact_ids = raw.get("evidenceFactIds")
+        references: list[EvidenceReference] = []
+        if isinstance(fact_ids, list):
+            for fact_id in fact_ids:
+                if not isinstance(fact_id, str) or fact_id not in facts_by_id:
+                    raise CouncilError("COUNCIL_OUTPUT_INVALID")
+                reference = _fact_reference(facts_by_id[fact_id])
+                if reference is not None and reference not in references:
+                    references.append(reference)
+        has_criterion_evidence = bool(references)
+        proposed_score = raw.get("score")
+        proposed_confidence = raw.get("confidence")
+        has_scored_pair = is_valid_score(proposed_score) and is_valid_score(proposed_confidence)
+        score = proposed_score if has_criterion_evidence and entry.score_required and not entry.portfolio_required and has_scored_pair else None
+        confidence = proposed_confidence if score is not None else None
+        if not references:
+            references = [fallback_reference]
+        missing = [_safe_text(item, 300) for item in raw.get("missingInformation", []) if isinstance(item, str) and item.strip()]
+        if entry.portfolio_required and "Portfolio data was not provided." not in missing:
+            missing.append("Portfolio data was not provided.")
+        if entry.score_required and not entry.portfolio_required and score is None and "Sufficient criterion-specific evidence was not provided." not in missing:
+            missing.append("Sufficient criterion-specific evidence was not provided.")
+        positive = [_safe_text(item, 400) for item in raw.get("positiveArguments", []) if isinstance(item, str) and item.strip()]
+        negative = [_safe_text(item, 400) for item in raw.get("negativeArguments", []) if isinstance(item, str) and item.strip()]
+        items_by_category[entry.category].append(EvaluationItem(
+            id=entry.id,
+            category=entry.category,
+            title=entry.title,
+            score=score,
+            confidence=confidence,
+            assessment=_safe_text(raw.get("assessment"), 800),
+            positive_arguments=positive or ["The supplied material provides limited positive evidence for this criterion."],
+            negative_arguments=negative or ["The supplied material does not resolve the principal risk for this criterion."],
+            evidence=references,
+            missing_information=missing,
+            source_references=list(references),
+        ))
+    source_documents = [
+        str(item["id"]) for item in metadata.get("source_documents", [])
+        if isinstance(item, Mapping) and isinstance(item.get("id"), str)
+    ]
+    generated_at = _timestamp()
+    return {
+        category: EvaluationDocument(
+            schema_version=1,
+            registry_version=1,
+            company=str(metadata["display_name"]),
+            slug=str(metadata["slug"]),
+            category=category,
+            generated_at=generated_at,
+            source_documents=source_documents,
+            items=items_by_category[category],
+        )
+        for category in CATEGORIES
+    }
 
 
 def _coerce_documents(value: object, slug: str) -> dict[Category, EvaluationDocument]:
@@ -206,6 +301,46 @@ def _claims_and_scores_are_supported(documents: Mapping[Category, EvaluationDocu
     return True
 
 
+def _provider_scores_are_bounded(documents: Mapping[Category, EvaluationDocument]) -> bool:
+    """Validate server-built provider proposals against registry score semantics."""
+    for category, document in documents.items():
+        entries = entries_for_category(category)
+        if len(document.items) != len(entries):
+            return False
+        for item, entry in zip(document.items, entries):
+            if item.score is not None and (not entry.score_required or entry.portfolio_required or not is_valid_score(item.score)):
+                return False
+            if item.score is not None and not is_valid_score(item.confidence):
+                return False
+            if item.score is None and entry.score_required and not entry.portfolio_required:
+                if "Sufficient criterion-specific evidence was not provided." not in item.missing_information:
+                    return False
+            if entry.portfolio_required and (item.score is not None or "Portfolio data was not provided." not in item.missing_information):
+                return False
+    return True
+
+
+def _candidate_documents(
+    response: object, metadata: Mapping[str, Any], facts: list[FactRecord],
+) -> tuple[dict[Category, EvaluationDocument], bool]:
+    if not isinstance(response, Mapping):
+        raise CouncilError("COUNCIL_OUTPUT_INVALID")
+    if "evaluations" in response:
+        return _provider_documents(response, metadata, facts), True
+    return _coerce_documents(response.get("documents"), str(metadata["slug"])), False
+
+
+def _candidate_is_valid(
+    documents: dict[Category, EvaluationDocument], provider_built: bool,
+    metadata: Mapping[str, Any], facts: list[FactRecord],
+) -> bool:
+    return (
+        _validate(documents, str(metadata["slug"]))
+        and _evidence_is_grounded(documents, metadata, facts)
+        and (_provider_scores_are_bounded(documents) if provider_built else _claims_and_scores_are_supported(documents))
+    )
+
+
 def run_council(metadata: Mapping[str, Any], facts: list[FactRecord], provider: CouncilProvider) -> tuple[dict[Category, EvaluationDocument], int]:
     """Run exactly Pro, Contra, Judge and at most one contract-only repair."""
     facts_payload = _facts_payload(facts)
@@ -219,27 +354,22 @@ def run_council(metadata: Mapping[str, Any], facts: list[FactRecord], provider: 
         judge = provider.respond("judge", _prompt("investment-judge.md"), {**base, "pro": pro, "contra": contra, "draft_documents": draft})
     except ProviderUnavailable as exc:
         raise CouncilError("PROVIDER_UNAVAILABLE") from exc
-    candidate = judge.get("documents") if isinstance(judge, Mapping) else None
     try:
-        documents = _coerce_documents(candidate, str(metadata["slug"]))
+        documents, provider_built = _candidate_documents(judge, metadata, facts)
     except CouncilError:
         documents = {}
+        provider_built = False
     generated_at = _timestamp()
     if documents:
         _server_owned_documents(documents, metadata, generated_at)
-    if (documents and _validate(documents, str(metadata["slug"]))
-            and _evidence_is_grounded(documents, metadata, facts)
-            and _claims_and_scores_are_supported(documents)):
+    if documents and _candidate_is_valid(documents, provider_built, metadata, facts):
         return documents, 0
     try:
         repaired = provider.respond("repair", _prompt("investment-judge.md"), {**base, "draft_documents": draft})
     except ProviderUnavailable as exc:
         raise CouncilError("PROVIDER_UNAVAILABLE") from exc
-    candidate = repaired.get("documents") if isinstance(repaired, Mapping) else None
-    documents = _coerce_documents(candidate, str(metadata["slug"]))
+    documents, provider_built = _candidate_documents(repaired, metadata, facts)
     _server_owned_documents(documents, metadata, _timestamp())
-    if (not _validate(documents, str(metadata["slug"]))
-            or not _evidence_is_grounded(documents, metadata, facts)
-            or not _claims_and_scores_are_supported(documents)):
+    if not _candidate_is_valid(documents, provider_built, metadata, facts):
         raise CouncilError("COUNCIL_OUTPUT_INVALID")
     return documents, 1

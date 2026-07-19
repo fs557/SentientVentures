@@ -103,6 +103,15 @@ def test_safe_storage_and_job_retry_transition(app: FastAPI, tmp_path: Path) -> 
     replay = asyncio.run(_post(app, f"/api/v1/jobs/{slug}/retry", headers={"Idempotency-Key": retry_key}))
     assert replay.status_code == 202
     assert replay.json() == retry.json()
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["current_job"].update({"state": "failed", "stage": "council", "progress": 100, "retryAllowed": True, "error": {"code": "PROVIDER_UNAVAILABLE"}})
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    third = asyncio.run(_post(app, f"/api/v1/jobs/{slug}/retry", headers={"Idempotency-Key": str(uuid4())}))
+    assert third.status_code == 202
+    assert third.json()["attempt"] == 3
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["current_job"].update({"state": "failed", "stage": "council", "progress": 100, "retryAllowed": False, "error": {"code": "PROVIDER_UNAVAILABLE"}})
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
     exhausted = asyncio.run(_post(app, f"/api/v1/jobs/{slug}/retry", headers={"Idempotency-Key": str(uuid4())}))
     assert exhausted.status_code == 409
 

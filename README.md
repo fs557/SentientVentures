@@ -37,7 +37,7 @@ pnpm install
 cp .env.example .env
 ```
 
-Die Datei `.env` ist lokal und nicht im Repository enthalten.
+Die Datei `.env` ist lokal und nicht im Repository enthalten. Die API lädt sie beim Start automatisch aus dem Repository-Root; bereits gesetzte Prozessvariablen behalten Vorrang.
 
 ## Konfiguration
 
@@ -48,9 +48,11 @@ Die wichtigsten lokalen Variablen stehen in `.env.example`:
 - `SV_ALLOWED_ORIGINS=http://localhost:8080,http://localhost:8081`
 - `SV_LLM_PROVIDER=`
 - `SV_LLM_MODEL=gpt-5.4-nano`
+- `SV_LLM_TIMEOUT_SECONDS=120`
+- `SV_LLM_MAX_OUTPUT_TOKENS=30000`
 - `SV_ENABLE_DEV_RESET=false`
 
-Für den normalen lokalen Betrieb ist kein Live-LLM-Provider erforderlich. Wenn `SV_LLM_PROVIDER` leer oder `disabled` ist, bleibt der Provider-Pfad deaktiviert. Der deterministische Demo-Provider wird nur aktiv, wenn `SV_LLM_PROVIDER=fake` oder `SV_LLM_PROVIDER=deterministic` gesetzt ist und zusätzlich `SV_DEMO_MODE=1`, `true` oder `yes` gesetzt ist. Ohne diese Demo-Einstellung wird kein Live-Adapter ausgeführt.
+Für den Live-Council werden `SV_LLM_PROVIDER=openai`, ein Modell in `SV_LLM_MODEL` und `OPENAI_API_KEY` benötigt. Der Adapter nutzt strikt strukturiertes JSON; Zitate werden serverseitig auf bekannte Dokumentseiten zurückgeführt. Wenn `SV_LLM_PROVIDER` leer oder `disabled` ist, bleibt der Provider-Pfad deaktiviert. Der deterministische Demo-Provider wird nur aktiv, wenn `SV_LLM_PROVIDER=fake` oder `deterministic` und zusätzlich `SV_DEMO_MODE=1`, `true` oder `yes` gesetzt ist. Ein Anthropic-Live-Adapter ist derzeit nicht implementiert.
 
 Die Persistenz liegt standardmäßig unter `./data/companies` relativ zum Repository. Dort werden Uploads, Extraktionsartefakte, Evaluierungen, Logs und `metadata.json` pro Company abgelegt.
 
@@ -126,6 +128,7 @@ Empfohlene Reihenfolge für lokale Änderungen:
 - Port `8081` ist das VC Dashboard.
 - Wenn das Frontend die API nicht erreicht, prüfe `VITE_API_BASE_URL` in `.env`.
 - Wenn lokale Daten fehlen oder alte Teststände stören, prüfe `SV_DATA_ROOT`.
+- Bei `PROVIDER_UNAVAILABLE` prüfe `SV_LLM_PROVIDER=openai`, `SV_LLM_MODEL`, `OPENAI_API_KEY` und den Netzwerkzugriff. Für den vollständigen 75-Kriterien-Judge sollte das Timeout mindestens 120 Sekunden betragen.
 - Wenn der deterministische Demo-Provider nicht greift, prüfe beide Variablen: `SV_LLM_PROVIDER=fake|deterministic` und `SV_DEMO_MODE=1|true|yes`.
 
 ## Weiteres

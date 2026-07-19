@@ -17,6 +17,7 @@ from .storage import CompanyRef, StorageError, atomic_write_bytes, atomic_write_
 
 _SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _SAFE_NAME = re.compile(r"[^a-z0-9._-]+")
+MAX_JOB_ATTEMPTS = 3
 
 
 class SubmissionStorageError(RuntimeError):
@@ -250,9 +251,11 @@ class SubmissionRepository:
             if isinstance(replay, dict):
                 return dict(replay), True
             job = metadata.get("current_job")
-            if not isinstance(job, dict) or job.get("state") != "failed" or job.get("attempt") != 1:
+            attempt = job.get("attempt") if isinstance(job, dict) else None
+            if (not isinstance(job, dict) or job.get("state") != "failed"
+                    or not isinstance(attempt, int) or isinstance(attempt, bool) or attempt >= MAX_JOB_ATTEMPTS):
                 raise SubmissionStorageError("RETRY_NOT_ALLOWED")
-            updated = self._new_job(slug, attempt=2)
+            updated = self._new_job(slug, attempt=attempt + 1)
             history = metadata.get("job_history")
             if not isinstance(history, list):
                 raise SubmissionStorageError("Stored job history is invalid")

@@ -8,6 +8,7 @@ from uuid import uuid4
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, Response
+from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
@@ -19,6 +20,7 @@ from .providers.council import configured_provider
 from .workers.queue import ProcessingWorker
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
+load_dotenv(_REPOSITORY_ROOT / ".env", override=False)
 _FIXTURES_ROOT = _REPOSITORY_ROOT / "tests" / "fixtures" / "companies"
 _DEFAULT_ALLOWED_ORIGINS = ("http://localhost:8080", "http://localhost:8081")
 

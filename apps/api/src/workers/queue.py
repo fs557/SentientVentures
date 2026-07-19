@@ -9,16 +9,20 @@ from pathlib import Path
 from typing import Any
 
 from ..core.classify import build_document_index
-from ..core.facts import extract_facts
+from ..core.facts import extract_facts, investment_terms
 from ..core.pdf_extract import PdfExtractionError, extract_pdf
 from ..core.storage import atomic_write_json
 from ..core.storage import write_evaluation_set
-from ..core.submissions import SubmissionRepository, SubmissionStorageError
+from ..core.submissions import MAX_JOB_ATTEMPTS, SubmissionRepository, SubmissionStorageError
 from ..core.scoring import category_scores, overall_score
 from ..core.council import CouncilError, run_council
 from ..providers.council import CouncilProvider
 
 _STAGES = (("validating", 5), ("extracting", 20), ("classifying", 35), ("fact_extracting", 50), ("council_preparing", 55), ("council", 70), ("validating_output", 85), ("publishing", 95))
+_ERROR_MESSAGES = {
+    "PROVIDER_UNAVAILABLE": "The LLM council provider is unavailable or misconfigured. Check the provider, model, credentials, and network access.",
+    "COUNCIL_OUTPUT_INVALID": "The LLM council returned an invalid evaluation. The result was not published.",
+}
 
 
 class ProcessingWorker:
@@ -109,6 +113,7 @@ class ProcessingWorker:
             self.repository.publish_ready(slug, job_id, {
                 "schema_version": 1, "registry_version": 1, "category_scores": scores,
                 "overall_score": overall_score(scores), "validation_errors": [], "output_hashes": hashes,
+                "investment": investment_terms(facts),
             }, repair_count=repair_count)
             self._log(slug, job_id, "ready", "ok")
         except CouncilError as exc:
@@ -125,8 +130,11 @@ class ProcessingWorker:
     def _fail(self, slug: str, job_id: object, code: str) -> None:
         if isinstance(job_id, str):
             try:
+                job = self.repository.get_job(slug)
+                attempt = job.get("attempt")
+                retry_allowed = isinstance(attempt, int) and not isinstance(attempt, bool) and attempt < MAX_JOB_ATTEMPTS
                 self.repository.update_job(slug, job_id, state="failed", stage="failed", progress=100,
-                    error={"code": code, "message": "Document processing could not be completed"}, retry_allowed=True)
+                    error={"code": code, "message": _ERROR_MESSAGES.get(code, "Document processing could not be completed")}, retry_allowed=retry_allowed)
                 self._log(slug, job_id, "failed", code)
             except SubmissionStorageError:
                 pass
