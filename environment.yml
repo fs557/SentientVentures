@@ -19,6 +19,7 @@ dependencies:
   - pymupdf
   - pytesseract
   - filetype
+  - networkx
   - pip:
     # Frontend Frameworks für modernes UI (Tesla Style / Frosted Glass)
     - reflex

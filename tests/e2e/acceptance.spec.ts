@@ -50,5 +50,16 @@ test("api health, founder portal, and dashboard navigation", async ({ page, requ
   await expect(founderDbSection.getByText("Binhui Shao")).toBeVisible();
   await expect(founderDbSection.getByText("Cambridge university")).toBeVisible();
   await expect(founderDbSection.getByText("OmniSkill Pathways: From Invisible Skills to Resilient Livelihoods")).toBeVisible();
+
+  // Test the Founder Network Graph tab
+  await page.getByRole("button", { name: "Founder Network Graph" }).click();
+  await expect(page.getByRole("heading", { name: "Founder Connection Network" })).toBeVisible();
+  
+  // Verify the SVG canvas and legend
+  await expect(page.locator("svg")).toBeVisible();
+  await expect(page.getByText("Founder", { exact: true })).toBeVisible();
+  await expect(page.getByText("University", { exact: true })).toBeVisible();
+  await expect(page.getByText("Project", { exact: true })).toBeVisible();
+  await expect(page.getByText("Hackathon", { exact: true })).toBeVisible();
 });
 
