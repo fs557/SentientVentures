@@ -1,138 +1,117 @@
 # SentientVentures
 
-SentientVentures ist ein lokales Monorepo mit drei Laufzeitkomponenten:
+> **Next-Generation Startup Evaluation & Founder Background Analysis Platform**
 
-- Founder Portal: `http://localhost:8080`
-- VC Dashboard: `http://localhost:8081`
-- API: `http://localhost:8000`
+SentientVentures is a powerful, locally-hosted platform designed to assist venture capitalists in evaluating early-stage startups. By combining pitch deck assessment, SQL database cross-referencing, and interactive network graphing, VCs can perform deep due diligence and verify founder background claims instantly.
 
-Die API bietet außerdem einen Health-Check unter `http://localhost:8000/health`.
+---
 
-## Voraussetzungen
+## 📸 Preview & Mockups
 
-- Conda
-- Node.js
-- `pnpm` 9.15.4 oder kompatibel mit dem Repository-Root-`packageManager`
+### 1. Venture Capital Evaluation Dashboard
+Structured startup metrics, overall scores, and category evaluations (Management, Idea, Market, Financials) matched with active data consistency verification statuses.
+![Venture Capital Evaluation Dashboard](assets/startup_evaluation_dashboard.jpg)
 
-Die Python-Abhängigkeiten kommen aus `environment.yml`, das Web-Workspace-Setup aus dem pnpm-Monorepo.
+### 2. Founder Connection Network Graph
+Interactive, physics-driven force-directed graph displaying direct (1-hop) founder connections through joint projects, academic institutions, and shared hackathons.
+![Founder Connection Network Graph](assets/dashboard_network_graph.jpg)
 
-## Installation
+---
 
-1. Conda-Umgebung erstellen und aktivieren:
+## 🚀 Key Features
 
-```bash
-conda env create -f environment.yml
-conda activate codex-agents
-```
+* **Start-to-Finish Startup Evaluation**: Evaluates pitch decks, CVs, and company submissions across 75 distinct criteria spanning Management, Idea, Market, and Financials.
+* **Database Founder Cross-Referencing**: Queries the SQL database `assets/DATABASE/hack_nation_people.sqlite` automatically to verify founder profiles, studies, and project links.
+* **Academic Background Verification (Dual-State Inquiry)**:
+  * **Verified (Disabled - Gray)**: Auto-disabled when the founder's academic credentials and university listed in the database match the claims made in the pitch deck.
+  * **Send Inquiry (Enabled - Orange)**: Automatically alerts and activates when there is a mismatch (e.g. founder claims a Stanford/Oxford degree, but public records indicate Harvard/INSEAD), permitting VCs to send verification emails directly.
+* **Founder Network Graph**: Reconstructs direct connection maps on the fly using **Python's `networkx`** on the backend and renders an interactive, physics-driven SVG graph on the frontend. Nodes represent:
+  * **Founders** (green)
+  * **Universities** (cyan)
+  * **Projects** (gold)
+  * **Hackathons** (orange)
+  * **Alumni & Teammates** (silver)
 
-2. Web-Workspace installieren:
+---
 
-```bash
-pnpm install
-```
+## 🧠 LLM Council & OSINT Data Strategy
 
-3. Beispiel-Umgebung anlegen:
+### 🗳️ The LLM Council Architecture
+SentientVentures evaluates pitch decks and company profiles using a **multi-agent LLM Council**:
+* **Parallel Jury Panel**: Rather than relying on a single prompt, a panel of specialized LLM judges evaluates the company across 75 structured criteria.
+* **Source Attribution & Citation**: The council maps citations back to specific PDF document pages (e.g. pitch deck pages) to prevent hallucinations.
+* **Deterministic Consensus**: An aggregator computes category scores and overall consensus metrics based on the jury's evaluations, generating a standardized report that is validated by the system.
 
-```bash
-cp .env.example .env
-```
+### 🌐 OSINT & Database Expansion
+The local SQLite database (`hack_nation_people.sqlite`) currently contains a relatively **limited seed database** of founders, alumni, and projects:
+* **Extension via OSINT**: To reach full potential, the database can and should be expanded by integrating Open Source Intelligence (OSINT) scrapers.
+* **Target Data Sources**: Automated pipelines can import public profiles from LinkedIn, GitHub commits, university graduation rosters, and public hackathon registries.
+* **Verification Loop**: Augmenting the database directly improves the accuracy of background verification and provides VCs with a richer, more connected founder network graph.
 
-Die Datei `.env` ist lokal und nicht im Repository enthalten. Die API lädt sie beim Start automatisch aus dem Repository-Root; bereits gesetzte Prozessvariablen behalten Vorrang.
+---
 
-## Konfiguration
+## 🛠️ Architecture & Monorepo Components
 
-Die wichtigsten lokalen Variablen stehen in `.env.example`:
+SentientVentures is organized as a pnpm monorepo consisting of:
 
-- `VITE_API_BASE_URL=http://localhost:8000/api/v1`
-- `SV_DATA_ROOT=./data/companies`
-- `SV_ALLOWED_ORIGINS=http://localhost:8080,http://localhost:8081`
-- `SV_LLM_PROVIDER=`
-- `SV_LLM_MODEL=gpt-5.4-nano`
-- `SV_LLM_TIMEOUT_SECONDS=120`
-- `SV_LLM_MAX_OUTPUT_TOKENS=30000`
-- `SV_ENABLE_DEV_RESET=false`
+* **Founder Portal** (Port `8080`): Submission portal for founders to upload pitch decks, resumes, and enter company profiles.
+* **VC Dashboard** (Port `8081`): The evaluator dashboard featuring structured evaluation categories, database integrations, and network graphs.
+* **API Service** (Port `8000`): FastAPI backend handling PDF processing, metadata scoring, and SQLite directory queries.
+* **Contracts Package**: Shared TypeScript contracts defining schemas and models between services.
 
-Für den Live-Council werden `SV_LLM_PROVIDER=openai`, ein Modell in `SV_LLM_MODEL` und `OPENAI_API_KEY` benötigt. Der Adapter nutzt strikt strukturiertes JSON; Zitate werden serverseitig auf bekannte Dokumentseiten zurückgeführt. Wenn `SV_LLM_PROVIDER` leer oder `disabled` ist, bleibt der Provider-Pfad deaktiviert. Der deterministische Demo-Provider wird nur aktiv, wenn `SV_LLM_PROVIDER=fake` oder `deterministic` und zusätzlich `SV_DEMO_MODE=1`, `true` oder `yes` gesetzt ist. Ein Anthropic-Live-Adapter ist derzeit nicht implementiert.
+---
 
-Die Persistenz liegt standardmäßig unter `./data/companies` relativ zum Repository. Dort werden Uploads, Extraktionsartefakte, Evaluierungen, Logs und `metadata.json` pro Company abgelegt.
+## 📦 Getting Started
 
-## Start
+### Prerequisites
 
-Alle lokalen Dienste zusammen starten:
+* **Conda** (for managing the Python environment)
+* **Node.js** (v18+)
+* **pnpm** (v9+)
 
-```bash
-pnpm dev
-```
+### Installation & Launch
 
-Der Befehl startet:
+1. **Clone the repository and set up the Python Environment**:
+   ```bash
+   conda env create -f environment.yml
+   conda activate codex-agents
+   ```
 
-- `apps/api` auf Port `8000`
-- `apps/founder-portal` auf Port `8080`
-- `apps/vc-dashboard` auf Port `8081`
+2. **Install Node dependencies**:
+   ```bash
+   pnpm install
+   ```
 
-Wenn du nur prüfen willst, ob die API läuft:
+3. **Configure Environment Variables**:
+   ```bash
+   cp .env.example .env
+   ```
+   *Edit `.env` as required (e.g. adding LLM keys or customizing database paths).*
 
-```bash
-curl http://localhost:8000/health
-```
+4. **Start the Monorepo services in development mode**:
+   ```bash
+   pnpm dev
+   ```
+   *This starts the API (8000), Founder Portal (8080), and VC Dashboard (8081) concurrently.*
 
-## Nutzung
+---
 
-### Founder Portal
+## 🧪 Testing
 
-1. Öffne `http://localhost:8080`.
-2. Fülle die Pflichtfelder für Unternehmen und Gründer aus.
-3. Lade das Pitch-Deck als PDF hoch.
-4. Lade entweder einen CV als PDF oder eine LinkedIn-HTTPS-URL hoch.
-5. Optional kannst du bis zu vier weitere PDFs anhängen.
-6. Sende das Formular ab und beobachte den Job-Status per Polling.
-
-### VC Dashboard
-
-1. Öffne `http://localhost:8081`.
-2. Wähle eine Company aus der Liste.
-3. Wechsle zwischen der Übersicht und den Kategorien.
-4. Die Ansicht zeigt nur validierte API-Daten an, keine Rohdateien.
-
-## Stoppen und Zurücksetzen
-
-- Mit `Ctrl+C` beendest du den lokalen Dev-Stack.
-- Es gibt keinen produktiven Reset- oder Reindex-Endpunkt.
-- Wenn du die lokale Demo vollständig zurücksetzen willst, lösche den Inhalt unter `SV_DATA_ROOT` und starte danach die Dienste neu.
-
-## Tests
-
-Die verfügbaren Checks aus dem Repository-Root sind:
+We ensure robustness by validating changes across all components. Run the test suite:
 
 ```bash
-pnpm typecheck
-pnpm test:web
-pnpm test:contracts
-pnpm test
-pnpm test:e2e
-conda run -n codex-agents pytest
+pnpm typecheck                    # TypeScript syntax check
+pnpm test:web                     # Frontend component and unit tests
+pnpm test:contracts               # Shared contracts verification
+conda run -n codex-agents pytest  # Backend API unit/integration tests
+pnpm test:e2e                     # Playwright integration & navigation tests
 ```
 
-Empfohlene Reihenfolge für lokale Änderungen:
+---
 
-1. `pnpm typecheck`
-2. `pnpm test:web`
-3. `pnpm test:contracts`
-4. `conda run -n codex-agents pytest`
-5. `pnpm test:e2e`
+## 📂 Additional Documentation
 
-## Troubleshooting
-
-- Port `8000` ist die API. Wenn `pnpm dev` dort scheitert, prüfe, ob ein anderer Prozess den Port belegt.
-- Port `8080` ist das Founder Portal.
-- Port `8081` ist das VC Dashboard.
-- Wenn das Frontend die API nicht erreicht, prüfe `VITE_API_BASE_URL` in `.env`.
-- Wenn lokale Daten fehlen oder alte Teststände stören, prüfe `SV_DATA_ROOT`.
-- Bei `PROVIDER_UNAVAILABLE` prüfe `SV_LLM_PROVIDER=openai`, `SV_LLM_MODEL`, `OPENAI_API_KEY` und den Netzwerkzugriff. Für den vollständigen 75-Kriterien-Judge sollte das Timeout mindestens 120 Sekunden betragen.
-- Wenn der deterministische Demo-Provider nicht greift, prüfe beide Variablen: `SV_LLM_PROVIDER=fake|deterministic` und `SV_DEMO_MODE=1|true|yes`.
-
-## Weiteres
-
-- [Architecture](docs/architecture.md)
-- [Operations](docs/operations.md)
-- [Markdown contract](docs/markdown-contract.md)
+* 📝 [Architecture Guidelines](docs/architecture.md)
+* ⚙️ [Operations & Deployment](docs/operations.md)
+* 📜 [Markdown Evaluation Contracts](docs/markdown-contract.md)
