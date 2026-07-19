@@ -362,7 +362,7 @@ def get_people_map_data() -> list[dict[str, Any]]:
                 "country": country.strip(),
                 "lat": point[0],
                 "lng": point[1],
-                "score": float(score) if score is not None else 50.0,
+                "score": float(score) if score is not None else 0.0,
             })
         return founders
     except sqlite3.Error as exc:

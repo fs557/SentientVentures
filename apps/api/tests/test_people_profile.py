@@ -127,4 +127,5 @@ def test_get_people_map_data_success(app: FastAPI) -> None:
         assert isinstance(item["lat"], float)
         assert isinstance(item["lng"], float)
         assert isinstance(item["score"], float)
+    assert any(item["score"] == 0.0 for item in data)
 
