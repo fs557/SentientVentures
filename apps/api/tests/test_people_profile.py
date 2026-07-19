@@ -98,3 +98,22 @@ def test_person_profile_invalid_id_format(app: FastAPI) -> None:
     user_id = "not-a-uuid"
     res = _request(app, f"/api/v1/people/{user_id}")
     assert res.status_code == 422
+
+
+def test_get_people_map_data_success(app: FastAPI) -> None:
+    res = _request(app, "/api/v1/people/map-data")
+    assert res.status_code == 200
+    data = res.json()
+    assert isinstance(data, list)
+    assert len(data) > 0
+    # Every item must have lat, lng, score, id, name
+    for item in data:
+        assert "id" in item
+        assert "name" in item
+        assert "lat" in item
+        assert "lng" in item
+        assert "score" in item
+        assert isinstance(item["lat"], float)
+        assert isinstance(item["lng"], float)
+        assert isinstance(item["score"], float)
+

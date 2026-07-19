@@ -21,7 +21,23 @@ export function DashboardApp() {
   const [route, setRoute] = useState<Route>(() => routeFromPath(window.location.pathname));
   const [companies, setCompanies] = useState<LoadState<CompaniesList>>(idle);
   const [evaluation, setEvaluation] = useState<LoadState<CompanyEvaluation>>({ value: null, error: null, loading: false });
-  const [activePersonId, setActivePersonId] = useState<string | null>(null);
+  const [activePersonId, setActivePersonId] = useState<string | null>(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("founder");
+  });
+
+  useEffect(() => {
+    const checkQuery = () => {
+      const params = new URLSearchParams(window.location.search);
+      const founder = params.get("founder");
+      if (founder) {
+        setActivePersonId(founder);
+      }
+    };
+    checkQuery();
+    window.addEventListener("popstate", checkQuery);
+    return () => window.removeEventListener("popstate", checkQuery);
+  }, []);
 
   useEffect(() => { const listener = () => setRoute(routeFromPath(window.location.pathname)); window.addEventListener("popstate", listener); return () => window.removeEventListener("popstate", listener); }, []);
   useEffect(() => { const controller = new AbortController(); setCompanies((state) => ({ ...state, loading: true, error: null })); getCompanies(controller.signal).then((value) => setCompanies({ value, error: null, loading: false })).catch((error: unknown) => { if ((error as DOMException).name !== "AbortError") setCompanies({ value: null, error: message(error), loading: false }); }); return () => controller.abort(); }, []);

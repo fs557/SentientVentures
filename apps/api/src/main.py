@@ -23,7 +23,7 @@ from .workers.queue import ProcessingWorker
 _REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 load_dotenv(_REPOSITORY_ROOT / ".env", override=False)
 _FIXTURES_ROOT = _REPOSITORY_ROOT / "tests" / "fixtures" / "companies"
-_DEFAULT_ALLOWED_ORIGINS = ("http://localhost:8080", "http://localhost:8081")
+_DEFAULT_ALLOWED_ORIGINS = ("http://localhost:8080", "http://localhost:8081", "http://localhost:8082")
 
 
 def _allowed_origins() -> tuple[str, ...]:

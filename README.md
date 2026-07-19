@@ -92,7 +92,16 @@ SentientVentures is organized as a pnpm monorepo consisting of:
    ```bash
    pnpm dev
    ```
-   *This starts the API (8000), Founder Portal (8080), and VC Dashboard (8081) concurrently.*
+   *This starts the API (8000), Founder Portal (8080), VC Dashboard (8081), and World Map (8082) concurrently.*
+
+---
+
+## 🗺️ Founder World Map (Port 8082)
+
+An interactive, high-performance world map application is built on port `8082` using React and **Leaflet.js** (dark-themed tile layout):
+- **Dynamic Circle Markers**: Visualizes all founders at their respective geocoordinates.
+- **Score-Proportional Scaling**: The circle marker radius scales dynamically according to the founder's active founder score.
+- **Direct VC Integration**: Clicking "View Profile" on any marker opens the VC Dashboard (`http://localhost:8081`) with a `?founder={id}` query parameter, which automatically displays the founder's profile modal.
 
 ---
 

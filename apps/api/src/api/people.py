@@ -272,6 +272,120 @@ class PersonNetworkModel(BaseModel):
     edges: list[NetworkEdgeModel]
 
 
+class MapFounderModel(BaseModel):
+    id: str
+    name: str
+    city: str | None = None
+    country: str | None = None
+    lat: float
+    lng: float
+    score: float
+
+
+@router.get("/people/map-data", response_model=list[MapFounderModel])
+def get_people_map_data() -> list[dict[str, Any]]:
+    configured = os.getenv("SV_PEOPLE_DATABASE")
+    path = (Path(configured) if configured else _ROOT / "assets" / "DATABASE" / "hack_nation_people.sqlite").resolve()
+    if not path.is_file():
+        return []
+        
+    def get_coordinates(user_id: str, city: str, country: str) -> tuple[float, float]:
+        import hashlib
+        city_clean = city.strip().lower()
+        country_clean = country.strip().lower()
+        
+        KNOWN_CITIES = {
+            ("munich", "germany"): (48.1351, 11.5820),
+            ("islamabad", "pakistan"): (33.6844, 73.0479),
+            ("lahore", "pakistan"): (31.5204, 74.3587),
+            ("delhi", "india"): (28.6139, 77.2090),
+            ("new delhi", "india"): (28.6139, 77.2090),
+            ("yerevan", "armenia"): (40.1792, 44.5152),
+            ("boston", "united states"): (42.3601, -71.0589),
+            ("boston", "united states of america"): (42.3601, -71.0589),
+            ("london", "united kingdom"): (51.5074, -0.1278),
+            ("paris", "france"): (48.8566, 2.3522),
+            ("bhubaneswar", "india"): (20.2961, 85.8245),
+            ("cambridge", "united states"): (42.3736, -71.1097),
+            ("cambridge", "united states of america"): (42.3736, -71.1097),
+            ("cambridge", "united kingdom"): (52.2053, 0.1218),
+            ("linz", "austria"): (48.3069, 14.2858),
+            ("new york city", "united states"): (40.7128, -74.0060),
+            ("san francisco", "united states"): (37.7749, -122.4194),
+            ("san francisco", "united states of america"): (37.7749, -122.4194),
+            ("san jose", "united states"): (37.3387, -121.8853),
+            ("rawalpindi", "pakistan"): (33.5997, 73.0479),
+            ("dresden", "germany"): (51.0504, 13.7373),
+            ("vienna", "austria"): (48.2082, 16.3738),
+            ("zürich", "switzerland"): (47.3769, 8.5417),
+            ("zurich", "switzerland"): (47.3769, 8.5417),
+            ("berlin", "germany"): (52.5200, 13.4050),
+            ("casablanca", "morocco"): (33.5731, -7.5898),
+            ("lagos", "nigeria"): (6.5244, 3.3792),
+            ("rabat", "morocco"): (34.0209, -6.8416),
+            ("karachi", "pakistan"): (24.8607, 67.0011),
+        }
+        
+        key = (city_clean, country_clean)
+        if key in KNOWN_CITIES:
+            lat_base, lng_base = KNOWN_CITIES[key]
+        else:
+            h = hashlib.md5(f"{city_clean},{country_clean}".encode("utf-8")).hexdigest()
+            lat_base = (int(h[0:8], 16) % 90) - 30.0
+            lng_base = (int(h[8:16], 16) % 240) - 100.0
+            
+        h_user = hashlib.md5(user_id.encode("utf-8")).hexdigest()
+        jitter_lat = ((int(h_user[0:4], 16) % 200) - 100) * 0.0008
+        jitter_lng = ((int(h_user[4:8], 16) % 200) - 100) * 0.0008
+        
+        return float(lat_base + jitter_lat), float(lng_base + jitter_lng)
+
+    try:
+        with sqlite3.connect(f"file:{path.as_posix()}?mode=ro", uri=True) as db:
+            rows = db.execute("""
+                SELECT p.user_id, p.roster_json, p.profile_json, fs.score
+                FROM people p
+                LEFT JOIN (
+                    SELECT user_id, score, MAX(timestamp) 
+                    FROM founder_scores 
+                    GROUP BY user_id
+                ) fs ON fs.user_id = p.user_id
+            """).fetchall()
+            
+            founders = []
+            for user_id, roster_json, profile_json, score in rows:
+                roster = _json(roster_json)
+                profile = _json(profile_json)
+                city = profile.get("city")
+                country = profile.get("country")
+                
+                if not city or not country:
+                    display_city = "Location Unspecified"
+                    display_country = "Global"
+                    lat, lng = get_coordinates(user_id, "Munich", "Germany")
+                else:
+                    display_city = city
+                    display_country = country
+                    lat, lng = get_coordinates(user_id, city, country)
+                
+                score_val = float(score) if score is not None else 50.0
+                first = (roster.get("first_name") or "").strip()
+                last = (roster.get("last_name") or "").strip()
+                name = " ".join(part for part in (first, last) if part) or roster.get("display_name") or "Unknown"
+                founders.append({
+                    "id": user_id,
+                    "name": name,
+                    "city": display_city,
+                    "country": display_country,
+                    "lat": lat,
+                    "lng": lng,
+                    "score": score_val
+                })
+            return founders
+    except sqlite3.Error as exc:
+        raise HTTPException(status_code=500, detail="Database error") from exc
+
+
 @router.get("/people/{user_id}", response_model=DetailedPersonModel)
 def get_person_profile(user_id: str) -> dict[str, Any]:
     import re
@@ -511,6 +625,7 @@ def init_db() -> None:
                 db.commit()
     except Exception as exc:
         print(f"Error seeding founder_scores: {exc}")
+
 
 
 

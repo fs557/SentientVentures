@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentientVentures Founder World Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <style>
+      :root {
+        --sv-bg: #07120f;
+        --sv-ink: #e2f0ec;
+        --sv-green: #72d6b4;
+        --sv-green-deep: #4da688;
+        --sv-surface: #0e221d;
+        --sv-line: rgba(114, 214, 180, 0.15);
+        --sv-muted: #7fa499;
+      }
+      body {
+        margin: 0;
+        background-color: var(--sv-bg);
+        color: var(--sv-ink);
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+      /* Leaflet dark theme override */
+      .leaflet-container {
+        background-color: #0c1a16 !important;
+      }
+      .leaflet-tile {
+        filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(90%);
+      }
+      /* Custom Popup styling */
+      .leaflet-popup-content-wrapper {
+        background: var(--sv-surface) !important;
+        color: var(--sv-ink) !important;
+        border: 1px solid var(--sv-line);
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+      .leaflet-popup-tip {
+        background: var(--sv-surface) !important;
+      }
+      .map-popup-btn {
+        display: inline-block;
+        margin-top: 0.5rem;
+        background: linear-gradient(135deg, #83dfbf, #56c39e);
+        color: #071c15 !important;
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(114, 214, 180, 0.25);
+        transition: transform 0.15s ease;
+      }
+      .map-popup-btn:hover {
+        transform: translateY(-1px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
