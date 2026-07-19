@@ -58,7 +58,7 @@ test("api health, founder portal, and dashboard navigation", async ({ page, requ
 
   // Test the Founder Network Graph tab
   await page.getByRole("button", { name: "Founder Network Graph" }).click();
-  await expect(page.getByRole("heading", { name: "Founder Connection Network" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Founder Network Graph" })).toBeVisible();
   
   // Verify the SVG canvas and legend
   await expect(page.locator("svg")).toBeVisible();

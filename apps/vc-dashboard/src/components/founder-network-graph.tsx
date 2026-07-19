@@ -19,7 +19,13 @@ interface Link {
 
 const apiBase = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000/api/v1";
 
-export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluation }) {
+export function FounderNetworkGraph({ 
+  evaluation, 
+  onSelectPerson 
+}: { 
+  evaluation: CompanyEvaluation; 
+  onSelectPerson?: (id: string) => void; 
+}) {
   const [nodes, setNodes] = useState<Node[]>([]);
   const [links, setLinks] = useState<Link[]>([]);
   const [loading, setLoading] = useState(true);
@@ -40,11 +46,11 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
 
     fetch(`${apiBase}/people/network?company_slug=${encodeURIComponent(evaluation.slug)}`, {
       signal: controller.signal,
-      headers: { Accept: "application/json" },
+      headers: { Accept: "application/json" }
     })
       .then((res) => {
-        if (!res.ok) throw new Error("Could not fetch connection network.");
-        return res.json() as Promise<{ nodes: any[]; links: any[] }>;
+        if (!res.ok) throw new Error("Could not load network graph.");
+        return res.json();
       })
       .then((data) => {
         // Initialize nodes with random positions near center
@@ -57,14 +63,13 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
           vx: 0,
           vy: 0,
         }));
-
         setNodes(initializedNodes);
         setLinks(data.links || data.edges || []);
         setLoading(false);
       })
       .catch((err) => {
         if ((err as DOMException).name !== "AbortError") {
-          setError(err instanceof Error ? err.message : "Failed to load network graph.");
+          setError("Network graph is currently offline.");
           setLoading(false);
         }
       });
@@ -74,10 +79,11 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
     };
   }, [evaluation.slug]);
 
-  // 2. Force-directed simulation loop
+  // 2. Physics simulation
   useEffect(() => {
     if (nodes.length === 0 || loading) return;
 
+    // Simulation constants
     const repulsionStrength = 800;
     const attractionStrength = 0.04;
     const desiredLength = 180;
@@ -86,16 +92,15 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
 
     const runSimulation = () => {
       setNodes((currentNodes) => {
-        // Create a deep copy of nodes to update positions
         const nextNodes = currentNodes.map((n) => ({ ...n }));
 
-        // 2a. Repulsion between all node pairs
+        // Repulsion between all nodes
         for (let i = 0; i < nextNodes.length; i++) {
           for (let j = i + 1; j < nextNodes.length; j++) {
             const dx = nextNodes[j].x - nextNodes[i].x;
             const dy = nextNodes[j].y - nextNodes[i].y;
             const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            if (dist < 300) {
+            if (dist < 400) {
               const force = repulsionStrength / (dist * dist);
               const fx = (dx / dist) * force;
               const fy = (dy / dist) * force;
@@ -107,9 +112,8 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
           }
         }
 
-        // 2b. Attraction along links
+        // Attraction along links
         links.forEach((link) => {
-          // Resolve string source/target IDs to node objects
           const sourceNode = nextNodes.find((n) => n.id === link.source);
           const targetNode = nextNodes.find((n) => n.id === link.target);
           if (sourceNode && targetNode) {
@@ -131,11 +135,10 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
           }
         });
 
-        // 2c. Update coordinates, apply gravity to center, and apply damping
+        // Update positions, apply center gravity
         nextNodes.forEach((node) => {
           if (node.id === dragNodeRef.current) return;
 
-          // Pull to center
           const cx = width / 2;
           const cy = height / 2;
           node.vx += (cx - node.x) * gravity;
@@ -147,9 +150,9 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
           node.vx *= damping;
           node.vy *= damping;
 
-          // Keep in bounds
-          node.x = Math.max(20, Math.min(width - 20, node.x));
-          node.y = Math.max(20, Math.min(height - 20, node.y));
+          // Boundary constraints
+          node.x = Math.max(30, Math.min(width - 30, node.x));
+          node.y = Math.max(30, Math.min(height - 30, node.y));
         });
 
         return nextNodes;
@@ -194,61 +197,75 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
   const getNodeColor = (type: Node["type"]) => {
     switch (type) {
       case "founder":
-        return "#72d6b4"; // Mint Green (Founder)
+        return "#72d6b4"; // Glowing Mint
       case "university":
-        return "#83dcea"; // Cyan (University)
+        return "#83dcea"; // Cyan
       case "project":
-        return "#ffc477"; // Gold (Project)
+        return "#ffc477"; // Gold
       case "hackathon":
-        return "#ffad72"; // Orange (Hackathon)
+        return "#ffad72"; // Orange
       default:
-        return "#a8b8b1"; // Soft Silver (Other teammate/alumni)
+        return "#a8b8b1"; // Silver
     }
   };
 
   return (
-    <div
-      className="evaluation-card evaluation-card--criterion"
-      style={{ marginBottom: "1.5rem", padding: "1.5rem" }}
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
-    >
-      <h3 style={{ marginTop: 0, marginBottom: "0.5rem" }}>Founder Connection Network</h3>
-      <p style={{ color: "var(--sv-muted)", fontSize: "0.85rem", marginBottom: "1.25rem" }}>
-        Visualizing direct 1-hop connections of the founding team via university alumni networks, project collaborations, and hackathons.
-      </p>
+    <details className="evaluation-card evaluation-card--criterion" open style={{ marginBottom: "1.5rem" }}>
+      <summary className="evaluation-card__summary">
+        <header>
+          <p className="eyebrow">Connection Map</p>
+          <h3 id="founder-network-title">Founder Network Graph</h3>
+        </header>
+        <span className="evaluation-card__indicator" aria-hidden="true" />
+      </summary>
+      <div className="evaluation-card__content" style={{ paddingTop: "1rem" }}>
+        <p style={{ color: "var(--sv-muted)", fontSize: "0.86rem", margin: "0 0 1.25rem 0" }}>
+          Visualizing direct 1-hop connections of the founding team via university alumni networks, project collaborations, and hackathons. Click a founder node to view their full profile.
+        </p>
 
-      {loading && <p>Generating network graph...</p>}
-      {error && <p className="error-text">{error}</p>}
+        {loading && <p>Generating network graph...</p>}
+        {error && <p className="error-text">{error}</p>}
 
-      {!loading && !error && (
-        <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "1fr" }}>
-          {/* SVG canvas */}
-          <div style={{ background: "rgba(10, 18, 16, 0.5)", border: "1px solid var(--sv-line)", borderRadius: "10px", overflow: "hidden" }}>
-            <svg viewBox={`0 0 ${width} ${height}`} width="100%" height="auto" style={{ display: "block" }}>
-              {/* Lines (Links) */}
-              {links.map((link, idx) => {
-                const sourceNode = nodes.find((n) => n.id === link.source);
-                const targetNode = nodes.find((n) => n.id === link.target);
-                if (!sourceNode || !targetNode) return null;
-                return (
-                  <line
-                    key={`${link.source}-${link.target}-${idx}`}
-                    x1={sourceNode.x}
-                    y1={sourceNode.y}
-                    x2={targetNode.x}
-                    y2={targetNode.y}
-                    stroke="rgba(114, 214, 180, 0.18)"
-                    strokeWidth="1.5"
-                  />
-                );
-              })}
+        {!loading && !error && (
+          <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "1fr" }}>
+            {/* SVG canvas */}
+            <div 
+              ref={containerRef}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              style={{ background: "rgba(10, 18, 16, 0.5)", border: "1px solid var(--sv-line)", borderRadius: "10px", overflow: "hidden" }}
+            >
+              <svg viewBox={`0 0 ${width} ${height}`} width="100%" height="auto" style={{ display: "block" }}>
+                {/* Lines (Links) */}
+                {links.map((link, idx) => {
+                  const sourceNode = nodes.find((n) => n.id === link.source);
+                  const targetNode = nodes.find((n) => n.id === link.target);
+                  if (!sourceNode || !targetNode) return null;
+                  return (
+                    <line
+                      key={`${link.source}-${link.target}-${idx}`}
+                      x1={sourceNode.x}
+                      y1={sourceNode.y}
+                      x2={targetNode.x}
+                      y2={targetNode.y}
+                      stroke="rgba(114, 214, 180, 0.18)"
+                      strokeWidth="1.5"
+                    />
+                  );
+                })}
 
-              {/* Circles (Nodes) */}
-              {nodes.map((node) => (
-                <g key={node.id} style={{ cursor: "grab" }}>
+                {/* Circles (Nodes) */}
+                {nodes.map((node) => (
+                  <g 
+                    key={node.id} 
+                    style={{ cursor: (node.type === "founder" || node.type === "person") ? "pointer" : "grab" }}
+                    onClick={() => {
+                      if (node.type === "founder" || node.type === "person") {
+                        onSelectPerson?.(node.id);
+                      }
+                    }}
+                  >
                   <circle
                     cx={node.x}
                     cy={node.y}
@@ -306,5 +323,6 @@ export function FounderNetworkGraph({ evaluation }: { evaluation: CompanyEvaluat
         </div>
       )}
     </div>
+  </details>
   );
 }

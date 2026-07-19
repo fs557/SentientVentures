@@ -43,9 +43,23 @@ describe("FounderPortal", () => {
 
   it("does not announce completion until the job is ready", async () => {
     vi.useFakeTimers();
-    fetchMock.mockResolvedValueOnce(new Response(JSON.stringify({ company: { id: "a", slug: "aster-labs", name: "Aster Labs" }, job: { id: "j", state: "queued", statusUrl: "/api/v1/jobs/aster-labs" }, acceptedAt: "2026-07-19T12:00:00Z" }), { status: 202 }))
-      .mockResolvedValueOnce(new Response(JSON.stringify({ id: "j", companySlug: "aster-labs", state: "extracting", stage: "Reading deck", progress: 20, attempt: 1, repairCount: 0, updatedAt: "2026-07-19T12:00:02Z", error: null, retryAllowed: false }), { status: 200 }))
-      .mockResolvedValueOnce(new Response(JSON.stringify({ id: "j", companySlug: "aster-labs", state: "ready", stage: "Ready", progress: 100, attempt: 1, repairCount: 0, updatedAt: "2026-07-19T12:00:04Z", error: null, retryAllowed: false }), { status: 200 }));
+    let statusCallCount = 0;
+    fetchMock.mockImplementation((url: string) => {
+      if (url.includes("/people/search")) {
+        return Promise.resolve(new Response(JSON.stringify({ people: [] }), { status: 200 }));
+      }
+      if (url.includes("/submissions")) {
+        return Promise.resolve(new Response(JSON.stringify({ company: { id: "a", slug: "aster-labs", name: "Aster Labs" }, job: { id: "j", state: "queued", statusUrl: "/api/v1/jobs/aster-labs" }, acceptedAt: "2026-07-19T12:00:00Z" }), { status: 202 }));
+      }
+      if (url.includes("/jobs/aster-labs")) {
+        statusCallCount++;
+        if (statusCallCount === 1) {
+          return Promise.resolve(new Response(JSON.stringify({ id: "j", companySlug: "aster-labs", state: "extracting", stage: "Reading deck", progress: 20, attempt: 1, repairCount: 0, updatedAt: "2026-07-19T12:00:02Z", error: null, retryAllowed: false }), { status: 200 }));
+        }
+        return Promise.resolve(new Response(JSON.stringify({ id: "j", companySlug: "aster-labs", state: "ready", stage: "Ready", progress: 100, attempt: 1, repairCount: 0, updatedAt: "2026-07-19T12:00:04Z", error: null, retryAllowed: false }), { status: 200 }));
+      }
+      return Promise.resolve(new Response(JSON.stringify({}), { status: 200 }));
+    });
     render(<FounderPortal />); addRequiredFields(); fireEvent.click(screen.getByRole("button", { name: /submit for evaluation/i }));
     await act(async () => {});
     await act(async () => { await vi.advanceTimersByTimeAsync(2000); });

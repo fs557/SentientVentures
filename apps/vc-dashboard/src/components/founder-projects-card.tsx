@@ -21,7 +21,13 @@ function extractNames(text: string): string[] {
     .filter((p) => p.length >= 2);
 }
 
-export function FounderProjectsCard({ evaluation }: { evaluation: CompanyEvaluation }) {
+export function FounderProjectsCard({ 
+  evaluation, 
+  onSelectPerson 
+}: { 
+  evaluation: CompanyEvaluation; 
+  onSelectPerson?: (id: string) => void; 
+}) {
   const [founders, setFounders] = useState<Person[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -60,37 +66,23 @@ export function FounderProjectsCard({ evaluation }: { evaluation: CompanyEvaluat
             }
             return [];
           })
-          .then((results) => {
-            // Find an exact or very close case-insensitive match
-            const lowerFullName = fullName.toLowerCase();
-            return results.filter(
-              (p) =>
-                p.name.toLowerCase().includes(lowerFullName) ||
-                lowerFullName.includes(p.name.toLowerCase())
-            );
-          })
           .catch((err) => {
             if ((err as DOMException).name !== "AbortError") {
-              throw err;
+              console.error(`Search failed for ${fullName}:`, err);
             }
             return [];
           })
       )
     )
       .then((resultsArray) => {
-        const flattened = resultsArray.flat();
-        // Remove duplicates by ID
-        const unique = flattened.reduce<Person[]>((acc, current) => {
-          if (!acc.some((item) => item.id === current.id)) {
-            acc.push(current);
-          }
-          return acc;
-        }, []);
-        setFounders(unique);
+        const found = resultsArray.flat().filter(
+          (person, idx, self) => self.findIndex((p) => p.id === person.id) === idx
+        );
+        setFounders(found);
         setLoading(false);
       })
       .catch((err) => {
-        setError("Could not search founders directory.");
+        setError("Failed to query people directory.");
         setLoading(false);
       });
 
@@ -119,7 +111,13 @@ export function FounderProjectsCard({ evaluation }: { evaluation: CompanyEvaluat
         {!loading && !error && founders.map((person) => (
           <div key={person.id} className="founder-db-profile" style={{ marginBottom: "1.5rem", borderBottom: "1px solid var(--sv-line)", paddingBottom: "1.25rem" }}>
             <h4 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", textTransform: "none", color: "var(--sv-ink)", letterSpacing: "normal" }}>
-              {person.name}
+              <button 
+                type="button" 
+                className="clickable-founder-link" 
+                onClick={() => onSelectPerson?.(person.id)}
+              >
+                {person.name}
+              </button>
             </h4>
             {(() => {
               const uni = person.university || "";

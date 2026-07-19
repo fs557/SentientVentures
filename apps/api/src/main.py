@@ -106,6 +106,8 @@ def create_app(*, fixtures_root: Path | None = None, data_root: Path | None = No
 
     @app.on_event("startup")
     async def start_processing_worker() -> None:
+        from .api.people import init_db
+        init_db()
         await app.state.processing_worker.start()
 
     @app.on_event("shutdown")

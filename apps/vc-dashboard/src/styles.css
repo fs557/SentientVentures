@@ -152,3 +152,221 @@ button, select { font: inherit; }
   font-weight: 700;
 }
 
+/* Modal Dialog Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(8, 17, 15, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.modal-box {
+  background: var(--sv-surface-strong);
+  border: 1px solid var(--sv-line);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  animation: modalFadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--sv-muted);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.16s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: var(--sv-ink);
+}
+
+/* Profile Layout Grid */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 500px;
+}
+
+/* Sidebar Biography styling */
+.profile-sidebar {
+  background: rgba(18, 31, 28, 0.4);
+  border-right: 1px solid var(--sv-line);
+  padding: 2rem 1.5rem;
+}
+
+.profile-avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #83dfbf, #56c39e);
+  color: #071c15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(114, 214, 180, 0.22);
+  overflow: hidden;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-sidebar h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  text-align: center;
+  color: var(--sv-ink);
+}
+
+.profile-tagline {
+  color: var(--sv-muted);
+  font-size: 0.84rem;
+  text-align: center;
+  margin: 0.35rem 0 0 0;
+}
+
+.profile-bio-list dt {
+  color: var(--sv-muted);
+  font-size: 0.72rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.8rem;
+}
+
+.profile-bio-list dd {
+  margin: 0.15rem 0 0 0;
+  font-size: 0.86rem;
+  color: var(--sv-ink);
+}
+
+.profile-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.profile-link-btn {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: filter 0.16s ease;
+}
+
+.profile-link-btn.linkedin {
+  background: #0a66c2;
+  color: white;
+}
+
+.profile-link-btn.github {
+  background: #24292e;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-link-btn:hover {
+  filter: brightness(1.12);
+}
+
+/* Main Panel styling */
+.profile-main {
+  padding: 2rem;
+}
+
+.founder-score-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--sv-line);
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  min-width: 180px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--sv-line);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.profile-projects-list li {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--sv-line);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+}
+
+/* Clickable elements link style */
+.clickable-founder-link {
+  background: transparent;
+  border: none;
+  color: var(--sv-green-deep);
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  transition: color 0.15s ease;
+  text-align: left;
+}
+
+.clickable-founder-link:hover {
+  color: var(--sv-green);
+}
+
+@media (max-width: 860px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+  .profile-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--sv-line);
+  }
+}
+
+
