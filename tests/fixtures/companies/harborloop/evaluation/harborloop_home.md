@@ -39,16 +39,16 @@ The submitted identity is HarborLoop.
 **Confidence:** 65
 
 ### Assessment
-The proposed EUR 2,500,000 post-money valuation is explicit.
+The proposed EUR 2.500.000 post-money valuation is explicit.
 
 ### Positive Arguments
-- The submitted company profile supports this assessment: The proposed EUR 2,500,000 post-money valuation is explicit.
+- The submitted company profile supports this assessment: The proposed EUR 2.500.000 post-money valuation is explicit.
 
 ### Negative Arguments and Risks
 - The valuation has not been independently benchmarked.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | The proposed EUR 2,500,000 post-money valuation is explicit.
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | The proposed EUR 2.500.000 post-money valuation is explicit.
 
 ### Missing Information
 
@@ -171,16 +171,16 @@ The proposed dilution is 4%.
 **Confidence:** 65
 
 ### Assessment
-The requested amount is EUR 100,000.
+The requested amount is EUR 100.000.
 
 ### Positive Arguments
-- The submitted company profile supports this assessment: The requested amount is EUR 100,000.
+- The submitted company profile supports this assessment: The requested amount is EUR 100.000.
 
 ### Negative Arguments and Risks
 - The amount should be tested against milestone costs.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | The requested amount is EUR 100,000.
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | The requested amount is EUR 100.000.
 
 ### Missing Information
 
@@ -193,16 +193,16 @@ The requested amount is EUR 100,000.
 **Confidence:** 56
 
 ### Assessment
-The terms imply EUR 2,500,000, matching the stated post-money value.
+The terms imply EUR 2.500.000, matching the stated post-money value.
 
 ### Positive Arguments
-- The submitted company profile supports this assessment: The terms imply EUR 2,500,000, matching the stated post-money value.
+- The submitted company profile supports this assessment: The terms imply EUR 2.500.000, matching the stated post-money value.
 
 ### Negative Arguments and Risks
 - The implied value is arithmetic, not market validation.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | The terms imply EUR 2,500,000, matching the stated post-money value.
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | The terms imply EUR 2.500.000, matching the stated post-money value.
 
 ### Missing Information
 

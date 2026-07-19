@@ -59,9 +59,9 @@ def test_fixture_criteria_are_complete_specific_and_terms_are_consistent() -> No
         assert by_id["idea.defensibility"].source_references[0].kind == "inference"
         terms_text = ", ".join(terms["useOfFunds"])
         assert terms_text in by_id["home.use_of_investment"].assessment
-        assert f"{terms['currency']} {terms['amount']:,.0f}" in by_id["home.investment_requested"].assessment
+        assert f"{terms['currency']} {terms['amount']:,.0f}".replace(",", ".") in by_id["home.investment_requested"].assessment
         assert f"{terms['equityPercentage']:g}%" in by_id["home.equity_offered"].assessment
-        assert f"{terms['currency']} {terms['impliedValuation']:,.0f}" in by_id["home.implied_valuation"].assessment
+        assert f"{terms['currency']} {terms['impliedValuation']:,.0f}".replace(",", ".") in by_id["home.implied_valuation"].assessment
         for item in items:
             assert "This assessment is limited to those materials" not in item.assessment
             assert all("Not provided:" not in value for value in item.missing_information)

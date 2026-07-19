@@ -24,14 +24,14 @@ from src.core.storage import CompanyRef, atomic_write_json, write_evaluation_set
 # evaluation source maintainable without hand-editing derived Markdown files.
 CRITERION_CONTEXT: dict[str, tuple[str, str]] = {
     "home.company_name": ("The submitted identity is {company}.", "The fixture does not model incorporation records."),
-    "home.current_valuation": ("The proposed {currency} {postMoneyValuation:,.0f} post-money valuation is explicit.", "The valuation has not been independently benchmarked."),
+    "home.current_valuation": ("The proposed {currency} {postMoneyValuationText} post-money valuation is explicit.", "The valuation has not been independently benchmarked."),
     "home.company_idea": ("The core idea is {theme}.", "The thesis still depends on execution outside the pitch."),
     "home.sector": ("The company operates in {sector}.", "Sector labels alone do not prove buyer urgency."),
     "home.what_company_does": ("It sells {product} to {customer}.", "The exact implementation scope can expand during delivery."),
     "home.use_of_investment": ("The round funds {useOfFundsText}.", "Allocation discipline must be demonstrated after financing."),
     "home.equity_offered": ("The proposed dilution is {equityPercentage:g}%.", "The cap-table context is not independently verified."),
-    "home.investment_requested": ("The requested amount is {currency} {amount:,.0f}.", "The amount should be tested against milestone costs."),
-    "home.implied_valuation": ("The terms imply {currency} {impliedValuation:,.0f}, matching the stated post-money value.", "The implied value is arithmetic, not market validation."),
+    "home.investment_requested": ("The requested amount is {currency} {amountText}.", "The amount should be tested against milestone costs."),
+    "home.implied_valuation": ("The terms imply {currency} {impliedValuationText}, matching the stated post-money value.", "The implied value is arithmetic, not market validation."),
     "home.founders": ("The founding team is {founders}.", "Key-person concentration remains relevant."),
     "home.founder_facts": ("Relevant founder facts include {founderFacts}.", "References and employment history are not independently verified."),
     "home.company_facts": ("Material company facts are {companyFacts}.", "These are fictional pitch claims rather than audited disclosures."),
@@ -149,6 +149,9 @@ def _document(facts: dict[str, Any], category: str) -> EvaluationDocument:
     formatting_facts = {
         **facts,
         **investment,
+        "amountText": f"{investment['amount']:,.0f}".replace(",", "."),
+        "postMoneyValuationText": f"{investment['postMoneyValuation']:,.0f}".replace(",", "."),
+        "impliedValuationText": f"{investment['impliedValuation']:,.0f}".replace(",", "."),
         "useOfFundsText": ", ".join(str(item) for item in investment["useOfFunds"]),
     }
     items: list[EvaluationItem] = []

@@ -60,7 +60,9 @@ button, select { font: inherit; }
 .evaluation-card__summary::-webkit-details-marker { display: none; }
 .evaluation-card__summary::marker { content: ""; }
 .evaluation-card__summary:focus-visible { outline-offset: -3px; }
+.evaluation-card--fact .evaluation-card__summary { grid-template-columns: minmax(0, 1fr) auto; }
 .evaluation-card__content { border-top: 1px solid var(--sv-line); min-width: 0; padding: .2rem 1.15rem 1.25rem; }
+.evaluation-card--fact .evaluation-card__content { padding-top: 1rem; }
 .evaluation-card h3 { font-size: 1.03rem; line-height: 1.35; margin: .25rem 0 0; }
 .evaluation-card h4 { color: var(--sv-green-deep); font-size: .7rem; letter-spacing: .09em; margin: 1.1rem 0 .42rem; text-transform: uppercase; }
 .evaluation-card p, .evaluation-card li { font-size: .88rem; line-height: 1.58; }

@@ -237,16 +237,16 @@ Profit per employee is negative while the team funds prototype work.
 **Confidence:** 60
 
 ### Assessment
-Current burn is about EUR 28,000 per month.
+Current burn is about EUR 28.000 per month.
 
 ### Positive Arguments
-- The submitted company profile supports this assessment: Current burn is about EUR 28,000 per month.
+- The submitted company profile supports this assessment: Current burn is about EUR 28.000 per month.
 
 ### Negative Arguments and Risks
 - Burn may rise before the financed milestone is reached.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Current burn is about EUR 28,000 per month.
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Current burn is about EUR 28.000 per month.
 
 ### Missing Information
 

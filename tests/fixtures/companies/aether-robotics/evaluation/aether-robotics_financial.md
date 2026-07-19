@@ -17,16 +17,16 @@ source_documents:
 **Confidence:** 89
 
 ### Assessment
-Current revenue is approximately EUR 180,000 of pilot and deployment revenue.
+Current revenue is approximately EUR 180.000 of pilot and deployment revenue.
 
 ### Positive Arguments
-- The submitted company profile supports this assessment: Current revenue is approximately EUR 180,000 of pilot and deployment revenue.
+- The submitted company profile supports this assessment: Current revenue is approximately EUR 180.000 of pilot and deployment revenue.
 
 ### Negative Arguments and Risks
 - Revenue recognition has not been audited.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Current revenue is approximately EUR 180,000 of pilot and deployment revenue.
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Current revenue is approximately EUR 180.000 of pilot and deployment revenue.
 
 ### Missing Information
 
@@ -237,16 +237,16 @@ Profit per employee is negative during the current build phase.
 **Confidence:** 89
 
 ### Assessment
-Current burn is about EUR 115,000 per month.
+Current burn is about EUR 115.000 per month.
 
 ### Positive Arguments
-- The submitted company profile supports this assessment: Current burn is about EUR 115,000 per month.
+- The submitted company profile supports this assessment: Current burn is about EUR 115.000 per month.
 
 ### Negative Arguments and Risks
 - Burn may rise before the financed milestone is reached.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Current burn is about EUR 115,000 per month.
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Current burn is about EUR 115.000 per month.
 
 ### Missing Information
 
