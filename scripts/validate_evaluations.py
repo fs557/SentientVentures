@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 import sys
 
@@ -14,6 +15,27 @@ sys.path.insert(0, str(ROOT / "apps" / "api"))
 from src.core.markdown import parse_evaluation_document
 from src.core.registry import CATEGORIES
 from src.core.scoring import category_scores, overall_score
+
+
+def _valid_investment_terms(value: object) -> bool:
+    if not isinstance(value, dict) or set(value) != {
+        "amount", "currency", "equityPercentage", "preMoneyValuation",
+        "postMoneyValuation", "impliedValuation", "useOfFunds",
+    }:
+        return False
+    monetary = ("amount", "preMoneyValuation", "postMoneyValuation", "impliedValuation")
+    if any(not isinstance(value[key], (int, float)) or isinstance(value[key], bool)
+           or not math.isfinite(value[key]) or value[key] < 0 for key in monetary):
+        return False
+    equity = value["equityPercentage"]
+    if (not isinstance(equity, (int, float)) or isinstance(equity, bool)
+            or not math.isfinite(equity) or not 0 <= equity <= 100):
+        return False
+    if (not isinstance(value["currency"], str) or len(value["currency"]) != 3
+            or not value["currency"].isalpha() or value["currency"] != value["currency"].upper()):
+        return False
+    funds = value["useOfFunds"]
+    return isinstance(funds, list) and all(isinstance(item, str) and item.strip() for item in funds)
 
 
 def validate(root: Path) -> list[str]:
@@ -53,6 +75,14 @@ def validate(root: Path) -> list[str]:
             continue
         metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
         if metadata.get("state") != "ready": failures.append(f"{company.name}: metadata is not ready")
+        terms = metadata.get("investment")
+        if not _valid_investment_terms(terms):
+            failures.append(f"{company.name}: investment terms are malformed")
+        elif (terms["postMoneyValuation"] != terms["preMoneyValuation"] + terms["amount"]
+              or terms["impliedValuation"] != terms["postMoneyValuation"]
+              or terms["postMoneyValuation"] == 0
+              or terms["equityPercentage"] != terms["amount"] / terms["postMoneyValuation"] * 100):
+            failures.append(f"{company.name}: investment terms are internally inconsistent")
         if len(documents) == len(CATEGORIES):
             scores = category_scores(documents)
             if scores.get("home") is not None: failures.append(f"{company.name}: Home score must be unavailable")

@@ -219,7 +219,7 @@ def serialize_evaluation_document(value: EvaluationDocument | Mapping[str, Any])
         lines.extend(["", "### Evidence"])
         lines.extend(_reference_to_line(reference) for reference in item.evidence)
         lines.extend(["", "### Missing Information"])
-        lines.extend(f"- {item_text}" for item_text in item.missing_information or ["No material missing information was identified."])
+        lines.extend(f"- {item_text}" for item_text in item.missing_information)
         lines.extend(["", "### Source References"])
         # Source references are evidence too.  Keeping their kind avoids
         # silently turning an inference into a fact during a round-trip.
@@ -363,9 +363,9 @@ def parse_evaluation_document(markdown: str, expected_slug: str, expected_catego
                 content.append(body[index]); index += 1
             while content and not content[-1].strip(): content.pop()
             sections[section_name] = content
-        def bullets(section: str) -> list[str]:
+        def bullets(section: str, *, required: bool = True) -> list[str]:
             values = [line[2:].strip() for line in sections[section] if line.startswith("- ") and line[2:].strip()]
-            if not values: _issue(errors, "SECTION_EMPTY", f"/items/{item_id}/{section}", f"{section} needs at least one list item")
+            if required and not values: _issue(errors, "SECTION_EMPTY", f"/items/{item_id}/{section}", f"{section} needs at least one list item")
             if any(line.strip() and not line.startswith("- ") for line in sections[section]): _issue(errors, "SECTION_CONTENT_INVALID", f"/items/{item_id}/{section}", "list section must contain only bullets")
             return values
         assessment = "\n".join(line for line in sections["Assessment"] if line.strip()).strip()
@@ -374,7 +374,7 @@ def parse_evaluation_document(markdown: str, expected_slug: str, expected_catego
         source_refs = [_parse_reference(line, set(source_documents), allow_implicit_fact=True) for line in sections["Source References"] if line.strip()]
         if not evidence or any(reference is None for reference in evidence): _issue(errors, "EVIDENCE_INVALID", f"/items/{item_id}/evidence", "Evidence must contain valid references")
         if not source_refs or any(reference is None for reference in source_refs): _issue(errors, "EVIDENCE_INVALID", f"/items/{item_id}/sourceReferences", "Source references must contain valid references")
-        document.items.append(EvaluationItem(item_id, category, title, score, confidence, assessment, bullets("Positive Arguments"), bullets("Negative Arguments and Risks"), [reference for reference in evidence if reference], bullets("Missing Information"), [reference for reference in source_refs if reference]))
+        document.items.append(EvaluationItem(item_id, category, title, score, confidence, assessment, bullets("Positive Arguments"), bullets("Negative Arguments and Risks"), [reference for reference in evidence if reference], bullets("Missing Information", required=False), [reference for reference in source_refs if reference]))
     errors.extend(_validate_document(document, expected_slug=expected_slug, expected_category=expected_category))
     document.validation_errors = list(errors)
     for index, item in enumerate(document.items):

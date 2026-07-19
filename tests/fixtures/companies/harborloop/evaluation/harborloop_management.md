@@ -17,22 +17,21 @@ source_documents:
 **Confidence:** 58
 
 ### Assessment
-For how strong is the academic background?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Academic background is relevant business and operations education without specialized engineering depth.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How strong is the academic background? is supported by the fictional fact pattern: Academic background is relevant business and operations education without specialized engineering depth.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Credentials do not by themselves prove operating execution.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.academic_background | management.academic_background: Academic background is relevant business and operations education without specialized engineering depth.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.academic_background | Structured fact for management.academic_background
 
 ## management.professional_background | How relevant is the professional background?
 
@@ -40,22 +39,21 @@ For how strong is the academic background?, the supplied fictional materials des
 **Confidence:** 58
 
 ### Assessment
-For how relevant is the professional background?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Professional background is local logistics coordination and early marketplace product work.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How relevant is the professional background? is supported by the fictional fact pattern: Professional background is local logistics coordination and early marketplace product work.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Prior roles should be reference-checked.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.professional_background | management.professional_background: Professional background is local logistics coordination and early marketplace product work.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.professional_background | Structured fact for management.professional_background
 
 ## management.domain_expertise | How deep is the domain expertise?
 
@@ -63,22 +61,21 @@ For how relevant is the professional background?, the supplied fictional materia
 **Confidence:** 58
 
 ### Assessment
-For how deep is the domain expertise?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Domain expertise is practical familiarity with local freight pain points.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How deep is the domain expertise? is supported by the fictional fact pattern: Domain expertise is practical familiarity with local freight pain points.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- The team still needs ongoing customer learning.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.domain_expertise | management.domain_expertise: Domain expertise is practical familiarity with local freight pain points.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.domain_expertise | Structured fact for management.domain_expertise
 
 ## management.technical_expertise | How strong is the technical expertise?
 
@@ -86,22 +83,21 @@ For how deep is the domain expertise?, the supplied fictional materials describe
 **Confidence:** 58
 
 ### Assessment
-For how strong is the technical expertise?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Technical expertise is adequate for a prototype, with deeper inventory-system expertise still needed.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How strong is the technical expertise? is supported by the fictional fact pattern: Technical expertise is adequate for a prototype, with deeper inventory-system expertise still needed.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Technical depth must translate into reliable delivery.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.technical_expertise | management.technical_expertise: Technical expertise is adequate for a prototype, with deeper inventory-system expertise still needed.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.technical_expertise | Structured fact for management.technical_expertise
 
 ## management.commercial_expertise | How strong is the commercial expertise?
 
@@ -109,22 +105,21 @@ For how strong is the technical expertise?, the supplied fictional materials des
 **Confidence:** 58
 
 ### Assessment
-For how strong is the commercial expertise?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Commercial expertise is early customer-discovery capability but no demonstrated repeatable sales motion.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How strong is the commercial expertise? is supported by the fictional fact pattern: Commercial expertise is early customer-discovery capability but no demonstrated repeatable sales motion.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Enterprise sales capability may need reinforcement.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.commercial_expertise | management.commercial_expertise: Commercial expertise is early customer-discovery capability but no demonstrated repeatable sales motion.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.commercial_expertise | Structured fact for management.commercial_expertise
 
 ## management.founder_market_fit | How strong is the founder-market fit?
 
@@ -132,22 +127,21 @@ For how strong is the commercial expertise?, the supplied fictional materials de
 **Confidence:** 58
 
 ### Assessment
-For how strong is the founder-market fit?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Founder-market fit is credible local exposure, though the team has not yet operated a reuse network.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How strong is the founder-market fit? is supported by the fictional fact pattern: Founder-market fit is credible local exposure, though the team has not yet operated a reuse network.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- The fit should be tested through sustained customer access.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.founder_market_fit | management.founder_market_fit: Founder-market fit is credible local exposure, though the team has not yet operated a reuse network.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.founder_market_fit | Structured inference for management.founder_market_fit
 
 ## management.professional_following | How large is the founder's professional following or influence?
 
@@ -155,22 +149,21 @@ For how strong is the founder-market fit?, the supplied fictional materials desc
 **Confidence:** 58
 
 ### Assessment
-For how large is the founder's professional following or influence?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Professional influence is a small local logistics network rather than broad industry influence.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How large is the founder's professional following or influence? is supported by the fictional fact pattern: Professional influence is a small local logistics network rather than broad industry influence.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Audience reach is not a proxy for purchase intent.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.professional_following | management.professional_following: Professional influence is a small local logistics network rather than broad industry influence.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.professional_following | Structured fact for management.professional_following
 
 ## management.controversies | Are there relevant controversies?
 
@@ -178,22 +171,21 @@ For how large is the founder's professional following or influence?, the supplie
 **Confidence:** 58
 
 ### Assessment
-For are there relevant controversies?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+The fixture reports no relevant controversies in the fictional record.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Are there relevant controversies? is supported by the fictional fact pattern: The fixture reports no relevant controversies in the fictional record.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Background checks remain part of real diligence.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.controversies | management.controversies: The fixture reports no relevant controversies in the fictional record.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.controversies | Structured fact for management.controversies
 
 ## management.creativity | How creative or innovative is the management team?
 
@@ -201,22 +193,21 @@ For are there relevant controversies?, the supplied fictional materials describe
 **Confidence:** 58
 
 ### Assessment
-For how creative or innovative is the management team?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Team creativity appears in applying marketplace coordination to reusable freight containers.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How creative or innovative is the management team? is supported by the fictional fact pattern: Team creativity appears in applying marketplace coordination to reusable freight containers.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Novel approaches need disciplined prioritization.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.creativity | management.creativity: Team creativity appears in applying marketplace coordination to reusable freight containers.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.creativity | Structured inference for management.creativity
 
 ## management.strengths | What are the management team's greatest strengths?
 
@@ -224,22 +215,21 @@ For how creative or innovative is the management team?, the supplied fictional m
 **Confidence:** 58
 
 ### Assessment
-For what are the management team's greatest strengths?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Core team strengths are local problem awareness, sustainability motivation, and rapid prototyping.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- What are the management team's greatest strengths? is supported by the fictional fact pattern: Core team strengths are local problem awareness, sustainability motivation, and rapid prototyping.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Strengths must be maintained as the organization grows.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.strengths | management.strengths: Core team strengths are local problem awareness, sustainability motivation, and rapid prototyping.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.strengths | Structured inference for management.strengths
 
 ## management.weaknesses | What are the management team's greatest weaknesses?
 
@@ -247,22 +237,21 @@ For what are the management team's greatest strengths?, the supplied fictional m
 **Confidence:** 58
 
 ### Assessment
-For what are the management team's greatest weaknesses?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Current weaknesses are limited capital, limited operating history, and unproven unit economics.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- What are the management team's greatest weaknesses? is supported by the fictional fact pattern: Current weaknesses are limited capital, limited operating history, and unproven unit economics.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Unaddressed gaps can slow execution.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.weaknesses | management.weaknesses: Current weaknesses are limited capital, limited operating history, and unproven unit economics.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.weaknesses | Structured inference for management.weaknesses
 
 ## management.missing_roles | Are important roles missing?
 
@@ -270,22 +259,21 @@ For what are the management team's greatest weaknesses?, the supplied fictional 
 **Confidence:** 58
 
 ### Assessment
-For are important roles missing?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+The key role gap is an operations lead with pooling experience and a technical inventory specialist.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Are important roles missing? is supported by the fictional fact pattern: The key role gap is an operations lead with pooling experience and a technical inventory specialist.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Hiring timing and quality are material risks.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.missing_roles | management.missing_roles: The key role gap is an operations lead with pooling experience and a technical inventory specialist.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.missing_roles | Structured inference for management.missing_roles
 
 ## management.execution_ability | How strong is the team's ability to execute?
 
@@ -293,22 +281,21 @@ For are important roles missing?, the supplied fictional materials describe a ci
 **Confidence:** 58
 
 ### Assessment
-For how strong is the team's ability to execute?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Execution evidence is completion of a clickable prototype and twelve customer interviews.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How strong is the team's ability to execute? is supported by the fictional fact pattern: Execution evidence is completion of a clickable prototype and twelve customer interviews.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Future execution includes challenges not yet encountered.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.execution_ability | management.execution_ability: Execution evidence is completion of a clickable prototype and twelve customer interviews.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.execution_ability | Structured inference for management.execution_ability
 
 ## management.credibility | How credible and trustworthy does the team appear?
 
@@ -316,22 +303,21 @@ For how strong is the team's ability to execute?, the supplied fictional materia
 **Confidence:** 58
 
 ### Assessment
-For how credible and trustworthy does the team appear?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Credibility rests on specific interview count and a defined pilot scope, not commercial traction.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How credible and trustworthy does the team appear? is supported by the fictional fact pattern: Credibility rests on specific interview count and a defined pilot scope, not commercial traction.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Claims should be verified with customers and references.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.credibility | management.credibility: Credibility rests on specific interview count and a defined pilot scope, not commercial traction.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.credibility | Structured inference for management.credibility
 
 ## management.team_balance | Is the team sufficiently balanced?
 
@@ -339,22 +325,21 @@ For how credible and trustworthy does the team appear?, the supplied fictional m
 **Confidence:** 58
 
 ### Assessment
-For is the team sufficiently balanced?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Team balance is founders cover operations and product but lack deep reuse-network operations.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Is the team sufficiently balanced? is supported by the fictional fact pattern: Team balance is founders cover operations and product but lack deep reuse-network operations.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- The balance can change as commercial demands grow.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.team_balance | management.team_balance: Team balance is founders cover operations and product but lack deep reuse-network operations.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.team_balance | Structured inference for management.team_balance
 
 ## management.prior_execution | Is there evidence of previous successful execution?
 
@@ -362,19 +347,18 @@ For is the team sufficiently balanced?, the supplied fictional materials describ
 **Confidence:** 58
 
 ### Assessment
-For is there evidence of previous successful execution?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Prior execution evidence is small marketplace and local logistics projects rather than a scaled venture.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Is there evidence of previous successful execution? is supported by the fictional fact pattern: Prior execution evidence is small marketplace and local logistics projects rather than a scaled venture.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Past success reduces but does not remove venture risk.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.prior_execution | management.prior_execution: Prior execution evidence is small marketplace and local logistics projects rather than a scaled venture.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | management.prior_execution | Structured inference for management.prior_execution

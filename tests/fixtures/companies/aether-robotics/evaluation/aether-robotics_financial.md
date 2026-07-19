@@ -17,22 +17,21 @@ source_documents:
 **Confidence:** 87
 
 ### Assessment
-For what is the current revenue?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Current revenue is approximately EUR 180,000 of pilot and deployment revenue.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the current revenue? is supported by the fictional fact pattern: Current revenue is approximately EUR 180,000 of pilot and deployment revenue.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Revenue recognition has not been audited.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.current_revenue | financial.current_revenue: Current revenue is approximately EUR 180,000 of pilot and deployment revenue.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.current_revenue | Structured fact for financial.current_revenue
 
 ## financial.current_profit_loss | What is the current profit or loss?
 
@@ -40,22 +39,21 @@ For what is the current revenue?, the supplied fictional materials describe an i
 **Confidence:** 87
 
 ### Assessment
-For what is the current profit or loss?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Current profitability is loss-making while building the robot fleet and software.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the current profit or loss? is supported by the fictional fact pattern: Current profitability is loss-making while building the robot fleet and software.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The loss profile may change with hiring and deployment.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.current_profit_loss | financial.current_profit_loss: Current profitability is loss-making while building the robot fleet and software.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.current_profit_loss | Structured fact for financial.current_profit_loss
 
 ## financial.projected_revenue | What future revenue is projected?
 
@@ -63,22 +61,21 @@ For what is the current profit or loss?, the supplied fictional materials descri
 **Confidence:** 87
 
 ### Assessment
-For what future revenue is projected?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The revenue projection is EUR 1.2 million after converting pilots into recurring site programs.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What future revenue is projected? is supported by the fictional fact pattern: The revenue projection is EUR 1.2 million after converting pilots into recurring site programs.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Projection conversion assumptions remain unverified.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.projected_revenue | financial.projected_revenue: The revenue projection is EUR 1.2 million after converting pilots into recurring site programs.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.projected_revenue | Structured fact for financial.projected_revenue
 
 ## financial.projected_profit | What future profit is projected?
 
@@ -86,22 +83,21 @@ For what future revenue is projected?, the supplied fictional materials describe
 **Confidence:** 87
 
 ### Assessment
-For what future profit is projected?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The profit outlook is positive contribution margin after fleet utilization rises.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What future profit is projected? is supported by the fictional fact pattern: The profit outlook is positive contribution margin after fleet utilization rises.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Margin improvement depends on operating leverage.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.projected_profit | financial.projected_profit: The profit outlook is positive contribution margin after fleet utilization rises.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.projected_profit | Structured fact for financial.projected_profit
 
 ## financial.projection_plausibility | How plausible are the projections?
 
@@ -109,22 +105,21 @@ For what future profit is projected?, the supplied fictional materials describe 
 **Confidence:** 87
 
 ### Assessment
-For how plausible are the projections?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Projection plausibility is credible for a seed plan but dependent on conversion of the two design partners.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How plausible are the projections? is supported by the fictional fact pattern: Projection plausibility is credible for a seed plan but dependent on conversion of the two design partners.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The model needs evidence from actual cohorts.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.projection_plausibility | financial.projection_plausibility: Projection plausibility is credible for a seed plan but dependent on conversion of the two design partners.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.projection_plausibility | Structured inference for financial.projection_plausibility
 
 ## financial.customer_acquisition_cost | What is the customer acquisition cost?
 
@@ -132,22 +127,21 @@ For how plausible are the projections?, the supplied fictional materials describ
 **Confidence:** 87
 
 ### Assessment
-For what is the customer acquisition cost?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Customer acquisition cost is tracked through founder-led pilot sales; no mature blended CAC yet.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the customer acquisition cost? is supported by the fictional fact pattern: Customer acquisition cost is tracked through founder-led pilot sales; no mature blended CAC yet.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Sales-cycle length can materially change CAC.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.customer_acquisition_cost | financial.customer_acquisition_cost: Customer acquisition cost is tracked through founder-led pilot sales; no mature blended CAC yet.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.customer_acquisition_cost | Structured inference for financial.customer_acquisition_cost
 
 ## financial.recurring_customer_rate | What is the recurring customer rate?
 
@@ -155,22 +149,21 @@ For what is the customer acquisition cost?, the supplied fictional materials des
 **Confidence:** 87
 
 ### Assessment
-For what is the recurring customer rate?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Recurring customer rate is early recurring revenue from paid deployment extensions.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the recurring customer rate? is supported by the fictional fact pattern: Recurring customer rate is early recurring revenue from paid deployment extensions.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The measure needs a stable definition and cohort period.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.recurring_customer_rate | financial.recurring_customer_rate: Recurring customer rate is early recurring revenue from paid deployment extensions.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.recurring_customer_rate | Structured inference for financial.recurring_customer_rate
 
 ## financial.customer_retention_rate | What is the customer retention rate?
 
@@ -178,22 +171,21 @@ For what is the recurring customer rate?, the supplied fictional materials descr
 **Confidence:** 87
 
 ### Assessment
-For what is the customer retention rate?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Customer retention is promising but based on a short operating history.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the customer retention rate? is supported by the fictional fact pattern: Customer retention is promising but based on a short operating history.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Renewals cannot yet be assumed from limited history.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.customer_retention_rate | financial.customer_retention_rate: Customer retention is promising but based on a short operating history.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.customer_retention_rate | Structured inference for financial.customer_retention_rate
 
 ## financial.revenue_per_employee | What is the revenue per employee?
 
@@ -201,22 +193,21 @@ For what is the customer retention rate?, the supplied fictional materials descr
 **Confidence:** 87
 
 ### Assessment
-For what is the revenue per employee?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Revenue per employee is low today because engineering and field capacity are staffed ahead of scale.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the revenue per employee? is supported by the fictional fact pattern: Revenue per employee is low today because engineering and field capacity are staffed ahead of scale.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Product and field staffing may change productivity.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.revenue_per_employee | financial.revenue_per_employee: Revenue per employee is low today because engineering and field capacity are staffed ahead of scale.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.revenue_per_employee | Structured inference for financial.revenue_per_employee
 
 ## financial.profit_per_employee | What is the profit per employee?
 
@@ -224,22 +215,21 @@ For what is the revenue per employee?, the supplied fictional materials describe
 **Confidence:** 87
 
 ### Assessment
-For what is the profit per employee?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Profit per employee is negative during the current build phase.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the profit per employee? is supported by the fictional fact pattern: Profit per employee is negative during the current build phase.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- This measure is immature while the company invests ahead of revenue.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.profit_per_employee | financial.profit_per_employee: Profit per employee is negative during the current build phase.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.profit_per_employee | Structured inference for financial.profit_per_employee
 
 ## financial.burn_rate | What is the current burn rate?
 
@@ -247,22 +237,21 @@ For what is the profit per employee?, the supplied fictional materials describe 
 **Confidence:** 87
 
 ### Assessment
-For what is the current burn rate?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Current burn is about EUR 115,000 per month.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the current burn rate? is supported by the fictional fact pattern: Current burn is about EUR 115,000 per month.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Burn may rise before the financed milestone is reached.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.burn_rate | financial.burn_rate: Current burn is about EUR 115,000 per month.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.burn_rate | Structured fact for financial.burn_rate
 
 ## financial.runway | What is the current runway?
 
@@ -270,22 +259,21 @@ For what is the current burn rate?, the supplied fictional materials describe an
 **Confidence:** 87
 
 ### Assessment
-For what is the current runway?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Available runway is roughly 14 months including the proposed round.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the current runway? is supported by the fictional fact pattern: Available runway is roughly 14 months including the proposed round.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- A delayed raise or sales cycle would compress that runway.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.runway | financial.runway: Available runway is roughly 14 months including the proposed round.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.runway | Structured fact for financial.runway
 
 ## financial.funding_requirement_plausibility | How plausible is the funding requirement?
 
@@ -293,22 +281,21 @@ For what is the current runway?, the supplied fictional materials describe an in
 **Confidence:** 87
 
 ### Assessment
-For how plausible is the funding requirement?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The funding request is tied to specific fleet, integration, and sales milestones.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How plausible is the funding requirement? is supported by the fictional fact pattern: The funding request is tied to specific fleet, integration, and sales milestones.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Milestone budgeting should be validated line by line.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.funding_requirement_plausibility | financial.funding_requirement_plausibility: The funding request is tied to specific fleet, integration, and sales milestones.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.funding_requirement_plausibility | Structured inference for financial.funding_requirement_plausibility
 
 ## financial.capital_allocation | How will the requested capital be allocated?
 
@@ -316,22 +303,21 @@ For how plausible is the funding requirement?, the supplied fictional materials 
 **Confidence:** 87
 
 ### Assessment
-For how will the requested capital be allocated?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Capital allocation prioritizes robot fleet validation, industrial software integrations, enterprise sales.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How will the requested capital be allocated? is supported by the fictional fact pattern: Capital allocation prioritizes robot fleet validation, industrial software integrations, enterprise sales.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Spend sequencing must preserve the highest-risk validation work.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.capital_allocation | financial.capital_allocation: Capital allocation prioritizes robot fleet validation, industrial software integrations, enterprise sales.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.capital_allocation | Structured inference for financial.capital_allocation
 
 ## financial.exit_strategy | What is the proposed exit strategy?
 
@@ -339,22 +325,21 @@ For how will the requested capital be allocated?, the supplied fictional materia
 **Confidence:** 87
 
 ### Assessment
-For what is the proposed exit strategy?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The exit path is strategic acquisition by industrial automation, inspection, or asset-management software buyers.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the proposed exit strategy? is supported by the fictional fact pattern: The exit path is strategic acquisition by industrial automation, inspection, or asset-management software buyers.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Exit timing and buyer appetite are not controllable.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.exit_strategy | financial.exit_strategy: The exit path is strategic acquisition by industrial automation, inspection, or asset-management software buyers.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.exit_strategy | Structured inference for financial.exit_strategy
 
 ## financial.inconsistencies | What financial inconsistencies exist?
 
@@ -362,22 +347,21 @@ For what is the proposed exit strategy?, the supplied fictional materials descri
 **Confidence:** 87
 
 ### Assessment
-For what financial inconsistencies exist?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Known financial consistency issue: none identified in the internally consistent fictional plan.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What financial inconsistencies exist? is supported by the fictional fact pattern: Known financial consistency issue: none identified in the internally consistent fictional plan.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Diligence should reconcile the underlying operating assumptions.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.inconsistencies | financial.inconsistencies: Known financial consistency issue: none identified in the internally consistent fictional plan.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.inconsistencies | Structured inference for financial.inconsistencies
 
 ## financial.risks | What financial risks exist?
 
@@ -385,22 +369,21 @@ For what financial inconsistencies exist?, the supplied fictional materials desc
 **Confidence:** 87
 
 ### Assessment
-For what financial risks exist?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The principal financial risk is slower enterprise conversion could leave fleet costs ahead of revenue.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What financial risks exist? is supported by the fictional fact pattern: The principal financial risk is slower enterprise conversion could leave fleet costs ahead of revenue.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The downside case needs explicit cash and pricing sensitivity.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.risks | financial.risks: The principal financial risk is slower enterprise conversion could leave fleet costs ahead of revenue.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.risks | Structured inference for financial.risks
 
 ## financial.document_completeness_reliability | How complete and reliable are the submitted financial documents?
 
@@ -408,22 +391,21 @@ For what financial risks exist?, the supplied fictional materials describe an in
 **Confidence:** 87
 
 ### Assessment
-For how complete and reliable are the submitted financial documents?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Financial document quality is structured operating assumptions with no audited statements.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How complete and reliable are the submitted financial documents? is supported by the fictional fact pattern: Financial document quality is structured operating assumptions with no audited statements.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The fixture is intentionally not a substitute for audited records.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.document_completeness_reliability | financial.document_completeness_reliability: Financial document quality is structured operating assumptions with no audited statements.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.document_completeness_reliability | Structured inference for financial.document_completeness_reliability
 
 ## financial.forecast_drivers | What assumptions have the largest influence on the forecast?
 
@@ -431,19 +413,18 @@ For how complete and reliable are the submitted financial documents?, the suppli
 **Confidence:** 87
 
 ### Assessment
-For what assumptions have the largest influence on the forecast?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The main forecast drivers are pilot conversion, deployment frequency, fleet utilization, and enterprise sales-cycle length.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What assumptions have the largest influence on the forecast? is supported by the fictional fact pattern: The main forecast drivers are pilot conversion, deployment frequency, fleet utilization, and enterprise sales-cycle length.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Small changes in those drivers can materially affect outcomes.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.forecast_drivers | financial.forecast_drivers: The main forecast drivers are pilot conversion, deployment frequency, fleet utilization, and enterprise sales-cycle length.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | financial.forecast_drivers | Structured inference for financial.forecast_drivers

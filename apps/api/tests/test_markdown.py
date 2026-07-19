@@ -79,7 +79,7 @@ def test_rejects_unknown_section_raw_html_and_slug_mismatch() -> None:
     result = parse_evaluation_document(text, "aether-robotics", "idea")
     assert not result.is_valid
     assert "SECTION_MISSING_OR_REORDERED" in {error.code for error in result.errors}
-    result = parse_evaluation_document(_text().replace("This assessment", "<b>This assessment</b>", 1), "other-company", "idea")
+    result = parse_evaluation_document(_text().replace("The differentiated element", "<b>The differentiated element</b>", 1), "other-company", "idea")
     codes = {error.code for error in result.errors}
     assert {"RAW_HTML_FORBIDDEN", "SLUG_MISMATCH"} <= codes
 
@@ -102,3 +102,14 @@ def test_source_reference_kind_and_section_survive_markdown_round_trip() -> None
     assert reparsed.is_valid and reparsed.document is not None
     round_tripped = reparsed.document.items[0].source_references[0]
     assert (round_tripped.kind, round_tripped.section) == ("inference", "section traction")
+
+
+def test_empty_missing_information_round_trips_without_a_placeholder() -> None:
+    parsed = parse_evaluation_document(_text(), "aether-robotics", "idea")
+    assert parsed.document is not None
+    parsed.document.items[0].missing_information = []
+    rendered = serialize_evaluation_document(parsed.document)
+    assert "No material missing information was identified." not in rendered
+    reparsed = parse_evaluation_document(rendered, "aether-robotics", "idea")
+    assert reparsed.is_valid and reparsed.document is not None
+    assert reparsed.document.items[0].missing_information == []

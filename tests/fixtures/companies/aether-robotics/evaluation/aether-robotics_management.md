@@ -17,22 +17,21 @@ source_documents:
 **Confidence:** 87
 
 ### Assessment
-For how strong is the academic background?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Academic background is engineering and computer-science degrees relevant to robotics.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How strong is the academic background? is supported by the fictional fact pattern: Academic background is engineering and computer-science degrees relevant to robotics.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Credentials do not by themselves prove operating execution.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.academic_background | management.academic_background: Academic background is engineering and computer-science degrees relevant to robotics.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.academic_background | Structured fact for management.academic_background
 
 ## management.professional_background | How relevant is the professional background?
 
@@ -40,22 +39,21 @@ For how strong is the academic background?, the supplied fictional materials des
 **Confidence:** 87
 
 ### Assessment
-For how relevant is the professional background?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Professional background is robotics product leadership and industrial software implementation.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How relevant is the professional background? is supported by the fictional fact pattern: Professional background is robotics product leadership and industrial software implementation.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Prior roles should be reference-checked.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.professional_background | management.professional_background: Professional background is robotics product leadership and industrial software implementation.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.professional_background | Structured fact for management.professional_background
 
 ## management.domain_expertise | How deep is the domain expertise?
 
@@ -63,22 +61,21 @@ For how relevant is the professional background?, the supplied fictional materia
 **Confidence:** 87
 
 ### Assessment
-For how deep is the domain expertise?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Domain expertise is direct experience with inspection workflows and industrial operators.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How deep is the domain expertise? is supported by the fictional fact pattern: Domain expertise is direct experience with inspection workflows and industrial operators.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The team still needs ongoing customer learning.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.domain_expertise | management.domain_expertise: Domain expertise is direct experience with inspection workflows and industrial operators.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.domain_expertise | Structured fact for management.domain_expertise
 
 ## management.technical_expertise | How strong is the technical expertise?
 
@@ -86,22 +83,21 @@ For how deep is the domain expertise?, the supplied fictional materials describe
 **Confidence:** 87
 
 ### Assessment
-For how strong is the technical expertise?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Technical expertise is strong in sensing, autonomy integration, and review software.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How strong is the technical expertise? is supported by the fictional fact pattern: Technical expertise is strong in sensing, autonomy integration, and review software.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Technical depth must translate into reliable delivery.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.technical_expertise | management.technical_expertise: Technical expertise is strong in sensing, autonomy integration, and review software.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.technical_expertise | Structured fact for management.technical_expertise
 
 ## management.commercial_expertise | How strong is the commercial expertise?
 
@@ -109,22 +105,21 @@ For how strong is the technical expertise?, the supplied fictional materials des
 **Confidence:** 87
 
 ### Assessment
-For how strong is the commercial expertise?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Commercial expertise is credible founder-led selling with enterprise support still to add.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How strong is the commercial expertise? is supported by the fictional fact pattern: Commercial expertise is credible founder-led selling with enterprise support still to add.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Enterprise sales capability may need reinforcement.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.commercial_expertise | management.commercial_expertise: Commercial expertise is credible founder-led selling with enterprise support still to add.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.commercial_expertise | Structured fact for management.commercial_expertise
 
 ## management.founder_market_fit | How strong is the founder-market fit?
 
@@ -132,22 +127,21 @@ For how strong is the commercial expertise?, the supplied fictional materials de
 **Confidence:** 87
 
 ### Assessment
-For how strong is the founder-market fit?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Founder-market fit is strong because the founders have worked with the target operating environment.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How strong is the founder-market fit? is supported by the fictional fact pattern: Founder-market fit is strong because the founders have worked with the target operating environment.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The fit should be tested through sustained customer access.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.founder_market_fit | management.founder_market_fit: Founder-market fit is strong because the founders have worked with the target operating environment.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.founder_market_fit | Structured inference for management.founder_market_fit
 
 ## management.professional_following | How large is the founder's professional following or influence?
 
@@ -155,22 +149,21 @@ For how strong is the founder-market fit?, the supplied fictional materials desc
 **Confidence:** 87
 
 ### Assessment
-For how large is the founder's professional following or influence?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Professional influence is a focused network of industrial operators and robotics practitioners.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How large is the founder's professional following or influence? is supported by the fictional fact pattern: Professional influence is a focused network of industrial operators and robotics practitioners.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Audience reach is not a proxy for purchase intent.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.professional_following | management.professional_following: Professional influence is a focused network of industrial operators and robotics practitioners.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.professional_following | Structured fact for management.professional_following
 
 ## management.controversies | Are there relevant controversies?
 
@@ -178,22 +171,21 @@ For how large is the founder's professional following or influence?, the supplie
 **Confidence:** 87
 
 ### Assessment
-For are there relevant controversies?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The fixture reports no relevant controversies in the fictional record.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- Are there relevant controversies? is supported by the fictional fact pattern: The fixture reports no relevant controversies in the fictional record.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Background checks remain part of real diligence.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.controversies | management.controversies: The fixture reports no relevant controversies in the fictional record.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.controversies | Structured fact for management.controversies
 
 ## management.creativity | How creative or innovative is the management team?
 
@@ -201,22 +193,21 @@ For are there relevant controversies?, the supplied fictional materials describe
 **Confidence:** 87
 
 ### Assessment
-For how creative or innovative is the management team?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Team creativity appears in combining robotic data capture with an engineer-first review workflow.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How creative or innovative is the management team? is supported by the fictional fact pattern: Team creativity appears in combining robotic data capture with an engineer-first review workflow.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Novel approaches need disciplined prioritization.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.creativity | management.creativity: Team creativity appears in combining robotic data capture with an engineer-first review workflow.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.creativity | Structured inference for management.creativity
 
 ## management.strengths | What are the management team's greatest strengths?
 
@@ -224,22 +215,21 @@ For how creative or innovative is the management team?, the supplied fictional m
 **Confidence:** 87
 
 ### Assessment
-For what are the management team's greatest strengths?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Core team strengths are deep technical delivery, industrial context, and design-partner access.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What are the management team's greatest strengths? is supported by the fictional fact pattern: Core team strengths are deep technical delivery, industrial context, and design-partner access.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Strengths must be maintained as the organization grows.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.strengths | management.strengths: Core team strengths are deep technical delivery, industrial context, and design-partner access.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.strengths | Structured inference for management.strengths
 
 ## management.weaknesses | What are the management team's greatest weaknesses?
 
@@ -247,22 +237,21 @@ For what are the management team's greatest strengths?, the supplied fictional m
 **Confidence:** 87
 
 ### Assessment
-For what are the management team's greatest weaknesses?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Current weaknesses are limited dedicated sales capacity and limited long-term fleet operations history.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What are the management team's greatest weaknesses? is supported by the fictional fact pattern: Current weaknesses are limited dedicated sales capacity and limited long-term fleet operations history.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Unaddressed gaps can slow execution.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.weaknesses | management.weaknesses: Current weaknesses are limited dedicated sales capacity and limited long-term fleet operations history.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.weaknesses | Structured inference for management.weaknesses
 
 ## management.missing_roles | Are important roles missing?
 
@@ -270,22 +259,21 @@ For what are the management team's greatest weaknesses?, the supplied fictional 
 **Confidence:** 87
 
 ### Assessment
-For are important roles missing?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The key role gap is an enterprise account executive and field-operations lead.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- Are important roles missing? is supported by the fictional fact pattern: The key role gap is an enterprise account executive and field-operations lead.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Hiring timing and quality are material risks.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.missing_roles | management.missing_roles: The key role gap is an enterprise account executive and field-operations lead.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.missing_roles | Structured inference for management.missing_roles
 
 ## management.execution_ability | How strong is the team's ability to execute?
 
@@ -293,22 +281,21 @@ For are important roles missing?, the supplied fictional materials describe an i
 **Confidence:** 87
 
 ### Assessment
-For how strong is the team's ability to execute?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Execution evidence is a prototype deployed with two paid design partners.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How strong is the team's ability to execute? is supported by the fictional fact pattern: Execution evidence is a prototype deployed with two paid design partners.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Future execution includes challenges not yet encountered.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.execution_ability | management.execution_ability: Execution evidence is a prototype deployed with two paid design partners.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.execution_ability | Structured inference for management.execution_ability
 
 ## management.credibility | How credible and trustworthy does the team appear?
 
@@ -316,22 +303,21 @@ For how strong is the team's ability to execute?, the supplied fictional materia
 **Confidence:** 87
 
 ### Assessment
-For how credible and trustworthy does the team appear?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Credibility rests on specific deployment facts and relevant prior roles.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How credible and trustworthy does the team appear? is supported by the fictional fact pattern: Credibility rests on specific deployment facts and relevant prior roles.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Claims should be verified with customers and references.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.credibility | management.credibility: Credibility rests on specific deployment facts and relevant prior roles.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.credibility | Structured inference for management.credibility
 
 ## management.team_balance | Is the team sufficiently balanced?
 
@@ -339,22 +325,21 @@ For how credible and trustworthy does the team appear?, the supplied fictional m
 **Confidence:** 87
 
 ### Assessment
-For is the team sufficiently balanced?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Team balance is good technical and domain balance, with commercial hiring still needed.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- Is the team sufficiently balanced? is supported by the fictional fact pattern: Team balance is good technical and domain balance, with commercial hiring still needed.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The balance can change as commercial demands grow.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.team_balance | management.team_balance: Team balance is good technical and domain balance, with commercial hiring still needed.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.team_balance | Structured inference for management.team_balance
 
 ## management.prior_execution | Is there evidence of previous successful execution?
 
@@ -362,19 +347,18 @@ For is the team sufficiently balanced?, the supplied fictional materials describ
 **Confidence:** 87
 
 ### Assessment
-For is there evidence of previous successful execution?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Prior execution evidence is previous delivery of robotics and industrial software programs.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- Is there evidence of previous successful execution? is supported by the fictional fact pattern: Prior execution evidence is previous delivery of robotics and industrial software programs.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Past success reduces but does not remove venture risk.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.prior_execution | management.prior_execution: Prior execution evidence is previous delivery of robotics and industrial software programs.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.prior_execution | Structured inference for management.prior_execution

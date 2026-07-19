@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -41,6 +42,17 @@ async def _get(app: FastAPI, path: str, *, params: dict[str, int] | None = None)
 
 def _request(app: FastAPI, path: str, *, params: dict[str, int] | None = None) -> httpx.Response:
     return asyncio.run(_get(app, path, params=params))
+
+
+def _refresh_manifest(root: Path) -> None:
+    files = {
+        str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted(root.rglob("*")) if path.is_file() and path.name != "manifest.json"
+    }
+    (root / "manifest.json").write_text(
+        json.dumps({"generator": "v1", "files": files}, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
 
 
 def _validator(schema_name: str, definition: str) -> Draft202012Validator:
@@ -95,6 +107,117 @@ def test_aggregate_and_category_reads_are_company_isolated(app: FastAPI) -> None
     assert category.json()["company"] != harbor_payload["company"]
     assert not list(_validator("evaluation.v1.json", "companyEvaluation").iter_errors(aether_payload))
     assert not list(_validator("evaluation.v1.json", "evaluationDocument").iter_errors(category.json()))
+
+
+def test_aggregate_reads_populated_investment_terms_from_isolated_metadata(app: FastAPI) -> None:
+    aether = _request(app, "/api/v1/companies/aether-robotics").json()["investment"]
+    harbor = _request(app, "/api/v1/companies/harborloop").json()["investment"]
+    assert aether == {
+        "amount": 2500000.0, "currency": "EUR", "equityPercentage": 20.0,
+        "preMoneyValuation": 10000000.0, "postMoneyValuation": 12500000.0,
+        "impliedValuation": 12500000.0,
+        "useOfFunds": ["robot fleet validation", "industrial software integrations", "enterprise sales"],
+    }
+    assert harbor["amount"] == 450000.0
+    assert harbor != aether
+
+
+def test_missing_investment_metadata_remains_backward_compatible(tmp_path: Path) -> None:
+    copied_fixtures = tmp_path / "companies"
+    shutil.copytree(FIXTURES, copied_fixtures)
+    metadata_path = copied_fixtures / "aether-robotics" / "metadata.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    del metadata["investment"]
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    _refresh_manifest(copied_fixtures)
+
+    response = _request(create_app(fixtures_root=copied_fixtures), "/api/v1/companies/aether-robotics")
+    assert response.status_code == 200
+    assert response.json()["investment"] == {
+        "amount": None, "currency": None, "equityPercentage": None,
+        "preMoneyValuation": None, "postMoneyValuation": None,
+        "impliedValuation": None, "useOfFunds": [],
+    }
+
+
+def test_present_all_null_empty_investment_terms_remain_contract_valid(tmp_path: Path) -> None:
+    copied_fixtures = tmp_path / "companies"
+    shutil.copytree(FIXTURES, copied_fixtures)
+    metadata_path = copied_fixtures / "aether-robotics" / "metadata.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["investment"] = {
+        "amount": None, "currency": None, "equityPercentage": None,
+        "preMoneyValuation": None, "postMoneyValuation": None,
+        "impliedValuation": None, "useOfFunds": [],
+    }
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    _refresh_manifest(copied_fixtures)
+
+    response = _request(create_app(fixtures_root=copied_fixtures), "/api/v1/companies/aether-robotics")
+    assert response.status_code == 200
+    assert response.json()["investment"] == metadata["investment"]
+
+
+def test_partial_investment_terms_remain_contract_valid(tmp_path: Path) -> None:
+    copied_fixtures = tmp_path / "companies"
+    shutil.copytree(FIXTURES, copied_fixtures)
+    metadata_path = copied_fixtures / "aether-robotics" / "metadata.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["investment"] = {
+        "amount": 100000, "currency": "EUR", "equityPercentage": None,
+        "preMoneyValuation": None, "postMoneyValuation": None,
+        "impliedValuation": None, "useOfFunds": [],
+    }
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    _refresh_manifest(copied_fixtures)
+
+    response = _request(create_app(fixtures_root=copied_fixtures), "/api/v1/companies/aether-robotics")
+    assert response.status_code == 200
+    assert response.json()["investment"] == metadata["investment"]
+
+
+@pytest.mark.parametrize("field, value", [("amount", True), ("currency", "eur"), ("equityPercentage", 101), ("useOfFunds", [""])])
+def test_malformed_present_investment_metadata_fails_closed(tmp_path: Path, field: str, value: object) -> None:
+    copied_fixtures = tmp_path / "companies"
+    shutil.copytree(FIXTURES, copied_fixtures)
+    metadata_path = copied_fixtures / "aether-robotics" / "metadata.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["investment"][field] = value
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    _refresh_manifest(copied_fixtures)
+
+    response = _request(create_app(fixtures_root=copied_fixtures), "/api/v1/companies/aether-robotics")
+    _assert_error_envelope(response, 500, "INDEX_INVALID")
+
+
+@pytest.mark.parametrize("field, value", [("postMoneyValuation", 12500001), ("equityPercentage", 21)])
+def test_inconsistent_present_investment_metadata_fails_closed(tmp_path: Path, field: str, value: object) -> None:
+    copied_fixtures = tmp_path / "companies"
+    shutil.copytree(FIXTURES, copied_fixtures)
+    metadata_path = copied_fixtures / "aether-robotics" / "metadata.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["investment"][field] = value
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    _refresh_manifest(copied_fixtures)
+
+    response = _request(create_app(fixtures_root=copied_fixtures), "/api/v1/companies/aether-robotics")
+    _assert_error_envelope(response, 500, "INDEX_INVALID")
+
+
+def test_partial_terms_with_nonpositive_post_money_and_equity_fail_closed(tmp_path: Path) -> None:
+    copied_fixtures = tmp_path / "companies"
+    shutil.copytree(FIXTURES, copied_fixtures)
+    metadata_path = copied_fixtures / "aether-robotics" / "metadata.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["investment"].update({
+        "amount": 100, "preMoneyValuation": None, "postMoneyValuation": 0,
+        "equityPercentage": 20,
+    })
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    _refresh_manifest(copied_fixtures)
+
+    response = _request(create_app(fixtures_root=copied_fixtures), "/api/v1/companies/aether-robotics")
+    _assert_error_envelope(response, 500, "INDEX_INVALID")
 
 
 @pytest.mark.parametrize(

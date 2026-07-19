@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from hashlib import sha256
 import json
+import math
 from pathlib import Path
 import re
 from typing import Any, Literal, cast
@@ -139,6 +140,7 @@ class CompanyRecord:
     category_scores: dict[Category, int | None]
     overall_score: int | None
     validation_errors: list[dict[str, str]]
+    investment: dict[str, object]
 
     def summary(self) -> dict[str, object]:
         return {
@@ -157,15 +159,7 @@ class CompanyRecord:
             "slug": self.slug,
             "stage": self.stage,
             "submissionDate": self.submission_date,
-            "investment": {
-                "amount": None,
-                "currency": None,
-                "equityPercentage": None,
-                "preMoneyValuation": None,
-                "postMoneyValuation": None,
-                "impliedValuation": None,
-                "useOfFunds": [],
-            },
+            "investment": self.investment,
             "categories": self.categories,
             "categoryScores": self.category_scores,
             "overallScore": self.overall_score,
@@ -289,6 +283,7 @@ class FixtureRepository:
             category_scores=computed_category_scores,
             overall_score=computed_overall_score,
             validation_errors=[self._validation_error(item) for item in raw_errors],
+            investment=self._investment_terms(metadata),
         )
 
     def _safe_fixture_path(self, relative: str) -> Path:
@@ -339,6 +334,76 @@ class FixtureRepository:
         if any(not isinstance(value.get(key), str) or not value[key] for key in required) or value["severity"] not in {"warning", "error"}:
             raise FixtureIndexError("Fixture validation issue is invalid")
         return {key: value[key] for key in required}  # type: ignore[return-value]
+
+    @staticmethod
+    def _investment_terms(metadata: Mapping[str, object]) -> dict[str, object]:
+        """Load public investment terms while treating absent legacy metadata as unknown.
+
+        A present investment object is untrusted fixture/live metadata, so it must be
+        complete and contract-shaped before it can reach the public response.
+        """
+        empty: dict[str, object] = {
+            "amount": None,
+            "currency": None,
+            "equityPercentage": None,
+            "preMoneyValuation": None,
+            "postMoneyValuation": None,
+            "impliedValuation": None,
+            "useOfFunds": [],
+        }
+        if "investment" not in metadata:
+            return empty
+        raw = metadata["investment"]
+        if not isinstance(raw, dict):
+            raise FixtureIndexError("Fixture investment terms are malformed")
+        expected = set(empty)
+        if set(raw) != expected:
+            raise FixtureIndexError("Fixture investment terms are malformed")
+
+        def monetary(key: str) -> float | None:
+            value = raw[key]
+            if value is None:
+                return None
+            if (not isinstance(value, (int, float)) or isinstance(value, bool)
+                    or not math.isfinite(value) or value < 0):
+                raise FixtureIndexError("Fixture investment terms are malformed")
+            return float(value)
+
+        amount = monetary("amount")
+        pre_money = monetary("preMoneyValuation")
+        post_money = monetary("postMoneyValuation")
+        implied = monetary("impliedValuation")
+        equity = raw["equityPercentage"]
+        if equity is not None and (not isinstance(equity, (int, float)) or isinstance(equity, bool)
+                                   or not math.isfinite(equity) or not 0 <= equity <= 100):
+            raise FixtureIndexError("Fixture investment terms are malformed")
+        currency = raw["currency"]
+        if currency is not None and (not isinstance(currency, str) or not re.fullmatch(r"[A-Z]{3}", currency)):
+            raise FixtureIndexError("Fixture investment terms are malformed")
+        use_of_funds = raw["useOfFunds"]
+        if (not isinstance(use_of_funds, list)
+                or any(not isinstance(item, str) or not item.strip() for item in use_of_funds)):
+            raise FixtureIndexError("Fixture investment terms are malformed")
+        if (amount is not None and pre_money is not None and post_money is not None
+                and not math.isclose(post_money, pre_money + amount, rel_tol=1e-9, abs_tol=1e-6)):
+            raise FixtureIndexError("Fixture investment terms are inconsistent")
+        if (implied is not None and post_money is not None
+                and not math.isclose(implied, post_money, rel_tol=1e-9, abs_tol=1e-6)):
+            raise FixtureIndexError("Fixture investment terms are inconsistent")
+        if amount is not None and post_money is not None and equity is not None:
+            if post_money <= 0 or not math.isclose(
+                float(equity), amount / post_money * 100, rel_tol=1e-9, abs_tol=1e-6,
+            ):
+                raise FixtureIndexError("Fixture investment terms are inconsistent")
+        return {
+            "amount": amount,
+            "currency": currency,
+            "equityPercentage": None if equity is None else float(equity),
+            "preMoneyValuation": pre_money,
+            "postMoneyValuation": post_money,
+            "impliedValuation": implied,
+            "useOfFunds": use_of_funds,
+        }
 
     @staticmethod
     def _validate_metadata_scores(

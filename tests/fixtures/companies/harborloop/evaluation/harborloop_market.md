@@ -17,22 +17,21 @@ source_documents:
 **Confidence:** 58
 
 ### Assessment
-For how large is the addressable market?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+The addressable market is framed as a broad local freight and reusable-packaging opportunity without a quantified bottom-up model.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How large is the addressable market? is supported by the fictional fact pattern: The addressable market is framed as a broad local freight and reusable-packaging opportunity without a quantified bottom-up model.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- The bottom-up opportunity is not independently modelled.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.addressable_market | market.addressable_market: The addressable market is framed as a broad local freight and reusable-packaging opportunity without a quantified bottom-up model.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.addressable_market | Structured inference for market.addressable_market
 
 ## market.market_size_reliability | How reliable is the stated market-size estimate?
 
@@ -40,22 +39,21 @@ For how large is the addressable market?, the supplied fictional materials descr
 **Confidence:** 58
 
 ### Assessment
-For how reliable is the stated market-size estimate?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+The market estimate is low because the estimate is narrative and lacks customer-volume evidence.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How reliable is the stated market-size estimate? is supported by the fictional fact pattern: The market estimate is low because the estimate is narrative and lacks customer-volume evidence.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Market-size claims should be reconciled to customer counts.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.market_size_reliability | market.market_size_reliability: The market estimate is low because the estimate is narrative and lacks customer-volume evidence.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.market_size_reliability | Structured inference for market.market_size_reliability
 
 ## market.sector_trend | Is the sector trending upward or downward?
 
@@ -63,22 +61,21 @@ For how reliable is the stated market-size estimate?, the supplied fictional mat
 **Confidence:** 58
 
 ### Assessment
-For is the sector trending upward or downward?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+The sector trend is helped by packaging-waste pressure but fragmented across local markets.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Is the sector trending upward or downward? is supported by the fictional fact pattern: The sector trend is helped by packaging-waste pressure but fragmented across local markets.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Trend momentum can reverse with budgets or regulation.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.sector_trend | market.sector_trend: The sector trend is helped by packaging-waste pressure but fragmented across local markets.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.sector_trend | Structured inference for market.sector_trend
 
 ## market.expected_growth | What market growth can reasonably be expected?
 
@@ -86,22 +83,21 @@ For is the sector trending upward or downward?, the supplied fictional materials
 **Confidence:** 58
 
 ### Assessment
-For what market growth can reasonably be expected?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Expected growth rests on density among nearby shippers and carriers.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- What market growth can reasonably be expected? is supported by the fictional fact pattern: Expected growth rests on density among nearby shippers and carriers.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- The forecast is sensitive to adoption pace.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.expected_growth | market.expected_growth: Expected growth rests on density among nearby shippers and carriers.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.expected_growth | Structured inference for market.expected_growth
 
 ## market.entry_timing | How strong is the timing for market entry?
 
@@ -109,22 +105,21 @@ For what market growth can reasonably be expected?, the supplied fictional mater
 **Confidence:** 58
 
 ### Assessment
-For how strong is the timing for market entry?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Entry timing is mixed: sustainability interest is high, while operators are cautious about process changes.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How strong is the timing for market entry? is supported by the fictional fact pattern: Entry timing is mixed: sustainability interest is high, while operators are cautious about process changes.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Timing advantages shrink if incumbents respond quickly.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.entry_timing | market.entry_timing: Entry timing is mixed: sustainability interest is high, while operators are cautious about process changes.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.entry_timing | Structured inference for market.entry_timing
 
 ## market.competition | How strong is the competition?
 
@@ -132,22 +127,21 @@ For how strong is the timing for market entry?, the supplied fictional materials
 **Confidence:** 58
 
 ### Assessment
-For how strong is the competition?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Competitive pressure comes from single-use packaging suppliers, closed pooling systems, and manual coordination.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How strong is the competition? is supported by the fictional fact pattern: Competitive pressure comes from single-use packaging suppliers, closed pooling systems, and manual coordination.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Competitors may bundle comparable capabilities.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.competition | market.competition: Competitive pressure comes from single-use packaging suppliers, closed pooling systems, and manual coordination.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.competition | Structured inference for market.competition
 
 ## market.entry_barriers | What barriers to entry exist?
 
@@ -155,22 +149,21 @@ For how strong is the competition?, the supplied fictional materials describe a 
 **Confidence:** 58
 
 ### Assessment
-For what barriers to entry exist?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Entry barriers include local supply density, cleaning logistics, and trusted operating routines.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- What barriers to entry exist? is supported by the fictional fact pattern: Entry barriers include local supply density, cleaning logistics, and trusted operating routines.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Barriers are lower before customer-specific learning accumulates.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.entry_barriers | market.entry_barriers: Entry barriers include local supply density, cleaning logistics, and trusted operating routines.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.entry_barriers | Structured inference for market.entry_barriers
 
 ## market.customer_adoption | How difficult will customer adoption be?
 
@@ -178,22 +171,21 @@ For what barriers to entry exist?, the supplied fictional materials describe a c
 **Confidence:** 58
 
 ### Assessment
-For how difficult will customer adoption be?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Customer adoption requires customer discovery followed by a small paid neighborhood pilot.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How difficult will customer adoption be? is supported by the fictional fact pattern: Customer adoption requires customer discovery followed by a small paid neighborhood pilot.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Procurement and behavior change can slow conversion.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.customer_adoption | market.customer_adoption: Customer adoption requires customer discovery followed by a small paid neighborhood pilot.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.customer_adoption | Structured inference for market.customer_adoption
 
 ## market.market_problems | What problems exist in the target market?
 
@@ -201,66 +193,63 @@ For how difficult will customer adoption be?, the supplied fictional materials d
 **Confidence:** 58
 
 ### Assessment
-For what problems exist in the target market?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+The market friction is participants may prefer familiar single-use processes over a shared loop.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- What problems exist in the target market? is supported by the fictional fact pattern: The market friction is participants may prefer familiar single-use processes over a shared loop.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- That friction can constrain growth even when demand exists.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.market_problems | market.market_problems: The market friction is participants may prefer familiar single-use processes over a shared loop.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.market_problems | Structured inference for market.market_problems
 
 ## market.portfolio_fit | Does the company fit the VC portfolio?
 
 **Score:** N/A
 
 ### Assessment
-VC portfolio data is not configured, so this criterion is unavailable rather than estimated.
+Portfolio fit is intentionally unscored because the frozen contract provides no VC portfolio holdings or mandate context.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Does the company fit the VC portfolio? is supported by the fictional fact pattern: Portfolio fit is intentionally unscored because the frozen contract provides no VC portfolio holdings or mandate context.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- A fit conclusion would require the investor's current portfolio and strategy.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.portfolio_fit | market.portfolio_fit: Portfolio fit is intentionally unscored because the frozen contract provides no VC portfolio holdings or mandate context.
 
 ### Missing Information
-- VC portfolio data is not configured.
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.portfolio_fit | Structured inference for market.portfolio_fit
 
 ## market.portfolio_synergies | Are there synergies with the existing portfolio?
 
 **Score:** N/A
 
 ### Assessment
-VC portfolio data is not configured, so this criterion is unavailable rather than estimated.
+Portfolio synergies are intentionally unscored because no portfolio-company capabilities, customer overlaps, or ownership constraints are supplied.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Are there synergies with the existing portfolio? is supported by the fictional fact pattern: Portfolio synergies are intentionally unscored because no portfolio-company capabilities, customer overlaps, or ownership constraints are supplied.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Any synergy claim would be speculative without that portfolio context.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.portfolio_synergies | market.portfolio_synergies: Portfolio synergies are intentionally unscored because no portfolio-company capabilities, customer overlaps, or ownership constraints are supplied.
 
 ### Missing Information
-- VC portfolio data is not configured.
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.portfolio_synergies | Structured inference for market.portfolio_synergies
 
 ## market.target_customer_clarity | Is the target customer clearly defined?
 
@@ -268,22 +257,21 @@ VC portfolio data is not configured, so this criterion is unavailable rather tha
 **Confidence:** 58
 
 ### Assessment
-For is the target customer clearly defined?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+The initial customer is local distributors, food producers, and independent carriers.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Is the target customer clearly defined? is supported by the fictional fact pattern: The initial customer is local distributors, food producers, and independent carriers.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- The buying committee may be broader than the user profile.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.target_customer_clarity | market.target_customer_clarity: The initial customer is local distributors, food producers, and independent carriers.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.target_customer_clarity | Structured fact for market.target_customer_clarity
 
 ## market.gtm_plausibility | Is the go-to-market strategy plausible?
 
@@ -291,22 +279,21 @@ For is the target customer clearly defined?, the supplied fictional materials de
 **Confidence:** 58
 
 ### Assessment
-For is the go-to-market strategy plausible?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+The go-to-market plan is founder-led outreach to a narrow local cluster of distributors and carriers.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Is the go-to-market strategy plausible? is supported by the fictional fact pattern: The go-to-market plan is founder-led outreach to a narrow local cluster of distributors and carriers.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Repeatability is not yet established.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.gtm_plausibility | market.gtm_plausibility: The go-to-market plan is founder-led outreach to a narrow local cluster of distributors and carriers.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.gtm_plausibility | Structured inference for market.gtm_plausibility
 
 ## market.customer_concentration | How concentrated is the customer base likely to be?
 
@@ -314,22 +301,21 @@ For is the go-to-market strategy plausible?, the supplied fictional materials de
 **Confidence:** 58
 
 ### Assessment
-For how concentrated is the customer base likely to be?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Likely concentration is high during the pilot because a few anchor operators are needed.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- How concentrated is the customer base likely to be? is supported by the fictional fact pattern: Likely concentration is high during the pilot because a few anchor operators are needed.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Early dependence on a few accounts can affect pricing power.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.customer_concentration | market.customer_concentration: Likely concentration is high during the pilot because a few anchor operators are needed.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.customer_concentration | Structured inference for market.customer_concentration
 
 ## market.regulatory_barriers | Are regulatory barriers relevant?
 
@@ -337,19 +323,18 @@ For how concentrated is the customer base likely to be?, the supplied fictional 
 **Confidence:** 58
 
 ### Assessment
-For are regulatory barriers relevant?, the supplied fictional materials describe a circular-logistics marketplace for reusable shipping containers. This assessment is limited to those materials.
+Regulatory exposure is food-contact, hygiene, deposit, and local transport rules may apply.
 
 ### Positive Arguments
-- The materials indicate that the concept addresses visible waste in local freight operations.
+- Are regulatory barriers relevant? is supported by the fictional fact pattern: Regulatory exposure is food-contact, hygiene, deposit, and local transport rules may apply.
 
 ### Negative Arguments and Risks
-- A documented risk is that demand, pricing power, and operational adoption remain uncertain .
+- Requirements can vary by customer and geography.
 
 ### Evidence
-- fact | doc_22222222-2222-4222-8222-222222222222 | p. 1 | Fixture fact: a circular-logistics marketplace for reusable shipping containers
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.regulatory_barriers | market.regulatory_barriers: Regulatory exposure is food-contact, hygiene, deposit, and local transport rules may apply.
 
 ### Missing Information
-- Not provided: reliable revenue data, retention evidence, and a complete operating plan .
 
 ### Source References
-- doc_22222222-2222-4222-8222-222222222222 | p. 1 | Structured fixture facts
+- inference | doc_22222222-2222-4222-8222-222222222222 | p. 1 | market.regulatory_barriers | Structured inference for market.regulatory_barriers

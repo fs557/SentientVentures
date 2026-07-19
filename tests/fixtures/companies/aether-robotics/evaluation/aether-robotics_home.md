@@ -17,22 +17,21 @@ source_documents:
 **Confidence:** 87
 
 ### Assessment
-For what is the company name?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The submitted identity is Aether Robotics.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the company name? is supported by the fictional fact pattern: The submitted identity is Aether Robotics.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The fixture does not model incorporation records.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.company_name | home.company_name: The submitted identity is Aether Robotics.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.company_name | Structured fact for home.company_name
 
 ## home.current_valuation | What is the current valuation?
 
@@ -40,22 +39,21 @@ For what is the company name?, the supplied fictional materials describe an indu
 **Confidence:** 87
 
 ### Assessment
-For what is the current valuation?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The proposed EUR 12,500,000 post-money valuation is explicit.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the current valuation? is supported by the fictional fact pattern: The proposed EUR 12,500,000 post-money valuation is explicit.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The valuation has not been independently benchmarked.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.current_valuation | home.current_valuation: The proposed EUR 12,500,000 post-money valuation is explicit.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.current_valuation | Structured fact for home.current_valuation
 
 ## home.company_idea | What is the company idea?
 
@@ -63,22 +61,21 @@ For what is the current valuation?, the supplied fictional materials describe an
 **Confidence:** 87
 
 ### Assessment
-For what is the company idea?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The core idea is an industrial inspection workflow combining robot-mounted sensors with review software.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What is the company idea? is supported by the fictional fact pattern: The core idea is an industrial inspection workflow combining robot-mounted sensors with review software.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The thesis still depends on execution outside the pitch.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.company_idea | home.company_idea: The core idea is an industrial inspection workflow combining robot-mounted sensors with review software.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.company_idea | Structured fact for home.company_idea
 
 ## home.sector | In which sector does the company operate?
 
@@ -86,22 +83,21 @@ For what is the company idea?, the supplied fictional materials describe an indu
 **Confidence:** 87
 
 ### Assessment
-For in which sector does the company operate?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The company operates in industrial robotics and inspection software.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- In which sector does the company operate? is supported by the fictional fact pattern: The company operates in industrial robotics and inspection software.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Sector labels alone do not prove buyer urgency.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.sector | home.sector: The company operates in industrial robotics and inspection software.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.sector | Structured fact for home.sector
 
 ## home.what_company_does | What exactly does the company do?
 
@@ -109,22 +105,21 @@ For in which sector does the company operate?, the supplied fictional materials 
 **Confidence:** 87
 
 ### Assessment
-For what exactly does the company do?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+It sells robot-assisted inspection reports to asset-intensive manufacturers and infrastructure operators.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What exactly does the company do? is supported by the fictional fact pattern: It sells robot-assisted inspection reports to asset-intensive manufacturers and infrastructure operators.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The exact implementation scope can expand during delivery.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.what_company_does | home.what_company_does: It sells robot-assisted inspection reports to asset-intensive manufacturers and infrastructure operators.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.what_company_does | Structured fact for home.what_company_does
 
 ## home.use_of_investment | What will the requested investment be used for?
 
@@ -132,22 +127,21 @@ For what exactly does the company do?, the supplied fictional materials describe
 **Confidence:** 87
 
 ### Assessment
-For what will the requested investment be used for?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The round funds robot fleet validation, industrial software integrations, enterprise sales.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What will the requested investment be used for? is supported by the fictional fact pattern: The round funds robot fleet validation, industrial software integrations, enterprise sales.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Allocation discipline must be demonstrated after financing.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.use_of_investment | home.use_of_investment: The round funds robot fleet validation, industrial software integrations, enterprise sales.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.use_of_investment | Structured fact for home.use_of_investment
 
 ## home.equity_offered | How much equity is offered?
 
@@ -155,22 +149,21 @@ For what will the requested investment be used for?, the supplied fictional mate
 **Confidence:** 87
 
 ### Assessment
-For how much equity is offered?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The proposed dilution is 20%.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How much equity is offered? is supported by the fictional fact pattern: The proposed dilution is 20%.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The cap-table context is not independently verified.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.equity_offered | home.equity_offered: The proposed dilution is 20%.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.equity_offered | Structured fact for home.equity_offered
 
 ## home.investment_requested | How much investment is requested?
 
@@ -178,22 +171,21 @@ For how much equity is offered?, the supplied fictional materials describe an in
 **Confidence:** 87
 
 ### Assessment
-For how much investment is requested?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The requested amount is EUR 2,500,000.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How much investment is requested? is supported by the fictional fact pattern: The requested amount is EUR 2,500,000.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The amount should be tested against milestone costs.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.investment_requested | home.investment_requested: The requested amount is EUR 2,500,000.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.investment_requested | Structured fact for home.investment_requested
 
 ## home.implied_valuation | What implied valuation follows from the proposed terms?
 
@@ -201,22 +193,21 @@ For how much investment is requested?, the supplied fictional materials describe
 **Confidence:** 87
 
 ### Assessment
-For what implied valuation follows from the proposed terms?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The terms imply EUR 12,500,000, matching the stated post-money value.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What implied valuation follows from the proposed terms? is supported by the fictional fact pattern: The terms imply EUR 12,500,000, matching the stated post-money value.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The implied value is arithmetic, not market validation.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.implied_valuation | home.implied_valuation: The terms imply EUR 12,500,000, matching the stated post-money value.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.implied_valuation | Structured fact for home.implied_valuation
 
 ## home.founders | Who are the founders?
 
@@ -224,22 +215,21 @@ For what implied valuation follows from the proposed terms?, the supplied fictio
 **Confidence:** 87
 
 ### Assessment
-For who are the founders?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The founding team is Maya Chen and Lukas Weber.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- Who are the founders? is supported by the fictional fact pattern: The founding team is Maya Chen and Lukas Weber.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Key-person concentration remains relevant.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.founders | home.founders: The founding team is Maya Chen and Lukas Weber.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.founders | Structured fact for home.founders
 
 ## home.founder_facts | What are the most important founder facts?
 
@@ -247,22 +237,21 @@ For who are the founders?, the supplied fictional materials describe an industri
 **Confidence:** 87
 
 ### Assessment
-For what are the most important founder facts?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Relevant founder facts include Maya's robotics systems leadership and Lukas's industrial software delivery record.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What are the most important founder facts? is supported by the fictional fact pattern: Relevant founder facts include Maya's robotics systems leadership and Lukas's industrial software delivery record.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- References and employment history are not independently verified.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.founder_facts | home.founder_facts: Relevant founder facts include Maya's robotics systems leadership and Lukas's industrial software delivery record.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.founder_facts | Structured fact for home.founder_facts
 
 ## home.company_facts | What are the most important company facts?
 
@@ -270,22 +259,21 @@ For what are the most important founder facts?, the supplied fictional materials
 **Confidence:** 87
 
 ### Assessment
-For what are the most important company facts?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Material company facts are two paid design partners, a field-tested sensor payload, and a review-software prototype.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What are the most important company facts? is supported by the fictional fact pattern: Material company facts are two paid design partners, a field-tested sensor payload, and a review-software prototype.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- These are fictional pitch claims rather than audited disclosures.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.company_facts | home.company_facts: Material company facts are two paid design partners, a field-tested sensor payload, and a review-software prototype.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.company_facts | Structured fact for home.company_facts
 
 ## home.missing_information | What important information is missing?
 
@@ -293,19 +281,18 @@ For what are the most important company facts?, the supplied fictional materials
 **Confidence:** 87
 
 ### Assessment
-For what important information is missing?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The review should next obtain signed contracts, deployment uptime data, and independent competitor comparisons.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What important information is missing? is supported by the fictional fact pattern: The review should next obtain signed contracts, deployment uptime data, and independent competitor comparisons.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Those gaps limit diligence depth but do not replace the assessment.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.missing_information | home.missing_information: The review should next obtain signed contracts, deployment uptime data, and independent competitor comparisons.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | home.missing_information | Structured inference for home.missing_information

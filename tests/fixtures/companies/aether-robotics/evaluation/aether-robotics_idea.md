@@ -17,22 +17,21 @@ source_documents:
 **Confidence:** 87
 
 ### Assessment
-For how unique is the company idea?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The differentiated element is a closed loop from sensor capture to engineer review.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How unique is the company idea? is supported by the fictional fact pattern: The differentiated element is a closed loop from sensor capture to engineer review.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Adjacent teams can pursue similar workflows.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.uniqueness | idea.uniqueness: The differentiated element is a closed loop from sensor capture to engineer review.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.uniqueness | Structured inference for idea.uniqueness
 
 ## idea.copyability | How easily can the idea be copied?
 
@@ -40,22 +39,21 @@ For how unique is the company idea?, the supplied fictional materials describe a
 **Confidence:** 87
 
 ### Assessment
-For how easily can the idea be copied?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Copying requires robotics integration, safety workflows, and customer-specific inspection data.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How easily can the idea be copied? is supported by the fictional fact pattern: Copying requires robotics integration, safety workflows, and customer-specific inspection data.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- A well-funded competitor could replicate visible product features.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.copyability | idea.copyability: Copying requires robotics integration, safety workflows, and customer-specific inspection data.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.copyability | Structured inference for idea.copyability
 
 ## idea.defensibility | How defensible is the idea?
 
@@ -63,22 +61,21 @@ For how easily can the idea be copied?, the supplied fictional materials describ
 **Confidence:** 87
 
 ### Assessment
-For how defensible is the idea?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Defensibility can compound through deployment data, workflow integration, and repeatable field operations.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How defensible is the idea? is supported by the fictional fact pattern: Defensibility can compound through deployment data, workflow integration, and repeatable field operations.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The moat is still being earned rather than proven.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.defensibility | idea.defensibility: Defensibility can compound through deployment data, workflow integration, and repeatable field operations.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.defensibility | Structured inference for idea.defensibility
 
 ## idea.protectability | Is the idea patentable or otherwise protectable?
 
@@ -86,22 +83,21 @@ For how defensible is the idea?, the supplied fictional materials describe an in
 **Confidence:** 87
 
 ### Assessment
-For is the idea patentable or otherwise protectable?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Protectable value is concentrated in sensor-calibration know-how and workflow software.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- Is the idea patentable or otherwise protectable? is supported by the fictional fact pattern: Protectable value is concentrated in sensor-calibration know-how and workflow software.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- No granted IP is represented in this fixture.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.protectability | idea.protectability: Protectable value is concentrated in sensor-calibration know-how and workflow software.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.protectability | Structured inference for idea.protectability
 
 ## idea.technical_execution_complexity | How complex is the technical execution?
 
@@ -109,22 +105,21 @@ For is the idea patentable or otherwise protectable?, the supplied fictional mat
 **Confidence:** 87
 
 ### Assessment
-For how complex is the technical execution?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Technical delivery requires reliable sensing, edge processing, and integration with inspection systems.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How complex is the technical execution? is supported by the fictional fact pattern: Technical delivery requires reliable sensing, edge processing, and integration with inspection systems.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Integration failures could delay commercial readiness.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.technical_execution_complexity | idea.technical_execution_complexity: Technical delivery requires reliable sensing, edge processing, and integration with inspection systems.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.technical_execution_complexity | Structured inference for idea.technical_execution_complexity
 
 ## idea.operational_execution_complexity | How complex is the operational execution?
 
@@ -132,22 +127,21 @@ For how complex is the technical execution?, the supplied fictional materials de
 **Confidence:** 87
 
 ### Assessment
-For how complex is the operational execution?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Operations require site access, robot maintenance, and technician coordination.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How complex is the operational execution? is supported by the fictional fact pattern: Operations require site access, robot maintenance, and technician coordination.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Field execution can become a bottleneck.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.operational_execution_complexity | idea.operational_execution_complexity: Operations require site access, robot maintenance, and technician coordination.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.operational_execution_complexity | Structured inference for idea.operational_execution_complexity
 
 ## idea.goal_effort | How much effort is required to achieve the stated goal?
 
@@ -155,22 +149,21 @@ For how complex is the operational execution?, the supplied fictional materials 
 **Confidence:** 87
 
 ### Assessment
-For how much effort is required to achieve the stated goal?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The stated milestone is complete repeatable paid deployments across three industrial sites, requiring a focused build-and-sell cycle.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How much effort is required to achieve the stated goal? is supported by the fictional fact pattern: The stated milestone is complete repeatable paid deployments across three industrial sites, requiring a focused build-and-sell cycle.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The schedule must absorb customer feedback.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.goal_effort | idea.goal_effort: The stated milestone is complete repeatable paid deployments across three industrial sites, requiring a focused build-and-sell cycle.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.goal_effort | Structured inference for idea.goal_effort
 
 ## idea.sustainability | How sustainable or environmentally friendly is the idea?
 
@@ -178,22 +171,21 @@ For how much effort is required to achieve the stated goal?, the supplied fictio
 **Confidence:** 87
 
 ### Assessment
-For how sustainable or environmentally friendly is the idea?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The sustainability case is earlier defect detection that reduces repeat visits and unplanned equipment replacement.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How sustainable or environmentally friendly is the idea? is supported by the fictional fact pattern: The sustainability case is earlier defect detection that reduces repeat visits and unplanned equipment replacement.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Impact should be measured rather than assumed.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.sustainability | idea.sustainability: The sustainability case is earlier defect detection that reduces repeat visits and unplanned equipment replacement.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.sustainability | Structured inference for idea.sustainability
 
 ## idea.fundamental_problems | What fundamental problems exist with the idea?
 
@@ -201,22 +193,21 @@ For how sustainable or environmentally friendly is the idea?, the supplied ficti
 **Confidence:** 87
 
 ### Assessment
-For what fundamental problems exist with the idea?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The central structural challenge is proving reliable operation in varied industrial environments.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- What fundamental problems exist with the idea? is supported by the fictional fact pattern: The central structural challenge is proving reliable operation in varied industrial environments.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Failure to solve it would weaken the model.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.fundamental_problems | idea.fundamental_problems: The central structural challenge is proving reliable operation in varied industrial environments.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.fundamental_problems | Structured inference for idea.fundamental_problems
 
 ## idea.problem_solution_clarity | How clearly does the idea solve a real problem?
 
@@ -224,22 +215,21 @@ For what fundamental problems exist with the idea?, the supplied fictional mater
 **Confidence:** 87
 
 ### Assessment
-For how clearly does the idea solve a real problem?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The problem-solution link is clear: costly manual inspections are shortened by documented robotic capture and review.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How clearly does the idea solve a real problem? is supported by the fictional fact pattern: The problem-solution link is clear: costly manual inspections are shortened by documented robotic capture and review.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Buyer validation still matters more than narrative clarity.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.problem_solution_clarity | idea.problem_solution_clarity: The problem-solution link is clear: costly manual inspections are shortened by documented robotic capture and review.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.problem_solution_clarity | Structured inference for idea.problem_solution_clarity
 
 ## idea.value_proposition | How strong is the value proposition?
 
@@ -247,22 +237,21 @@ For how clearly does the idea solve a real problem?, the supplied fictional mate
 **Confidence:** 87
 
 ### Assessment
-For how strong is the value proposition?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+The value proposition is safer inspections, faster reports, and less production interruption.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How strong is the value proposition? is supported by the fictional fact pattern: The value proposition is safer inspections, faster reports, and less production interruption.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- Customers must confirm that the benefit justifies switching.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.value_proposition | idea.value_proposition: The value proposition is safer inspections, faster reports, and less production interruption.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.value_proposition | Structured inference for idea.value_proposition
 
 ## idea.product_maturity | How mature is the current product or prototype?
 
@@ -270,19 +259,18 @@ For how strong is the value proposition?, the supplied fictional materials descr
 **Confidence:** 87
 
 ### Assessment
-For how mature is the current product or prototype?, the supplied fictional materials describe an industrial inspection workflow that combines robot-mounted sensors with review software. This assessment is limited to those materials.
+Product maturity is a field-tested prototype with two design-partner deployments.
 
 ### Positive Arguments
-- The materials indicate that the founders have relevant robotics and industrial software experience.
+- How mature is the current product or prototype? is supported by the fictional fact pattern: Product maturity is a field-tested prototype with two design-partner deployments.
 
 ### Negative Arguments and Risks
-- A documented risk is that customer deployment cycles and hardware reliability still require proof .
+- The product has remaining proof points before scale.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Fixture fact: an industrial inspection workflow that combines robot-mounted sensors with review software
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.product_maturity | idea.product_maturity: Product maturity is a field-tested prototype with two design-partner deployments.
 
 ### Missing Information
-- Not provided: independent competitor benchmarks and signed customer contracts .
 
 ### Source References
-- doc_11111111-1111-4111-8111-111111111111 | p. 1 | Structured fixture facts
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | idea.product_maturity | Structured inference for idea.product_maturity
