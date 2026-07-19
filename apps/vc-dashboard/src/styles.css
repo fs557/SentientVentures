@@ -68,7 +68,7 @@ button, select { font: inherit; }
 .evaluation-card ul { margin: 0; padding-left: 1.15rem; }
 .evaluation-card__score { align-items: center; display: flex; gap: .9rem; justify-content: flex-end; min-width: 0; }
 .evaluation-card__score .sv-score-badge { align-items: baseline; gap: .3rem; }
-.evaluation-card__score .sv-score-badge strong { color: var(--sv-green-deep); font-size: 1.1rem; }
+.evaluation-card__score .sv-score-badge strong { color: var(--sv-score-color); font-size: 1.1rem; }
 .confidence { color: var(--sv-muted); font-size: .74rem !important; }
 .confidence strong { color: var(--sv-ink); font-size: .84rem; font-variant-numeric: tabular-nums; }
 .evaluation-card__indicator { border-bottom: 1px solid currentColor; border-right: 1px solid currentColor; color: var(--sv-muted); flex: 0 0 auto; height: .5rem; margin: -.2rem .15rem 0 .2rem; transform: rotate(45deg); transition: transform .16s ease; width: .5rem; }

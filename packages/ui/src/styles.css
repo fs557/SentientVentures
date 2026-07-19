@@ -19,9 +19,17 @@
 .sv-brand { align-items: center; color: var(--sv-ink); display: flex; font-weight: 800; gap: .6rem; letter-spacing: -.035em; line-height: .9; text-decoration: none; }
 .sv-brand img { filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .28)); height: 34px; width: 34px; }
 .sv-app-shell :is(a, button, input, select, summary):focus-visible { outline: 3px solid var(--sv-focus); outline-offset: 3px; }
-.sv-score-badge { align-items: baseline; display: inline-flex; gap: .42rem; white-space: nowrap; }
+.sv-score-badge { --sv-score-color: var(--sv-green); display: inline-grid; gap: .32rem; min-width: 5.2rem; white-space: nowrap; }
+.sv-score-badge__value { align-items: baseline; display: flex; gap: .42rem; justify-content: space-between; }
 .sv-score-badge__label { color: var(--sv-muted); font-size: .7rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
-.sv-score-badge strong { color: var(--sv-green-deep); font-size: .92rem; }
+.sv-score-badge strong { color: var(--sv-score-color); font-size: .92rem; }
+.sv-score-badge__track { background: rgba(255, 255, 255, .08); border-radius: 999px; display: block; height: 4px; overflow: hidden; width: 100%; }
+.sv-score-badge__fill { background: var(--sv-score-color); border-radius: inherit; box-shadow: 0 0 10px color-mix(in srgb, var(--sv-score-color) 45%, transparent); display: block; height: 100%; transition: width .28s ease; }
+.sv-score-badge--critical { --sv-score-color: #ff8585; }
+.sv-score-badge--caution { --sv-score-color: #ffad72; }
+.sv-score-badge--mixed { --sv-score-color: #f4cf72; }
+.sv-score-badge--strong { --sv-score-color: #72d6b4; }
+.sv-score-badge--exceptional { --sv-score-color: #83dcea; }
 .sv-score-badge--unavailable strong { color: var(--sv-muted); }
 .sv-status { background: var(--sv-surface); backdrop-filter: blur(18px); border: 1px solid var(--sv-line); border-left: 3px solid var(--sv-green); border-radius: 14px; box-shadow: 0 20px 60px rgba(0, 0, 0, .2); max-width: 50rem; padding: 1.25rem 1.4rem; }
 .sv-status h2 { font-size: 1rem; margin: 0 0 .35rem; }
