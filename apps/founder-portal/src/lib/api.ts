@@ -28,3 +28,7 @@ export async function retryJob(slug: string, idempotencyKey: string): Promise<{ 
   if (!response.ok) throw await readError(response);
   return response.json() as Promise<{ id: string; state: string; attempt: number; statusUrl: string }>;
 }
+
+export type DirectoryProject = { id: string; title: string | null; relationship: string; completed: boolean };
+export type DirectoryPerson = { id: string; name: string; university: string | null; city: string | null; projects: DirectoryProject[] };
+export async function searchPeople(query: string, signal?: AbortSignal): Promise<DirectoryPerson[]> { const response = await fetch(`${apiBase}/people/search?q=${encodeURIComponent(query)}`, { headers: { Accept: "application/json" }, signal }); if (!response.ok) throw new ApiError("People directory could not be loaded.", response.status); return (await response.json() as { people: DirectoryPerson[] }).people; }

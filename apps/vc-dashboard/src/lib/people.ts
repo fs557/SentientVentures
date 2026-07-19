@@ -1,0 +1,4 @@
+﻿export type PersonProject = { id: string; title: string | null; relationship: string; completed: boolean };
+export type Person = { id: string; name: string; firstName: string | null; lastName: string | null; avatarUrl: string | null; tagline: string | null; university: string | null; fieldOfStudy: string | null; professionalSituation: string | null; country: string | null; city: string | null; projects: PersonProject[] };
+const apiBase = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000/api/v1";
+export async function searchPeople(query: string, signal?: AbortSignal): Promise<Person[]> { const response = await fetch(`${apiBase}/people/search?q=${encodeURIComponent(query)}`, { signal, headers: { Accept: "application/json" } }); if (!response.ok) throw new Error("People directory could not be loaded."); return (await response.json() as { people: Person[] }).people; }

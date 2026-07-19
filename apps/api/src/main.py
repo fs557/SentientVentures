@@ -13,6 +13,7 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from .api.companies import CompanyRepository, FixtureRepository, LiveCompanyRepository, router as companies_router
+from .api.people import router as people_router
 from .api.health import router as health_router
 from .api.submissions import ApiProblem, SubmissionBodyLimitMiddleware, router as submissions_router
 from .core.submissions import SubmissionRepository
@@ -100,6 +101,7 @@ def create_app(*, fixtures_root: Path | None = None, data_root: Path | None = No
 
     app.include_router(health_router)
     app.include_router(companies_router)
+    app.include_router(people_router)
     app.include_router(submissions_router)
 
     @app.on_event("startup")
