@@ -6,7 +6,17 @@ from __future__ import annotations
 import argparse
 import json
 import sqlite3
+import sys
 from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "apps" / "api"))
+
+from src.core.location_coordinates import (  # noqa: E402
+    ensure_location_coordinates,
+    sync_people_location_pairs,
+)
 
 
 def main() -> None:
@@ -60,6 +70,7 @@ def main() -> None:
         );
         """
     )
+    ensure_location_coordinates(db)
     # Backward-compatible upgrade for databases created by older script versions.
     export_columns = {row[1] for row in db.execute("PRAGMA table_info(exports)")}
     if "source_projects_url" not in export_columns:
@@ -89,6 +100,7 @@ def main() -> None:
                 exported_at,
             ),
         )
+    sync_people_location_pairs(db)
     for project in projects:
         project_id = project.get("id")
         if not project_id:

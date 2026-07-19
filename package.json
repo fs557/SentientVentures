@@ -4,11 +4,11 @@
   "version": "0.1.0",
   "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail --names api,portal,dashboard,map \"conda run -n codex-agents uvicorn apps.api.src.main:app --host 0.0.0.0 --port 8000 --reload\" \"pnpm --filter @sv/founder-portal dev -- --port 8080\" \"pnpm --filter @sv/vc-dashboard dev -- --port 8081\" \"pnpm --filter @sv/world-map dev\"",
+    "dev": "concurrently --kill-others-on-fail --names api,portal,dashboard,map \"conda run -n codex-agents uvicorn apps.api.src.main:app --host 0.0.0.0 --port 8000 --reload\" \"pnpm --filter @sv/founder-portal dev\" \"pnpm --filter @sv/vc-dashboard dev\" \"pnpm --filter @sv/world-map dev\"",
     "typecheck": "pnpm -r --if-present typecheck",
     "test": "pnpm test:web && pnpm test:contracts && conda run -n codex-agents pytest",
     "test:e2e": "playwright test",
-    "test:web": "pnpm --filter @sv/founder-portal test && pnpm --filter @sv/vc-dashboard test",
+    "test:web": "pnpm --filter @sv/founder-portal test && pnpm --filter @sv/vc-dashboard test && pnpm --filter @sv/world-map test",
     "test:contracts": "pnpm --filter @sv/contracts test"
   },
   "devDependencies": {

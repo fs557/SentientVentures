@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import logo from "../../../assets/logo/sv_logo_128.png";
-
-interface MapFounder {
-  id: string;
-  name: string;
-  city: string;
-  country: string;
-  lat: number;
-  lng: number;
-  score: number;
-}
+import {
+  escapeHtml,
+  groupFoundersByLocation,
+  locationLabel,
+  locationPopup,
+  markerColor,
+  markerRadius,
+  type MapFounder
+} from "./mapData";
 
 const apiBase = "http://localhost:8000/api/v1";
 declare const L: any; // Leaflet global
@@ -20,6 +19,7 @@ export function App() {
   const [error, setError] = useState<string | null>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
+  const markerLayerRef = useRef<any>(null);
 
   // Fetch map data on load
   useEffect(() => {
@@ -66,41 +66,33 @@ export function App() {
     const map = mapInstanceRef.current;
     if (!map || founders.length === 0) return;
 
-    founders.forEach((f) => {
-      // CircleMarker radius is proportional to score (minimum radius 6)
-      const radius = Math.max(6, f.score * 0.22);
-      
-      // Determine color based on score
-      let color = "#ffc477"; // gold
-      if (f.score < 40) color = "#ff8585";
-      else if (f.score < 60) color = "#ffad72";
-      else if (f.score >= 85) color = "#83dcea";
-      else if (f.score >= 70) color = "#72d6b4";
+    if (markerLayerRef.current) {
+      markerLayerRef.current.remove();
+    }
 
-      const marker = L.circleMarker([f.lat, f.lng], {
-        radius,
+    const markerLayer = L.layerGroup().addTo(map);
+    markerLayerRef.current = markerLayer;
+
+    groupFoundersByLocation(founders).forEach((location) => {
+      const color = markerColor(location.averageScore);
+      const marker = L.circleMarker([location.lat, location.lng], {
+        radius: markerRadius(location),
         fillColor: color,
         color: "#0a120f",
         weight: 2,
         opacity: 0.9,
         fillOpacity: 0.65
-      }).addTo(map);
+      }).addTo(markerLayer);
 
-      // Create a popup linking back to VC Dashboard
-      const popupContent = `
-        <div style="font-family: system-ui, sans-serif; padding: 0.25rem 0; min-width: 140px;">
-          <h3 style="margin: 0 0 0.25rem 0; font-size: 1rem; color: #72d6b4;">${f.name}</h3>
-          <p style="margin: 0 0 0.4rem 0; font-size: 0.8rem; color: #a8b8b1;">${f.city}, ${f.country}</p>
-          <div style="font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem;">
-            Score: <span style="color: ${color};">${f.score.toFixed(1)}</span>
-          </div>
-          <a href="http://localhost:8081/?founder=${f.id}" target="_blank" class="map-popup-btn">
-            View Profile
-          </a>
-        </div>
-      `;
-      marker.bindPopup(popupContent);
+      const countLabel = location.founders.length === 1 ? "1 founder" : `${location.founders.length} founders`;
+      marker.bindTooltip(`${escapeHtml(locationLabel(location))} - ${countLabel}`);
+      marker.bindPopup(locationPopup(location), { maxWidth: 350 });
     });
+
+    return () => {
+      markerLayer.remove();
+      if (markerLayerRef.current === markerLayer) markerLayerRef.current = null;
+    };
   }, [founders]);
 
   return (

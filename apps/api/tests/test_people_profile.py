@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import builtins
 import sqlite3
 import pytest
 from pathlib import Path
@@ -71,13 +72,23 @@ def test_get_person_scores_success(app: FastAPI) -> None:
     assert data[2]["score"] == 75.0
 
 
-def test_get_person_network_success(app: FastAPI) -> None:
+def test_get_person_network_success(app: FastAPI, monkeypatch: pytest.MonkeyPatch) -> None:
+    original_import = builtins.__import__
+
+    def import_without_networkx(name: str, *args: object, **kwargs: object) -> object:
+        if name == "networkx" or name.startswith("networkx."):
+            raise ModuleNotFoundError("No module named 'networkx'")
+        return original_import(name, *args, **kwargs)
+
+    monkeypatch.setattr(builtins, "__import__", import_without_networkx)
     user_id = "02887d15-7eac-40f7-836d-4a7a23031b5a"
     res = _request(app, f"/api/v1/people/{user_id}/network")
     assert res.status_code == 200
     data = res.json()
-    assert "nodes" in data
-    assert "edges" in data
+    assert set(data) == {"directed", "multigraph", "graph", "nodes", "edges"}
+    assert data["directed"] is False
+    assert data["multigraph"] is False
+    assert data["graph"] == {}
     assert isinstance(data["nodes"], list)
     assert isinstance(data["edges"], list)
     

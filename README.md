@@ -99,9 +99,15 @@ SentientVentures is organized as a pnpm monorepo consisting of:
 ## 🗺️ Founder World Map (Port 8082)
 
 An interactive, high-performance world map application is built on port `8082` using React and **Leaflet.js** (dark-themed tile layout):
-- **Dynamic Circle Markers**: Visualizes all founders at their respective geocoordinates.
+- **Dynamic City Markers**: Visualizes founders at WGS84 coordinates from the checked-in GeoNames-derived city lookup (`assets/DATABASE/location_coordinates.csv`), which is loaded into the `location_coordinates` SQLite table. Profiles with missing or unresolved locations are excluded instead of being assigned fabricated coordinates. Founders at the same resolved city coordinates are grouped in one marker.
 - **Score-Proportional Scaling**: The circle marker radius scales dynamically according to the founder's active founder score.
 - **Direct VC Integration**: Clicking "View Profile" on any marker opens the VC Dashboard (`http://localhost:8081`) with a `?founder={id}` query parameter, which automatically displays the founder's profile modal.
+
+The city lookup is derived from the [GeoNames `cities500` data dump](https://download.geonames.org/export/dump/), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). To refresh it, download `cities500.zip` locally and run:
+
+```bash
+python scripts/generate_location_coordinates.py --geonames-zip /path/to/cities500.zip
+```
 
 ---
 

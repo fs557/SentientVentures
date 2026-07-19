@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --port 8082 --host 0.0.0.0",
     "build": "vite build",
+    "test": "node --test src/mapData.test.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -5,8 +5,43 @@ from pathlib import Path
 from typing import Any
 from fastapi import APIRouter, HTTPException, Query, Request
 from pydantic import BaseModel, ConfigDict
+from ..core.location_coordinates import ensure_location_coordinates, normalize_location_component
 router = APIRouter(prefix="/api/v1", tags=["people"])
 _ROOT = Path(__file__).resolve().parents[4]
+
+
+class _NodeLinkGraph:
+    """Minimal undirected graph with NetworkX-compatible node-link output."""
+
+    def __init__(self) -> None:
+        self._nodes: dict[str, dict[str, Any]] = {}
+        self._edges: dict[frozenset[str], dict[str, Any]] = {}
+
+    def add_node(self, node_id: str, **attributes: Any) -> None:
+        node = self._nodes.setdefault(node_id, {"id": node_id})
+        node.update(attributes)
+
+    def add_edge(self, source: str, target: str, **attributes: Any) -> None:
+        edge = self._edges.setdefault(
+            frozenset((source, target)),
+            {"source": source, "target": target},
+        )
+        edge.update(attributes)
+
+    def node_link_data(self) -> dict[str, Any]:
+        return {
+            "directed": False,
+            "multigraph": False,
+            "graph": {},
+            "nodes": list(self._nodes.values()),
+            "edges": list(self._edges.values()),
+        }
+
+
+def _empty_node_link_data() -> dict[str, Any]:
+    return _NodeLinkGraph().node_link_data()
+
+
 class _Model(BaseModel):
     model_config = ConfigDict(extra="forbid")
 class PersonProjectModel(_Model):
@@ -112,7 +147,7 @@ def get_people_network(company_slug: str, request: Request) -> dict[str, Any]:
     configured = os.getenv("SV_PEOPLE_DATABASE")
     path = (Path(configured) if configured else _ROOT / "assets" / "DATABASE" / "hack_nation_people.sqlite").resolve()
     if not path.is_file():
-        return {"nodes": [], "links": []}
+        return _empty_node_link_data()
 
     try:
         company_repo = request.app.state.company_repository
@@ -122,7 +157,7 @@ def get_people_network(company_slug: str, request: Request) -> dict[str, Any]:
 
     home = company.categories.get("home")
     if not home:
-        return {"nodes": [], "links": []}
+        return _empty_node_link_data()
 
     founders_text = ""
     # home is a dict where items is a list of dicts (converted to contract dict)
@@ -137,12 +172,9 @@ def get_people_network(company_slug: str, request: Request) -> dict[str, Any]:
 
     founder_names = extract_founder_names(founders_text)
     if not founder_names:
-        return {"nodes": [], "links": []}
+        return _empty_node_link_data()
 
-    import networkx as nx
-    from networkx.readwrite import json_graph
-
-    G = nx.Graph()
+    graph = _NodeLinkGraph()
 
     try:
         with sqlite3.connect(f"file:{path.as_posix()}?mode=ro", uri=True) as db:
@@ -154,13 +186,13 @@ def get_people_network(company_slug: str, request: Request) -> dict[str, Any]:
 
             for f in founders_db:
                 f_id = f["user_id"]
-                G.add_node(f_id, label=f["name"], type="founder")
+                graph.add_node(f_id, label=f["name"], type="founder")
 
                 # University
                 uni = f["profile"].get("university") or f["roster"].get("university")
                 if uni and uni.lower() not in ("others", "none", ""):
-                    G.add_node(uni, label=uni, type="university")
-                    G.add_edge(f_id, uni, relationship="studied_at")
+                    graph.add_node(uni, label=uni, type="university")
+                    graph.add_edge(f_id, uni, relationship="studied_at")
 
                     # Classmates (limit to 5)
                     classmates = db.execute("""
@@ -174,8 +206,8 @@ def get_people_network(company_slug: str, request: Request) -> dict[str, Any]:
                         c_first = (c_roster.get("first_name") or "").strip()
                         c_last = (c_roster.get("last_name") or "").strip()
                         c_name = " ".join(part for part in (c_first, c_last) if part) or c_roster.get("display_name") or "Alumni"
-                        G.add_node(c_id, label=c_name, type="person")
-                        G.add_edge(c_id, uni, relationship="studied_at")
+                        graph.add_node(c_id, label=c_name, type="person")
+                        graph.add_edge(c_id, uni, relationship="studied_at")
 
                 # Projects
                 projects = db.execute("""
@@ -185,8 +217,8 @@ def get_people_network(company_slug: str, request: Request) -> dict[str, Any]:
                     WHERE pp.user_id = ?
                 """, (f_id,)).fetchall()
                 for p_id, p_title, p_json_str, rel in projects:
-                    G.add_node(p_id, label=p_title or "Untitled Project", type="project")
-                    G.add_edge(f_id, p_id, relationship=rel)
+                    graph.add_node(p_id, label=p_title or "Untitled Project", type="project")
+                    graph.add_edge(f_id, p_id, relationship=rel)
 
                     # Teammates
                     teammates = db.execute("""
@@ -197,15 +229,15 @@ def get_people_network(company_slug: str, request: Request) -> dict[str, Any]:
                     """, (p_id, f_id)).fetchall()
                     for t_id, t_rel, t_disp, t_first, t_last in teammates:
                         t_name = " ".join(part for part in (t_first, t_last) if part) or t_disp or "Teammate"
-                        G.add_node(t_id, label=t_name, type="person")
-                        G.add_edge(t_id, p_id, relationship=t_rel)
+                        graph.add_node(t_id, label=t_name, type="person")
+                        graph.add_edge(t_id, p_id, relationship=t_rel)
 
                     # Hackathon
                     p_json = _json(p_json_str)
                     event_title = p_json.get("eventTitle")
                     if event_title:
-                        G.add_node(event_title, label=event_title, type="hackathon")
-                        G.add_edge(p_id, event_title, relationship="part_of_event")
+                        graph.add_node(event_title, label=event_title, type="hackathon")
+                        graph.add_edge(p_id, event_title, relationship="part_of_event")
 
                         # Other hackathon projects (limit to 5)
                         other_projs = db.execute("""
@@ -214,12 +246,10 @@ def get_people_network(company_slug: str, request: Request) -> dict[str, Any]:
                               AND project_id != ? LIMIT 5
                         """, (event_title, p_id)).fetchall()
                         for op_id, op_title in other_projs:
-                            G.add_node(op_id, label=op_title or "Hackathon Project", type="project")
-                            G.add_edge(op_id, event_title, relationship="part_of_event")
+                            graph.add_node(op_id, label=op_title or "Hackathon Project", type="project")
+                            graph.add_edge(op_id, event_title, relationship="part_of_event")
 
-            # Convert networkx graph to D3 JSON format
-            graph_data = json_graph.node_link_data(G)
-            return graph_data
+            return graph.node_link_data()
     except (sqlite3.Error, OSError) as exc:
         raise HTTPException(status_code=500, detail="Database error during network generation") from exc
 
@@ -288,100 +318,53 @@ def get_people_map_data() -> list[dict[str, Any]]:
     path = (Path(configured) if configured else _ROOT / "assets" / "DATABASE" / "hack_nation_people.sqlite").resolve()
     if not path.is_file():
         return []
-        
-    def get_coordinates(user_id: str, city: str, country: str) -> tuple[float, float]:
-        import hashlib
-        city_clean = city.strip().lower()
-        country_clean = country.strip().lower()
-        
-        KNOWN_CITIES = {
-            ("munich", "germany"): (48.1351, 11.5820),
-            ("islamabad", "pakistan"): (33.6844, 73.0479),
-            ("lahore", "pakistan"): (31.5204, 74.3587),
-            ("delhi", "india"): (28.6139, 77.2090),
-            ("new delhi", "india"): (28.6139, 77.2090),
-            ("yerevan", "armenia"): (40.1792, 44.5152),
-            ("boston", "united states"): (42.3601, -71.0589),
-            ("boston", "united states of america"): (42.3601, -71.0589),
-            ("london", "united kingdom"): (51.5074, -0.1278),
-            ("paris", "france"): (48.8566, 2.3522),
-            ("bhubaneswar", "india"): (20.2961, 85.8245),
-            ("cambridge", "united states"): (42.3736, -71.1097),
-            ("cambridge", "united states of america"): (42.3736, -71.1097),
-            ("cambridge", "united kingdom"): (52.2053, 0.1218),
-            ("linz", "austria"): (48.3069, 14.2858),
-            ("new york city", "united states"): (40.7128, -74.0060),
-            ("san francisco", "united states"): (37.7749, -122.4194),
-            ("san francisco", "united states of america"): (37.7749, -122.4194),
-            ("san jose", "united states"): (37.3387, -121.8853),
-            ("rawalpindi", "pakistan"): (33.5997, 73.0479),
-            ("dresden", "germany"): (51.0504, 13.7373),
-            ("vienna", "austria"): (48.2082, 16.3738),
-            ("zürich", "switzerland"): (47.3769, 8.5417),
-            ("zurich", "switzerland"): (47.3769, 8.5417),
-            ("berlin", "germany"): (52.5200, 13.4050),
-            ("casablanca", "morocco"): (33.5731, -7.5898),
-            ("lagos", "nigeria"): (6.5244, 3.3792),
-            ("rabat", "morocco"): (34.0209, -6.8416),
-            ("karachi", "pakistan"): (24.8607, 67.0011),
-        }
-        
-        key = (city_clean, country_clean)
-        if key in KNOWN_CITIES:
-            lat_base, lng_base = KNOWN_CITIES[key]
-        else:
-            h = hashlib.md5(f"{city_clean},{country_clean}".encode("utf-8")).hexdigest()
-            lat_base = (int(h[0:8], 16) % 90) - 30.0
-            lng_base = (int(h[8:16], 16) % 240) - 100.0
-            
-        h_user = hashlib.md5(user_id.encode("utf-8")).hexdigest()
-        jitter_lat = ((int(h_user[0:4], 16) % 200) - 100) * 0.0008
-        jitter_lng = ((int(h_user[4:8], 16) % 200) - 100) * 0.0008
-        
-        return float(lat_base + jitter_lat), float(lng_base + jitter_lng)
 
     try:
         with sqlite3.connect(f"file:{path.as_posix()}?mode=ro", uri=True) as db:
+            coordinates = {
+                (city_key, country_key): (float(latitude), float(longitude))
+                for city_key, country_key, latitude, longitude in db.execute("""
+                    SELECT city_key, country_key, latitude, longitude
+                    FROM location_coordinates
+                    WHERE status = 'resolved'
+                """)
+            }
             rows = db.execute("""
                 SELECT p.user_id, p.roster_json, p.profile_json, fs.score
                 FROM people p
-                LEFT JOIN (
-                    SELECT user_id, score, MAX(timestamp) 
-                    FROM founder_scores 
-                    GROUP BY user_id
-                ) fs ON fs.user_id = p.user_id
+                LEFT JOIN founder_scores fs ON fs.user_id = p.user_id
+                    AND fs.timestamp = (
+                        SELECT MAX(latest.timestamp)
+                        FROM founder_scores latest
+                        WHERE latest.user_id = p.user_id
+                    )
             """).fetchall()
-            
-            founders = []
-            for user_id, roster_json, profile_json, score in rows:
-                roster = _json(roster_json)
-                profile = _json(profile_json)
-                city = profile.get("city")
-                country = profile.get("country")
-                
-                if not city or not country:
-                    display_city = "Location Unspecified"
-                    display_country = "Global"
-                    lat, lng = get_coordinates(user_id, "Munich", "Germany")
-                else:
-                    display_city = city
-                    display_country = country
-                    lat, lng = get_coordinates(user_id, city, country)
-                
-                score_val = float(score) if score is not None else 50.0
-                first = (roster.get("first_name") or "").strip()
-                last = (roster.get("last_name") or "").strip()
-                name = " ".join(part for part in (first, last) if part) or roster.get("display_name") or "Unknown"
-                founders.append({
-                    "id": user_id,
-                    "name": name,
-                    "city": display_city,
-                    "country": display_country,
-                    "lat": lat,
-                    "lng": lng,
-                    "score": score_val
-                })
-            return founders
+
+        founders = []
+        for user_id, roster_json, profile_json, score in rows:
+            roster = _json(roster_json)
+            profile = _json(profile_json)
+            city = profile.get("city")
+            country = profile.get("country")
+            if not isinstance(city, str) or not city.strip() or not isinstance(country, str) or not country.strip():
+                continue
+            point = coordinates.get(
+                (normalize_location_component(city), normalize_location_component(country))
+            )
+            if point is None:
+                continue
+            first = (roster.get("first_name") or "").strip()
+            last = (roster.get("last_name") or "").strip()
+            founders.append({
+                "id": user_id,
+                "name": " ".join(part for part in (first, last) if part) or roster.get("display_name") or "Unknown",
+                "city": city.strip(),
+                "country": country.strip(),
+                "lat": point[0],
+                "lng": point[1],
+                "score": float(score) if score is not None else 50.0,
+            })
+        return founders
     except sqlite3.Error as exc:
         raise HTTPException(status_code=500, detail="Database error") from exc
 
@@ -484,12 +467,9 @@ def get_person_network(user_id: str) -> dict[str, Any]:
     configured = os.getenv("SV_PEOPLE_DATABASE")
     path = (Path(configured) if configured else _ROOT / "assets" / "DATABASE" / "hack_nation_people.sqlite").resolve()
     if not path.is_file():
-        return {"directed": False, "multigraph": False, "graph": {}, "nodes": [], "edges": []}
-        
-    import networkx as nx
-    from networkx.readwrite import json_graph
-    
-    G = nx.Graph()
+        return _empty_node_link_data()
+
+    graph = _NodeLinkGraph()
     
     try:
         with sqlite3.connect(f"file:{path.as_posix()}?mode=ro", uri=True) as db:
@@ -505,13 +485,13 @@ def get_person_network(user_id: str) -> dict[str, Any]:
             name = " ".join(part for part in (first, last) if part) or person.get("display_name") or "Center Person"
             
             # Root Node
-            G.add_node(user_id, label=name, type="founder")
+            graph.add_node(user_id, label=name, type="founder")
             
             # University
             uni = person.get("university")
             if uni and uni.lower() not in ("others", "none", ""):
-                G.add_node(uni, label=uni, type="university")
-                G.add_edge(user_id, uni, relationship="studied_at")
+                graph.add_node(uni, label=uni, type="university")
+                graph.add_edge(user_id, uni, relationship="studied_at")
                 
                 # Classmates (limit to 5)
                 classmates = db.execute("""
@@ -525,8 +505,8 @@ def get_person_network(user_id: str) -> dict[str, Any]:
                     c_first = (c_roster.get("first_name") or "").strip()
                     c_last = (c_roster.get("last_name") or "").strip()
                     c_name = " ".join(part for part in (c_first, c_last) if part) or c_roster.get("display_name") or "Alumni"
-                    G.add_node(c_id, label=c_name, type="person")
-                    G.add_edge(c_id, uni, relationship="studied_at")
+                    graph.add_node(c_id, label=c_name, type="person")
+                    graph.add_edge(c_id, uni, relationship="studied_at")
                     
             # Projects
             projects = db.execute("""
@@ -536,8 +516,8 @@ def get_person_network(user_id: str) -> dict[str, Any]:
                 WHERE pp.user_id = ?
             """, (user_id,)).fetchall()
             for p_id, p_title, p_json_str, rel in projects:
-                G.add_node(p_id, label=p_title or "Untitled Project", type="project")
-                G.add_edge(user_id, p_id, relationship=rel)
+                graph.add_node(p_id, label=p_title or "Untitled Project", type="project")
+                graph.add_edge(user_id, p_id, relationship=rel)
                 
                 # Teammates
                 teammates = db.execute("""
@@ -548,15 +528,15 @@ def get_person_network(user_id: str) -> dict[str, Any]:
                 """, (p_id, user_id)).fetchall()
                 for t_id, t_rel, t_disp, t_first, t_last in teammates:
                     t_name = " ".join(part for part in (t_first, t_last) if part) or t_disp or "Teammate"
-                    G.add_node(t_id, label=t_name, type="person")
-                    G.add_edge(t_id, p_id, relationship=t_rel)
+                    graph.add_node(t_id, label=t_name, type="person")
+                    graph.add_edge(t_id, p_id, relationship=t_rel)
                     
                 # Hackathon
                 p_json = _json(p_json_str)
                 event_title = p_json.get("eventTitle")
                 if event_title:
-                    G.add_node(event_title, label=event_title, type="hackathon")
-                    G.add_edge(p_id, event_title, relationship="part_of_event")
+                    graph.add_node(event_title, label=event_title, type="hackathon")
+                    graph.add_edge(p_id, event_title, relationship="part_of_event")
                     
                     # Other hackathon projects (limit to 5)
                     other_projs = db.execute("""
@@ -565,10 +545,10 @@ def get_person_network(user_id: str) -> dict[str, Any]:
                           AND project_id != ? LIMIT 5
                     """, (event_title, p_id)).fetchall()
                     for op_id, op_title in other_projs:
-                        G.add_node(op_id, label=op_title or "Hackathon Project", type="project")
-                        G.add_edge(op_id, event_title, relationship="part_of_event")
+                        graph.add_node(op_id, label=op_title or "Hackathon Project", type="project")
+                        graph.add_edge(op_id, event_title, relationship="part_of_event")
                         
-            return json_graph.node_link_data(G)
+            return graph.node_link_data()
     except sqlite3.Error as exc:
         raise HTTPException(status_code=500, detail="Database error") from exc
 
@@ -580,6 +560,7 @@ def init_db() -> None:
         return
     try:
         with sqlite3.connect(path.as_posix()) as db:
+            ensure_location_coordinates(db)
             db.execute("""
                 CREATE TABLE IF NOT EXISTS founder_scores (
                     user_id TEXT NOT NULL,
@@ -623,8 +604,8 @@ def init_db() -> None:
                 ]
                 db.executemany("INSERT INTO founder_scores (user_id, timestamp, score) VALUES (?, ?, ?)", seed_data)
                 db.commit()
-    except Exception as exc:
-        print(f"Error seeding founder_scores: {exc}")
+    except (OSError, sqlite3.Error, ValueError) as exc:
+        raise RuntimeError(f"Failed to initialize people database at {path}: {exc}") from exc
 
 
 

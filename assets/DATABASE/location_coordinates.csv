@@ -1,0 +1,313 @@
+city_key,country_key,city,country,latitude,longitude,status,source,geoname_id,match_name,notes
+02150,united states,02150,United States,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+aachen,germany,Aachen,Germany,50.77664,6.08342,resolved,GeoNames cities500,3247449,Aachen,canonical/ascii match
+abbottabad,pakistan,Abbottabad,Pakistan,34.1463,73.21168,resolved,GeoNames cities500,1185056,Abbottabad,canonical/ascii match
+abu dhabi,united arab emirates,Abu Dhabi,United Arab Emirates,24.45118,54.39696,resolved,GeoNames cities500,292968,Abu Dhabi,canonical/ascii match
+abuja,nigeria,Abuja,Nigeria,9.05785,7.49508,resolved,GeoNames cities500,2352778,Abuja,canonical/ascii match
+addis ababa,ethiopia,Addis Ababa,Ethiopia,9.02497,38.74689,resolved,GeoNames cities500,344979,Addis Ababa,canonical/ascii match
+aguascalientes,mexico,Aguascalientes,Mexico,21.88262,-102.2843,resolved,GeoNames cities500,4019233,Aguascalientes,canonical/ascii match
+ahmedabad,india,Ahmedabad,India,23.02579,72.58727,resolved,GeoNames cities500,1279233,Ahmedabad,canonical/ascii match
+ajman city,united arab emirates,Ajman City,United Arab Emirates,25.40177,55.47878,resolved,GeoNames cities500,292932,Ajman,unambiguous alternate-name match
+alīgarh,india,Alīgarh,India,27.88145,78.07464,resolved,GeoNames cities500,1279017,Alīgarh,canonical/ascii match
+amman,jordan,Amman,Jordan,31.95522,35.94503,resolved,GeoNames cities500,250441,Amman,canonical/ascii match
+amsterdam,netherlands,Amsterdam,Netherlands,52.37403,4.88969,resolved,GeoNames cities500,2759794,Amsterdam,canonical/ascii match
+antananarivo,madagascar,Antananarivo,Madagascar,-18.91368,47.53613,resolved,GeoNames cities500,1070940,Antananarivo,canonical/ascii match
+apex,united states,Apex,United States,35.73265,-78.85029,resolved,GeoNames cities500,4452808,Apex,canonical/ascii match
+ariana,tunisia,Ariana,Tunisia,36.86012,10.19337,resolved,GeoNames cities500,2473247,Aryanah,unambiguous alternate-name match
+arizona,united states of america,Arizona,United States of America,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+arrifes,morocco,Arrifes,Morocco,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+ashtarak,armenia,Ashtarak,Armenia,40.2976,44.36152,resolved,GeoNames cities500,616877,Ashtarak,canonical/ascii match
+asyūţ,egypt,Asyūţ,Egypt,27.18096,31.18368,resolved,GeoNames cities500,359783,Assiut,unambiguous alternate-name match
+athens,greece,Athens,Greece,37.98376,23.72784,resolved,GeoNames cities500,264371,Athens,canonical/ascii match
+atlanta,united states,Atlanta,United States,33.749,-84.38798,resolved,GeoNames cities500,4180439,Atlanta,canonical/ascii match
+augsburg,germany,Augsburg,Germany,48.37154,10.89851,resolved,GeoNames cities500,2954172,Augsburg,canonical/ascii match
+austin,united states,Austin,United States,30.26715,-97.74306,resolved,GeoNames cities500,4671654,Austin,canonical/ascii match
+balkh,afghanistan,Balkh,Afghanistan,36.75635,66.8972,resolved,GeoNames cities500,1147290,Balkh,canonical/ascii match
+balotra,india,Balotra,India,25.83242,72.24,resolved,GeoNames cities500,1277527,Balotra,canonical/ascii match
+baltimore,united states,Baltimore,United States,39.29038,-76.61219,resolved,GeoNames cities500,4347778,Baltimore,canonical/ascii match
+banglore,india,Banglore,India,12.97194,77.59369,resolved,GeoNames cities500,1277333,Bengaluru,canonical/ascii match
+banjul,gambia,Banjul,Gambia,13.45274,-16.57803,resolved,GeoNames cities500,2413876,Banjul,canonical/ascii match
+basel,switzerland,Basel,Switzerland,47.55839,7.57327,resolved,GeoNames cities500,2661604,Basel,canonical/ascii match
+bengalore,india,Bengalore,India,12.97194,77.59369,resolved,GeoNames cities500,1277333,Bengaluru,canonical/ascii match
+bengaluru,india,Bengaluru,India,12.97194,77.59369,resolved,GeoNames cities500,1277333,Bengaluru,canonical/ascii match
+berkeley,united states,Berkeley,United States,37.87159,-122.27275,resolved,GeoNames cities500,5327684,Berkeley,canonical/ascii match
+berkeley,united states of america,Berkeley,United States of America,37.87159,-122.27275,resolved,GeoNames cities500,5327684,Berkeley,canonical/ascii match
+berlin,germany,Berlin,Germany,52.52437,13.41053,resolved,GeoNames cities500,2950159,Berlin,canonical/ascii match
+bhopal,india,Bhopal,India,23.25469,77.40289,resolved,GeoNames cities500,1275841,Bhopal,canonical/ascii match
+bhubaneshwar,india,Bhubaneshwar,India,20.27241,85.83385,resolved,GeoNames cities500,1275817,Bhubaneswar,canonical/ascii match
+bhubaneswar,india,Bhubaneswar,India,20.27241,85.83385,resolved,GeoNames cities500,1275817,Bhubaneswar,canonical/ascii match
+bhubneshwar,india,Bhubneshwar,India,20.27241,85.83385,resolved,GeoNames cities500,1275817,Bhubaneswar,canonical/ascii match
+bloomington,united states,Bloomington,United States,44.8408,-93.29828,resolved,GeoNames cities500,5018739,Bloomington,canonical/ascii match
+bogotá,colombia,Bogotá,Colombia,4.60971,-74.08175,resolved,GeoNames cities500,3688689,Bogotá,canonical/ascii match
+bordeaux,france,Bordeaux,France,44.84124,-0.58046,resolved,GeoNames cities500,3031582,Bordeaux,canonical/ascii match
+boston,united states,Boston,United States,42.35843,-71.05977,resolved,GeoNames cities500,4930956,Boston,canonical/ascii match
+boston,united states of america,Boston,United States of America,42.35843,-71.05977,resolved,GeoNames cities500,4930956,Boston,canonical/ascii match
+boston,us,Boston,US,42.35843,-71.05977,resolved,GeoNames cities500,4930956,Boston,canonical/ascii match
+"boston, ma",united states of america,"Boston, MA",United States of America,42.35843,-71.05977,resolved,GeoNames cities500,4930956,Boston,canonical/ascii match constrained to admin1=MA
+boulder,united states,Boulder,United States,40.01499,-105.27055,resolved,GeoNames cities500,5574991,Boulder,canonical/ascii match
+brussels,belgium,Brussels,Belgium,50.85045,4.34878,resolved,GeoNames cities500,2800866,Brussels,canonical/ascii match
+bucharest,romania,Bucharest,Romania,44.43225,26.10626,resolved,GeoNames cities500,683506,Bucharest,canonical/ascii match
+budapest,hungary,Budapest,Hungary,47.49835,19.04045,resolved,GeoNames cities500,3054643,Budapest,canonical/ascii match
+buenos aires,argentina,Buenos Aires,Argentina,-34.61315,-58.37723,resolved,GeoNames cities500,3435910,Buenos Aires,canonical/ascii match
+bukavu,congo (democratic republic),Bukavu,Congo (Democratic Republic),-2.49077,28.84281,resolved,GeoNames cities500,217831,Bukavu,canonical/ascii match
+calgary,canada,Calgary,Canada,51.05011,-114.08529,resolved,GeoNames cities500,5913490,Calgary,canonical/ascii match
+cambridge,united kingdom,Cambridge,United Kingdom,52.2,0.11667,resolved,GeoNames cities500,2653941,Cambridge,canonical/ascii match
+cambridge,united states,Cambridge,United States,42.3751,-71.10561,resolved,GeoNames cities500,4931972,Cambridge,canonical/ascii match
+cambridge,united states of america,Cambridge,United States of America,42.3751,-71.10561,resolved,GeoNames cities500,4931972,Cambridge,canonical/ascii match
+canberra,australia,Canberra,Australia,-35.28346,149.12807,resolved,GeoNames cities500,2172517,Canberra,canonical/ascii match
+cape town,south africa,Cape Town,South Africa,-33.92584,18.42322,resolved,GeoNames cities500,3369157,Cape Town,canonical/ascii match
+casablanca,morocco,Casablanca,Morocco,33.58831,-7.61138,resolved,GeoNames cities500,2553604,Casablanca,canonical/ascii match
+casablanca,morroco,Casablanca,Morroco,33.58831,-7.61138,resolved,GeoNames cities500,2553604,Casablanca,canonical/ascii match
+cdmx,méxico,CDMX,México,19.42847,-99.12766,resolved,GeoNames cities500,3530597,Mexico City,canonical/ascii match
+charkhi dādri,india,Charkhi Dādri,India,28.59166,76.27161,resolved,GeoNames cities500,1274571,Charkhi Dādri,canonical/ascii match
+charlotte,united states of america,Charlotte,United States of America,35.22709,-80.84313,resolved,GeoNames cities500,4460243,Charlotte,canonical/ascii match
+chelmsford,united kingdom,Chelmsford,United Kingdom,51.73575,0.46958,resolved,GeoNames cities500,2653266,Chelmsford,canonical/ascii match
+chemnitz,germany,Chemnitz,Germany,50.8357,12.92922,resolved,GeoNames cities500,2940132,Chemnitz,canonical/ascii match
+chennai,india,Chennai,India,13.08784,80.27847,resolved,GeoNames cities500,1264527,Chennai,canonical/ascii match
+chicago,united states,Chicago,United States,41.85003,-87.65005,resolved,GeoNames cities500,4887398,Chicago,canonical/ascii match
+chicago,united states of america,Chicago,United States of America,41.85003,-87.65005,resolved,GeoNames cities500,4887398,Chicago,canonical/ascii match
+chicago,us,Chicago,US,41.85003,-87.65005,resolved,GeoNames cities500,4887398,Chicago,canonical/ascii match
+claremont,united states,Claremont,United States,34.09668,-117.71978,resolved,GeoNames cities500,5337696,Claremont,canonical/ascii match
+coimbatore,india,Coimbatore,India,11.00555,76.96612,resolved,GeoNames cities500,1273865,Coimbatore,canonical/ascii match
+colombo,sri lanka,Colombo,Sri Lanka,6.93548,79.84868,resolved,GeoNames cities500,1248991,Colombo,canonical/ascii match
+copenhagen,denmark,Copenhagen,Denmark,55.67594,12.56553,resolved,GeoNames cities500,2618425,Copenhagen,canonical/ascii match
+cottbus,germany,Cottbus,Germany,51.75769,14.32888,resolved,GeoNames cities500,2939811,Cottbus,canonical/ascii match
+dallas,united states,Dallas,United States,32.78306,-96.80667,resolved,GeoNames cities500,4684888,Dallas,canonical/ascii match
+dammarie-les-lys,france,Dammarie-les-Lys,France,48.51667,2.65,resolved,GeoNames cities500,3021852,Dammarie-les-Lys,canonical/ascii match
+darmstadt,germany,Darmstadt,Germany,49.87167,8.65027,resolved,GeoNames cities500,2938913,Darmstadt,canonical/ascii match
+deggendorf,germany,Deggendorf,Germany,48.84085,12.96068,resolved,GeoNames cities500,2938540,Deggendorf,canonical/ascii match
+dehra dūn,india,Dehra Dūn,India,30.32443,78.03392,resolved,GeoNames cities500,1273313,Dehradun,unambiguous alternate-name match
+delhi,india,Delhi,India,28.65195,77.23149,resolved,GeoNames cities500,1273294,Delhi,canonical/ascii match
+dera ghazi khan,pakistan,Dera Ghazi Khan,Pakistan,30.04587,70.64029,resolved,GeoNames cities500,1180289,Dera Ghazi Khan,canonical/ascii match
+dhaka,bangladesh,Dhaka,Bangladesh,23.7104,90.40744,resolved,GeoNames cities500,1185241,Dhaka,canonical/ascii match
+diepenbeek,belgium,Diepenbeek,Belgium,50.90769,5.41875,resolved,GeoNames cities500,2799412,Diepenbeek,canonical/ascii match
+doha,qatar,Doha,Qatar,25.28545,51.53096,resolved,GeoNames cities500,290030,Doha,canonical/ascii match
+dortmund,germany,Dortmund,Germany,51.51494,7.466,resolved,GeoNames cities500,2935517,Dortmund,canonical/ascii match
+dresden,germany,Dresden,Germany,51.05089,13.73832,resolved,GeoNames cities500,2935022,Dresden,canonical/ascii match
+dubai,uae,Dubai,UAE,25.07725,55.30927,resolved,GeoNames cities500,292223,Dubai,canonical/ascii match
+dubai,united arab emirates,Dubai,United Arab Emirates,25.07725,55.30927,resolved,GeoNames cities500,292223,Dubai,canonical/ascii match
+dublin,united states of america,Dublin,United States of America,37.70215,-121.93579,resolved,GeoNames cities500,5344157,Dublin,canonical/ascii match
+durham,united states of america,Durham,United States of America,35.99403,-78.89862,resolved,GeoNames cities500,4464368,Durham,canonical/ascii match
+eindhoven,the netherlands,Eindhoven,The Netherlands,51.44083,5.47778,resolved,GeoNames cities500,2756253,Eindhoven,canonical/ascii match
+erlangen,germany,Erlangen,Germany,49.59099,11.00783,resolved,GeoNames cities500,2929567,Erlangen,canonical/ascii match
+erode,india,Erode,India,11.3428,77.72741,resolved,GeoNames cities500,1272013,Erode,canonical/ascii match
+espoo,finland,Espoo,Finland,60.2052,24.6522,resolved,GeoNames cities500,660158,Espoo,canonical/ascii match
+faisalabad,pakistan,Faisalabad,Pakistan,31.41554,73.08969,resolved,GeoNames cities500,1179400,Faisalabad,canonical/ascii match
+fes,mroco,fes,mroco,34.03313,-5.00028,resolved,GeoNames cities500,2548885,Fes,canonical/ascii match
+fezna,morocco,Fezna,Morocco,31.52921,-4.45562,resolved,GeoNames cities500,2548869,Fezna,canonical/ascii match
+fremont,united states,Fremont,United States,37.54827,-121.98857,resolved,GeoNames cities500,5350734,Fremont,canonical/ascii match
+fremont,united states of america,Fremont,United States of America,37.54827,-121.98857,resolved,GeoNames cities500,5350734,Fremont,canonical/ascii match
+gadag-betageri,india,Gadag-Betageri,India,15.4167,75.6167,resolved,GeoNames cities500,8740017,Gadag-Betageri,canonical/ascii match
+gainesville,united states,Gainesville,United States,29.65163,-82.32483,resolved,GeoNames cities500,4156404,Gainesville,canonical/ascii match
+gaithersburg,united states,Gaithersburg,United States,39.14344,-77.20137,resolved,GeoNames cities500,4355843,Gaithersburg,canonical/ascii match
+gent,belgium,Gent,Belgium,51.05,3.71667,resolved,GeoNames cities500,2797656,Gent,canonical/ascii match
+ghaziabad,india,Ghaziabad,India,28.66535,77.43915,resolved,GeoNames cities500,1271308,Ghāziābād,canonical/ascii match
+giessen,germany,Giessen,Germany,50.58727,8.67554,resolved,GeoNames cities500,2920512,Gießen,canonical/ascii match
+gif-sur-yvette,france,Gif-sur-Yvette,France,48.68333,2.13333,resolved,GeoNames cities500,3016078,Gif-sur-Yvette,canonical/ascii match
+giza,egypt,Giza,Egypt,30.00944,31.20861,resolved,GeoNames cities500,360995,Giza,canonical/ascii match
+"granville, oh",united states of america,"Granville, OH",United States of America,40.06812,-82.5196,resolved,GeoNames cities500,5156270,Granville,canonical/ascii match constrained to admin1=OH
+guanajuato,mexico,Guanajuato,Mexico,21.01858,-101.2591,resolved,GeoNames cities500,4005270,Guanajuato,canonical/ascii match
+gujranwala,pakistan,Gujranwala,Pakistan,32.15567,74.18705,resolved,GeoNames cities500,1177662,Gujranwala,canonical/ascii match
+guttenberg,united states of america,Guttenberg,United States of America,40.79205,-74.00375,resolved,GeoNames cities500,5098698,Guttenberg,canonical/ascii match
+gwalior,india,Gwalior,India,26.22983,78.17337,resolved,GeoNames cities500,1270583,Gwalior,canonical/ascii match
+hagen,germany,Hagen,Germany,51.36081,7.47168,resolved,GeoNames cities500,2912621,Hagen,canonical/ascii match
+hamburg,germany,Hamburg,Germany,53.55073,9.99302,resolved,GeoNames cities500,2911298,Hamburg,canonical/ascii match
+hamilton,canada,Hamilton,Canada,43.25011,-79.84963,resolved,GeoNames cities500,5969782,Hamilton,canonical/ascii match
+haripur,pakistan,Haripur,Pakistan,33.99783,72.93493,resolved,GeoNames cities500,1177107,Haripur,canonical/ascii match
+haroonabad,pakistan,Haroonabad,Pakistan,29.61206,73.13802,resolved,GeoNames cities500,1177073,Harunabad,canonical/ascii match
+heilbronn,germany,Heilbronn,Germany,49.13995,9.22054,resolved,GeoNames cities500,2907669,Heilbronn,canonical/ascii match
+"hillsborough, new jersey",united states of america,"Hillsborough, New Jersey",United States of America,40.4776,-74.62682,resolved,GeoNames cities500,5099079,Hillsborough,canonical/ascii match constrained to admin1=NJ
+houston,united states of america,Houston,United States of America,29.76328,-95.36327,resolved,GeoNames cities500,4699066,Houston,canonical/ascii match
+houthulst,belgium,Houthulst,Belgium,50.97824,2.9505,resolved,GeoNames cities500,2795255,Houthulst,canonical/ascii match
+hyderabad,india,HYDERABAD,India,17.38405,78.45636,resolved,GeoNames cities500,1269843,Hyderabad,canonical/ascii match
+hyderabad,pakistan,Hyderabad,Pakistan,25.39689,68.37718,resolved,GeoNames cities500,1176734,Hyderabad,canonical/ascii match
+ibadan,nigeria,Ibadan,Nigeria,7.37756,3.90591,resolved,GeoNames cities500,2339354,Ibadan,canonical/ascii match
+ikorodu,nigeria,Ikorodu,Nigeria,6.61526,3.5069,resolved,GeoNames cities500,2338229,Ikorodu,canonical/ascii match
+islamabad,pakistan,Islamabad,Pakistan,33.72148,73.04329,resolved,GeoNames cities500,1176615,Islamabad,canonical/ascii match
+isolo,nigeria,Isolo,Nigeria,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+ithaca,united states,Ithaca,United States,42.44063,-76.49661,resolved,GeoNames cities500,5122432,Ithaca,canonical/ascii match
+ithaca,united states of america,Ithaca,United States of America,42.44063,-76.49661,resolved,GeoNames cities500,5122432,Ithaca,canonical/ascii match
+jaipur rajasthan,india,Jaipur rajasthan,India,26.91962,75.78781,resolved,GeoNames cities500,1269515,Jaipur,canonical/ascii match
+jakarta,indonesia,Jakarta,Indonesia,-6.21462,106.84513,resolved,GeoNames cities500,1642911,Jakarta,canonical/ascii match
+jeddah,saudi arabia,Jeddah,Saudi Arabia,21.49012,39.18624,resolved,GeoNames cities500,105343,Jeddah,canonical/ascii match
+jersey city,united states,Jersey City,United States,40.72816,-74.07764,resolved,GeoNames cities500,5099836,Jersey City,canonical/ascii match
+johannesburg,south africa,johannesburg,South Africa,-26.20227,28.04363,resolved,GeoNames cities500,993800,Johannesburg,canonical/ascii match
+johnston,united states,Johnston,United States,41.82186,-71.50675,resolved,GeoNames cities500,8604682,Johnston,canonical/ascii match
+kabul,afghanistan,Kabul,Afghanistan,34.52813,69.17233,resolved,GeoNames cities500,1138958,Kabul,canonical/ascii match
+kandy,sri lanka,Kandy,Sri Lanka,7.2906,80.6336,resolved,GeoNames cities500,1241622,Kandy,canonical/ascii match
+kanifing,gambia,Kanifing,Gambia,13.44639,-16.67444,resolved,GeoNames cities500,2413106,Kanifing,canonical/ascii match
+kano,nigeria,Kano,Nigeria,12.00012,8.51672,resolved,GeoNames cities500,2335204,Kano,canonical/ascii match
+karachi,pakistan,Karachi,Pakistan,24.8608,67.0104,resolved,GeoNames cities500,1174872,Karachi,canonical/ascii match
+"karachi, pakistan.",pakistan,"Karachi, Pakistan.",Pakistan,24.8608,67.0104,resolved,GeoNames cities500,1174872,Karachi,canonical/ascii match
+karlsruhe,germany,Karlsruhe,Germany,49.00937,8.40444,resolved,GeoNames cities500,2892794,Karlsruhe,canonical/ascii match
+kathmandu,nepal,Kathmandu,Nepal,27.70169,85.3206,resolved,GeoNames cities500,1283240,Kathmandu,canonical/ascii match
+kelowna,canada,KELOWNA,Canada,49.88307,-119.48568,resolved,GeoNames cities500,5990579,Kelowna,canonical/ascii match
+kenitra,morocco,Kenitra,Morocco,34.26101,-6.5802,resolved,GeoNames cities500,2544571,Kenitra,canonical/ascii match
+khartoum,sudan,khartoum,sudan,15.55177,32.53241,resolved,GeoNames cities500,379252,Khartoum,canonical/ascii match
+khouribga,morocco,Khouribga,Morocco,32.88108,-6.9063,resolved,GeoNames cities500,2544248,Khouribga,canonical/ascii match
+kigali,rwanda,Kigali,Rwanda,-1.94995,30.05885,resolved,GeoNames cities500,202061,Kigali,canonical/ascii match
+kolhāpur,india,Kolhāpur,India,16.69563,74.23167,resolved,GeoNames cities500,1266285,Kolhāpur,canonical/ascii match
+kolkata,india,kolkata,india,22.56263,88.36304,resolved,GeoNames cities500,1275004,Kolkata,canonical/ascii match
+kongens lyngby,denmark,Kongens Lyngby,Denmark,55.77044,12.50378,resolved,GeoNames cities500,2618468,Kongens Lyngby,canonical/ascii match
+krefeld,germany,Krefeld,Germany,51.33645,6.55381,resolved,GeoNames cities500,2884509,Krefeld,canonical/ascii match
+kyiv,ukraine,Kyiv,Ukraine,50.45466,30.5238,resolved,GeoNames cities500,703448,Kyiv,canonical/ascii match
+köln,germany,Köln,Germany,50.93333,6.95,resolved,GeoNames cities500,2886242,Köln,canonical/ascii match
+lagos,nigeria,Lagos,Nigeria,6.45407,3.39467,resolved,GeoNames cities500,2332459,Lagos,canonical/ascii match
+lagos state,nigeria,Lagos State,Nigeria,6.45407,3.39467,resolved,GeoNames cities500,2332459,Lagos,canonical/ascii match
+lahore,pakistan,Lahore,Pakistan,31.558,74.35071,resolved,GeoNames cities500,1172451,Lahore,canonical/ascii match
+lancaster,uk,Lancaster,UK,54.04649,-2.79988,resolved,GeoNames cities500,2644972,Lancaster,canonical/ascii match
+laurel,united states of america,Laurel,United States of America,39.09928,-76.84831,resolved,GeoNames cities500,4360369,Laurel,canonical/ascii match
+leeds,united kingdom,Leeds,United Kingdom,53.79648,-1.54785,resolved,GeoNames cities500,2644688,Leeds,canonical/ascii match
+leipzig,germany,Leipzig,Germany,51.33962,12.37129,resolved,GeoNames cities500,2879139,Leipzig,canonical/ascii match
+leuven,belgium,Leuven,Belgium,50.87959,4.70093,resolved,GeoNames cities500,2792482,Leuven,canonical/ascii match
+lima,peru,Lima,Peru,-12.04318,-77.02824,resolved,GeoNames cities500,3936456,Lima,canonical/ascii match
+linz,austria,Linz,Austria,48.30639,14.28611,resolved,GeoNames cities500,2772400,Linz,canonical/ascii match
+liverpool,united kingdom,Liverpool,United Kingdom,53.41058,-2.97794,resolved,GeoNames cities500,2644210,Liverpool,canonical/ascii match
+london,england,London,England,51.50853,-0.12574,resolved,GeoNames cities500,2643743,London,canonical/ascii match
+london,united kingdom,London,United Kingdom,51.50853,-0.12574,resolved,GeoNames cities500,2643743,London,canonical/ascii match
+los angeles,united states,Los Angeles,United States,34.05223,-118.24368,resolved,GeoNames cities500,5368361,Los Angeles,canonical/ascii match
+los angeles,united states of america,Los Angeles,United States of America,34.05223,-118.24368,resolved,GeoNames cities500,5368361,Los Angeles,canonical/ascii match
+los angeles,usa,Los Angeles,USA,34.05223,-118.24368,resolved,GeoNames cities500,5368361,Los Angeles,canonical/ascii match
+lucknow,india,Lucknow,India,26.83928,80.92313,resolved,GeoNames cities500,1264733,Lucknow,canonical/ascii match
+lviv,ukraine,Lviv,Ukraine,49.83826,24.02324,resolved,GeoNames cities500,702550,Lviv,canonical/ascii match
+lyon,france,Lyon,France,45.74906,4.84789,resolved,GeoNames cities500,2996944,Lyon,canonical/ascii match
+madrid,spain,Madrid,Spain,40.4165,-3.70256,resolved,GeoNames cities500,3117735,Madrid,canonical/ascii match
+mainz,germany,Mainz,Germany,49.98185,8.28008,resolved,GeoNames cities500,2874225,Mainz,canonical/ascii match
+manchester,united kingdom,Manchester,United Kingdom,53.48095,-2.23743,resolved,GeoNames cities500,2643123,Manchester,canonical/ascii match
+mansehra,pakistan,Mansehra,Pakistan,34.33023,73.19679,resolved,GeoNames cities500,1170951,Mansehra,canonical/ascii match
+mardan,pakistan,Mardan,Pakistan,34.19794,72.04965,resolved,GeoNames cities500,1170880,Mardan,canonical/ascii match
+"mardan, khyber pakhtunkhwa, pakistan",pakistan,"Mardan, Khyber Pakhtunkhwa, Pakistan",Pakistan,34.19794,72.04965,resolved,GeoNames cities500,1170880,Mardan,canonical/ascii match
+mathura,india,Mathura,India,27.5035,77.67215,resolved,GeoNames cities500,1263364,Mathura,canonical/ascii match
+maurepas,france,Maurepas,France,48.76486,1.92923,resolved,GeoNames cities500,2995041,Maurepas,canonical/ascii match
+mckinney,united states,McKinney,United States,33.19762,-96.61527,resolved,GeoNames cities500,4710178,McKinney,canonical/ascii match
+meknes,morocco,meknes,morocco,33.89352,-5.54727,resolved,GeoNames cities500,2542715,Meknes,canonical/ascii match
+merida,mexico,Merida,Mexico,20.967,-89.62318,resolved,GeoNames cities500,3523349,Mérida,canonical/ascii match
+methuen,united kingdom,Methuen,United Kingdom,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+metuchen,united states,Metuchen,United States,40.54316,-74.3632,resolved,GeoNames cities500,5101125,Metuchen,canonical/ascii match
+mexico city,mexico,Mexico City,Mexico,19.42847,-99.12766,resolved,GeoNames cities500,3530597,Mexico City,canonical/ascii match
+milan,italy,Milan,Italy,45.46427,9.18951,resolved,GeoNames cities500,3173435,Milan,canonical/ascii match
+minneapolis,united states,Minneapolis,United States,44.97997,-93.26384,resolved,GeoNames cities500,5037649,Minneapolis,canonical/ascii match
+mirpur khas,pakistan,Mirpur Khas,Pakistan,25.5276,69.01255,resolved,GeoNames cities500,1170295,Mirpur Khas,canonical/ascii match
+monterrey,mexico,Monterrey,Mexico,25.68435,-100.31721,resolved,GeoNames cities500,3995465,Monterrey,canonical/ascii match
+monterrey,méxico,Monterrey,México,25.68435,-100.31721,resolved,GeoNames cities500,3995465,Monterrey,canonical/ascii match
+montreuil-aux-lions,canada,Montreuil-aux-Lions,Canada,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+montréal,canada,Montréal,Canada,45.50884,-73.58781,resolved,GeoNames cities500,6077243,Montréal,canonical/ascii match
+multan,pakistan,Multan,Pakistan,30.19679,71.47824,resolved,GeoNames cities500,1169825,Multan,canonical/ascii match
+mumbai,india,Mumbai,India,19.07283,72.88261,resolved,GeoNames cities500,1275339,Mumbai,canonical/ascii match
+munich,germany,Munich,Germany,48.13743,11.57549,resolved,GeoNames cities500,2867714,Munich,canonical/ascii match
+muscat,oman,Muscat,Oman,23.58413,58.40778,resolved,GeoNames cities500,287286,Muscat,canonical/ascii match
+muzaffargarh,pakistan,Muzaffargarh,Pakistan,30.07258,71.19379,resolved,GeoNames cities500,1169605,Muzaffargarh,canonical/ascii match
+muzaffarpur,india,Muzaffarpur,India,26.12259,85.39055,resolved,GeoNames cities500,1262330,Muzaffarpur,canonical/ascii match
+münster,germany,Münster,Germany,51.96236,7.62571,resolved,GeoNames cities500,2867543,Münster,canonical/ascii match
+nairobi,kenya,nairobi,Kenya,-1.28333,36.81667,resolved,GeoNames cities500,184745,Nairobi,canonical/ascii match
+nakuru,kenya,Nakuru,Kenya,-0.30719,36.07225,resolved,GeoNames cities500,184622,Nakuru,canonical/ascii match
+nancy,france,Nancy,France,48.68439,6.18496,resolved,GeoNames cities500,2990999,Nancy,canonical/ascii match
+nashik,india,Nashik,India,19.99727,73.79096,resolved,GeoNames cities500,1261731,Nashik,canonical/ascii match
+"naushahro feroze, sindh, pakistan",pakistan,"Naushahro Feroze, Sindh, Pakistan",Pakistan,26.8401,68.12265,resolved,GeoNames cities500,1169143,Naushahro Firoz,canonical/ascii match
+navi mumbai,india,Navi Mumbai,India,19.03681,73.01582,resolved,GeoNames cities500,6619347,Navi Mumbai,canonical/ascii match
+new cairo,egypt,New Cairo,Egypt,30.03,31.47,resolved,GeoNames cities500,7799991,New Cairo,canonical/ascii match
+new delhi,india,New Delhi,India,28.62137,77.2148,resolved,GeoNames cities500,1261481,New Delhi,canonical/ascii match
+"new delhi, delhi",india,"New Delhi, Delhi",India,28.62137,77.2148,resolved,GeoNames cities500,1261481,New Delhi,canonical/ascii match
+new haven,united states,New Haven,United States,41.30815,-72.92816,resolved,GeoNames cities500,4839366,New Haven,canonical/ascii match
+new york,united states,New York,United States,40.71427,-74.00597,resolved,GeoNames cities500,5128581,New York City,canonical/ascii match
+new york,united states of america,New York,United States of America,40.71427,-74.00597,resolved,GeoNames cities500,5128581,New York City,canonical/ascii match
+new york city,india,New York City,India,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+new york city,united states,New York City,United States,40.71427,-74.00597,resolved,GeoNames cities500,5128581,New York City,canonical/ascii match
+new york city,united states of america,New York City,United States of America,40.71427,-74.00597,resolved,GeoNames cities500,5128581,New York City,canonical/ascii match
+newburyport,united states,Newburyport,United States,42.81259,-70.87728,resolved,GeoNames cities500,4945256,Newburyport,canonical/ascii match
+newport,ireland,Newport,Ireland,52.71111,-8.40972,resolved,GeoNames cities500,2962257,Newport,canonical/ascii match
+niamey,niger,Niamey,Niger,13.51366,2.1098,resolved,GeoNames cities500,2440485,Niamey,canonical/ascii match
+noida,india,Noida,India,28.58,77.33,resolved,GeoNames cities500,7279746,Noida,canonical/ascii match
+nokesville,usa,Nokesville,USA,38.69873,-77.57971,resolved,GeoNames cities500,4776181,Nokesville,canonical/ascii match
+nufringen,germany,Nufringen,Germany,48.62253,8.89009,resolved,GeoNames cities500,2861690,Nufringen,canonical/ascii match
+nussloch,germany,Nußloch,Germany,49.32389,8.69556,resolved,GeoNames cities500,2861579,Nußloch,canonical/ascii match
+nürnberg,germany,Nürnberg,Germany,49.45421,11.07752,resolved,GeoNames cities500,2861650,Nuremberg,unambiguous alternate-name match
+oakland,united states of america,Oakland,United States of America,37.80437,-122.2708,resolved,GeoNames cities500,5378538,Oakland,canonical/ascii match
+orlando,united states,Orlando,United States,28.53834,-81.37924,resolved,GeoNames cities500,4167147,Orlando,canonical/ascii match
+oyo,nigeria,Oyo,Nigeria,7.85367,3.93235,resolved,GeoNames cities500,2325200,Oyo,canonical/ascii match
+paderborn,germany,Paderborn,Germany,51.71905,8.75439,resolved,GeoNames cities500,2855745,Paderborn,canonical/ascii match
+palo alto,united states,Palo Alto,United States,37.44188,-122.14302,resolved,GeoNames cities500,5380748,Palo Alto,canonical/ascii match
+paphos,cyprus,Paphos,Cyprus,34.77679,32.42451,resolved,GeoNames cities500,146214,Paphos,canonical/ascii match
+paris,france,Paris,France,48.85341,2.3488,resolved,GeoNames cities500,2988507,Paris,canonical/ascii match
+parker,united states,Parker,United States,39.5186,-104.76136,resolved,GeoNames cities500,5434006,Parker,canonical/ascii match
+peshawar,pakistan,Peshawar,Pakistan,34.008,71.57849,resolved,GeoNames cities500,1168197,Peshawar,canonical/ascii match
+philadelphia,united states,Philadelphia,United States,39.95238,-75.16362,resolved,GeoNames cities500,4560349,Philadelphia,canonical/ascii match
+philadelphia,united states of america,Philadelphia,United States of America,39.95238,-75.16362,resolved,GeoNames cities500,4560349,Philadelphia,canonical/ascii match
+powell,united states of america,Powell,United States of America,40.15784,-83.07519,resolved,GeoNames cities500,5167350,Powell,canonical/ascii match
+prato,italy,Prato,Italy,43.8805,11.09699,resolved,GeoNames cities500,3169921,Prato,canonical/ascii match
+prayagraj,india,Prayagraj,India,25.44478,81.84322,resolved,GeoNames cities500,1278994,Prayagraj,canonical/ascii match
+pucheng,malaysia,Pucheng,Malaysia,3.0,101.61667,resolved,GeoNames cities500,1749822,Puchong,canonical/ascii match
+puebla,mexico,Puebla,Mexico,19.04778,-98.20723,resolved,GeoNames cities500,3521081,Puebla,canonical/ascii match
+pune,india,Pune,India,18.51957,73.85535,resolved,GeoNames cities500,1259229,Pune,canonical/ascii match
+quillacollo,bolivia,QUILLACOLLO,Bolivia,-17.39228,-66.27838,resolved,GeoNames cities500,3906791,Quillacollo,canonical/ascii match
+quincy,united states,Quincy,United States,42.25288,-71.00227,resolved,GeoNames cities500,4948247,Quincy,canonical/ascii match
+rabat,morocco,Rabat,Morocco,34.01325,-6.83255,resolved,GeoNames cities500,2538475,Rabat,canonical/ascii match
+"rabat, rabat-salé-kénitra",maroc,"Rabat, Rabat-Salé-Kénitra",Maroc,34.01325,-6.83255,resolved,GeoNames cities500,2538475,Rabat,canonical/ascii match
+rades,tunisia,rades,Tunisia,36.76946,10.27468,resolved,GeoNames cities500,2467815,Radès,canonical/ascii match
+rajam,india,Rajam,India,18.44909,83.65957,resolved,GeoNames cities500,1258270,Rāzām,unambiguous alternate-name match
+ranchi,india,Ranchi,India,23.34316,85.3094,resolved,GeoNames cities500,1258526,Ranchi,canonical/ascii match
+rawalpindi,pakistan,Rawalpindi,Pakistan,33.59733,73.0479,resolved,GeoNames cities500,1166993,Rawalpindi,canonical/ascii match
+rennes,france,Rennes,France,48.11109,-1.67431,resolved,GeoNames cities500,2983990,Rennes,canonical/ascii match
+renton,united states,Renton,United States,47.48288,-122.21707,resolved,GeoNames cities500,5808189,Renton,canonical/ascii match
+richmond,united states,Richmond,United States,37.55376,-77.46026,resolved,GeoNames cities500,4781708,Richmond,canonical/ascii match
+rochester,united states,Rochester,United States,43.15478,-77.61556,resolved,GeoNames cities500,5134086,Rochester,canonical/ascii match
+saint cloud,united states,Saint Cloud,United States,45.5608,-94.16249,resolved,GeoNames cities500,5044407,Saint Cloud,canonical/ascii match
+saint paul,united states of america,SAINT PAUL,United States of America,44.94441,-93.09327,resolved,GeoNames cities500,5045360,Saint Paul,canonical/ascii match
+saint petersburg,russia,Saint Petersburg,Russia,59.93863,30.31413,resolved,GeoNames cities500,498817,Saint Petersburg,canonical/ascii match
+san francisco,albania,San Francisco,Albania,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+san francisco,united states,San Francisco,United States,37.77493,-122.41942,resolved,GeoNames cities500,5391959,San Francisco,canonical/ascii match
+san francisco,united states of america,San Francisco,United States of America,37.77493,-122.41942,resolved,GeoNames cities500,5391959,San Francisco,canonical/ascii match
+san francisco,us,San Francisco,US,37.77493,-122.41942,resolved,GeoNames cities500,5391959,San Francisco,canonical/ascii match
+san francisco,usa,San Francisco,USA,37.77493,-122.41942,resolved,GeoNames cities500,5391959,San Francisco,canonical/ascii match
+san jose,united states,San Jose,United States,37.33939,-121.89496,resolved,GeoNames cities500,5392171,San Jose,canonical/ascii match
+san jose,united states of america,San Jose,United States of America,37.33939,-121.89496,resolved,GeoNames cities500,5392171,San Jose,canonical/ascii match
+san mateo,united states,San Mateo,United States,37.56299,-122.32553,resolved,GeoNames cities500,5392423,San Mateo,canonical/ascii match
+san ramon,united states,San Ramon,United States,37.77993,-121.97802,resolved,GeoNames cities500,5392593,San Ramon,canonical/ascii match
+santa clara,united states,Santa Clara,United States,37.35411,-121.95524,resolved,GeoNames cities500,5393015,Santa Clara,canonical/ascii match
+santa cruz,united states,Santa Cruz,United States,36.97412,-122.0308,resolved,GeoNames cities500,5393052,Santa Cruz,canonical/ascii match
+schmalkalden,germany,Schmalkalden,Germany,50.72136,10.44386,resolved,GeoNames cities500,2838059,Schmalkalden,canonical/ascii match
+seattle,united states,Seattle,United States,47.60621,-122.33207,resolved,GeoNames cities500,5809844,Seattle,canonical/ascii match
+seoul,south korea,Seoul,South Korea,37.566,126.9784,resolved,GeoNames cities500,1835848,Seoul,canonical/ascii match
+settat,morocco,settat,morocco,33.00103,-7.61662,resolved,GeoNames cities500,2537406,Settat,canonical/ascii match
+sfax,tunisia,Sfax,Tunisia,34.74056,10.76028,resolved,GeoNames cities500,2467454,Sfax,canonical/ascii match
+sharjah,united arab emirates,Sharjah,United Arab Emirates,25.3342,55.41221,resolved,GeoNames cities500,292672,Sharjah,canonical/ascii match
+sheikhupura,pakistan,Sheikhupura,Pakistan,31.71287,73.98556,resolved,GeoNames cities500,1165221,Shekhupura,unambiguous alternate-name match
+sialkot,pakistan,Sialkot,Pakistan,32.49268,74.53134,resolved,GeoNames cities500,1164909,Sialkot,canonical/ascii match
+singapore,singapore,Singapore,Singapore,1.28967,103.85007,resolved,GeoNames cities500,1880252,Singapore,canonical/ascii match
+stanford,germany,Stanford,Germany,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+stanford,united states,Stanford,United States,37.42411,-122.16608,resolved,GeoNames cities500,5398563,Stanford,canonical/ascii match
+state of mexico,mexico,State of Mexico,Mexico,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+stockholm,sweden,Stockholm,Sweden,59.32938,18.06871,resolved,GeoNames cities500,2673730,Stockholm,canonical/ascii match
+stuttgart,germany,Stuttgart,Germany,48.78232,9.17702,resolved,GeoNames cities500,2825297,Stuttgart,canonical/ascii match
+sunnyvale,united states,Sunnyvale,United States,37.36883,-122.03635,resolved,GeoNames cities500,5400075,Sunnyvale,canonical/ascii match
+sunnyvale,united states of america,Sunnyvale,United States of America,37.36883,-122.03635,resolved,GeoNames cities500,5400075,Sunnyvale,canonical/ascii match
+sydney,australia,Sydney,Australia,-33.86785,151.20732,resolved,GeoNames cities500,2147714,Sydney,canonical/ascii match
+são paulo - capital,brazil,São Paulo - Capital,Brazil,-23.5475,-46.63611,resolved,GeoNames cities500,3448439,São Paulo,canonical/ascii match
+talence,france,Talence,France,44.80849,-0.58915,resolved,GeoNames cities500,2973495,Talence,canonical/ascii match
+tamboerskloof,south africa,Tamboerskloof,South Africa,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+taroudant,maroc,TAROUDANT,Maroc,30.47028,-8.87695,resolved,GeoNames cities500,2529649,Taroudant,canonical/ascii match
+texas city,united states,Texas City,United States,29.38385,-94.9027,resolved,GeoNames cities500,4736134,Texas City,canonical/ascii match
+tirschenreuth,germany,Tirschenreuth,Germany,49.88263,12.33112,resolved,GeoNames cities500,2822100,Tirschenreuth,canonical/ascii match
+topi,pakistan,Topi,Pakistan,34.07034,72.62147,resolved,GeoNames cities500,1163224,Topi,canonical/ascii match
+toronto,canada,Toronto,Canada,43.70643,-79.39864,resolved,GeoNames cities500,6167865,Toronto,canonical/ascii match
+toulouse,france,Toulouse,France,43.60426,1.44367,resolved,GeoNames cities500,2972315,Toulouse,canonical/ascii match
+tunis,tunisia,Tunis,Tunisia,36.81897,10.16579,resolved,GeoNames cities500,2464470,Tunis,canonical/ascii match
+tétouan,morocco,Tétouan,Morocco,35.57845,-5.36837,resolved,GeoNames cities500,2528910,Tétouan,canonical/ascii match
+vanadzor,armenia,Vanadzor,Armenia,40.8074,44.49704,resolved,GeoNames cities500,616530,Vanadzor,canonical/ascii match
+vancouver,canada,Vancouver,Canada,49.24966,-123.11934,resolved,GeoNames cities500,6173331,Vancouver,canonical/ascii match
+vienna,australia,Vienna,Australia,,,unresolved,GeoNames cities500,,,No exact city/country match; review required
+vienna,austria,Vienna,Austria,48.20849,16.37208,resolved,GeoNames cities500,2761369,Vienna,canonical/ascii match
+vijayawada,india,Vijayawada,India,16.50745,80.6466,resolved,GeoNames cities500,1253184,Vijayawada,canonical/ascii match
+virudunagar,india,Virudunagar,India,9.58509,77.95787,resolved,GeoNames cities500,1253113,Virudunagar,canonical/ascii match
+visakhapatnam,india,Visakhapatnam,India,17.68009,83.20161,resolved,GeoNames cities500,1253102,Visakhapatnam,canonical/ascii match
+watford,united kingdom,Watford,United Kingdom,51.65531,-0.39602,resolved,GeoNames cities500,2634677,Watford,canonical/ascii match
+white plains,united states,White Plains,United States,41.03399,-73.76291,resolved,GeoNames cities500,5144336,White Plains,canonical/ascii match
+wollongong,australia,Wollongong,Australia,-34.424,150.89345,resolved,GeoNames cities500,2171507,Wollongong,canonical/ascii match
+würzburg,germany,Würzburg,Germany,49.79391,9.95121,resolved,GeoNames cities500,2805615,Würzburg,canonical/ascii match
+yaba,nigeria,Yaba,Nigeria,6.45407,3.39467,resolved,GeoNames cities500,2332459,Lagos,canonical/ascii match
+yerevan,armenia,Yerevan,Armenia,40.17765,44.5126,resolved,GeoNames cities500,616052,Yerevan,canonical/ascii match
+zaria,nigeria,Zaria,Nigeria,11.11128,7.7227,resolved,GeoNames cities500,2317765,Zaria,canonical/ascii match
+zarqa,jordan,Zarqa,Jordan,32.07275,36.08796,resolved,GeoNames cities500,250090,Zarqa,canonical/ascii match
+zurich,switzerland,Zurich,Switzerland,47.36667,8.55,resolved,GeoNames cities500,2657896,Zürich,unambiguous alternate-name match
+zürich,switzerland,Zürich,Switzerland,47.36667,8.55,resolved,GeoNames cities500,2657896,Zürich,canonical/ascii match
+zürich (kreis 6),switzerland,Zürich (Kreis 6),Switzerland,47.39223,8.54381,resolved,GeoNames cities500,6295550,Zürich (Kreis 6),canonical/ascii match
