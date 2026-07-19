@@ -23,7 +23,15 @@
     "tidegrid/evaluation/tidegrid_market.md": "27a8b5b2b6554c15b90282370f7d365f4d5f75831b92987b54b448dd7da20f94",
     "tidegrid/extracted/company-facts.json": "6a1ce354f3888308d3997aba23746ee00552d5543bb3e21ecd708050eb194898",
     "tidegrid/extracted/document-index.json": "79df203df71cd0a6e8f9a0137fe385df87a3b324295ea70e03e7c1adc02388ff",
-    "tidegrid/metadata.json": "c73f2edd2db86d21649780e5a7981468a98025af3aad1feb290e2cd04a31ccde"
+    "tidegrid/metadata.json": "c73f2edd2db86d21649780e5a7981468a98025af3aad1feb290e2cd04a31ccde",
+    "walletprofun/evaluation/walletprofun_financial.md": "a2c5528d987d6305544643d64c96ecd0750381f4abc62cfaac1c64bf01cd462f",
+    "walletprofun/evaluation/walletprofun_home.md": "af1660f249728814368b5db7429151cced8e8d704173830c898babe4608dcd3d",
+    "walletprofun/evaluation/walletprofun_idea.md": "cdace4bc6806e96817ae61e8d332b97ba81718c63afd074b21e1c8600f036a21",
+    "walletprofun/evaluation/walletprofun_management.md": "5d1e926c44f5388cb4b04e7402d9398db5ac2d7efaecdd0c2a68f64e0b6ccb2a",
+    "walletprofun/evaluation/walletprofun_market.md": "2f232080f87e3f33426a5fbf6d582d07801e592f802fb9ec3fb6e34ed9b6b925",
+    "walletprofun/extracted/company-facts.json": "811f255071363058debfeae957e78fcf834a7a0ebe3e7b5eb2c819583d8d8f25",
+    "walletprofun/extracted/document-index.json": "b512d27218212e2ece0fd3ced1204e520272f77d8f188e914a8644b6dc1173b5",
+    "walletprofun/metadata.json": "6bf882efa00cc4fc76ceb62a31f0e723bd9a6c1e7bd429d934815c61e4bb7a37"
   },
   "generator": "v1"
 }

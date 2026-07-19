@@ -1,0 +1,48 @@
+{
+  "category_scores": {
+    "financial": 82,
+    "home": null,
+    "idea": 83,
+    "management": 85,
+    "market": 80
+  },
+  "company_id": "22222222-2222-4222-8222-222222222222",
+  "created_at": "2026-07-19T12:00:00Z",
+  "display_name": "WalletProFun",
+  "investment": {
+    "amount": 100000,
+    "currency": "EUR",
+    "equityPercentage": 1,
+    "impliedValuation": 10000000,
+    "postMoneyValuation": 10000000,
+    "preMoneyValuation": 9900000,
+    "useOfFunds": [
+      "robot fleet validation",
+      "industrial software integrations",
+      "enterprise sales"
+    ]
+  },
+  "overall_score": 83,
+  "registry_version": 1,
+  "schema_version": 1,
+  "slug": "walletprofun",
+  "source_documents": [
+    {
+      "id": "doc_22222222-2222-4222-8222-222222222222",
+      "media_type": "application/pdf",
+      "original_name": "fictional-pitch.pdf",
+      "role": "pitch_deck",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 0,
+      "stored_name": "fixture-facts.json",
+      "uploaded_at": "2026-07-19T12:00:00Z"
+    }
+  ],
+  "stage": "Seed",
+  "state": "ready",
+  "submission": {
+    "founder_email": "akshat.tandon@example.invalid",
+    "founder_name": "Akshat Tandon"
+  },
+  "validation_errors": []
+}
