@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -14,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "apps" / "api"))
 
 from src.core.markdown import EvidenceReference, EvaluationDocument, EvaluationItem
+from src.core.integrity import fixture_sha256
 from src.core.registry import CATEGORIES, entries_for_category
 from src.core.scoring import PORTFOLIO_UNAVAILABLE_IDS, category_scores, overall_score
 from src.core.storage import CompanyRef, atomic_write_json, write_evaluation_set
@@ -200,7 +200,7 @@ def generate(destination: Path, facts_path: Path) -> dict[str, str]:
         atomic_write_json(reference, "extracted/document-index.json", {"documents": [{"id": facts["documentId"], "kind": "pitch_deck"}]})
         atomic_write_json(reference, "metadata.json", _metadata(facts, documents))
         for path in sorted(company_root.rglob("*")):
-            if path.is_file(): hashes[str(path.relative_to(destination))] = hashlib.sha256(path.read_bytes()).hexdigest()
+            if path.is_file(): hashes[str(path.relative_to(destination))] = fixture_sha256(path)
     manifest = {"generator": "v1", "files": dict(sorted(hashes.items()))}
     (destination / "manifest.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return hashes

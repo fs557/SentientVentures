@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import math
 from pathlib import Path
@@ -13,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "apps" / "api"))
 
 from src.core.markdown import parse_evaluation_document
+from src.core.integrity import fixture_sha256
 from src.core.registry import CATEGORIES
 from src.core.scoring import category_scores, overall_score
 
@@ -50,7 +50,7 @@ def validate(root: Path) -> list[str]:
         try:
             expected_hashes = json.loads(manifest_path.read_text(encoding="utf-8"))["files"]
             actual_hashes = {
-                str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
+                str(path.relative_to(root)): fixture_sha256(path)
                 for company in company_roots for path in company.rglob("*") if path.is_file()
             }
             if expected_hashes != dict(sorted(actual_hashes.items())):

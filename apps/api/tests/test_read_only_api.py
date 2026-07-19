@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import asyncio
-import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -13,6 +12,7 @@ from jsonschema import Draft202012Validator, FormatChecker, RefResolver
 import pytest
 
 from src.main import create_app
+from src.core.integrity import fixture_sha256
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -46,7 +46,7 @@ def _request(app: FastAPI, path: str, *, params: dict[str, int] | None = None) -
 
 def _refresh_manifest(root: Path) -> None:
     files = {
-        str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
+        str(path.relative_to(root)): fixture_sha256(path)
         for path in sorted(root.rglob("*")) if path.is_file() and path.name != "manifest.json"
     }
     (root / "manifest.json").write_text(
@@ -250,6 +250,18 @@ def test_fixture_integrity_failure_is_not_served(tmp_path: Path) -> None:
     response = _request(app, "/api/v1/companies")
     _assert_error_envelope(response, 500, "INDEX_INVALID")
     assert "Tampered" not in response.text
+
+
+def test_fixture_integrity_accepts_windows_line_endings_for_text_artifacts(tmp_path: Path) -> None:
+    copied_fixtures = tmp_path / "companies"
+    shutil.copytree(FIXTURES, copied_fixtures)
+    evaluation = copied_fixtures / "aether-robotics" / "evaluation" / "aether-robotics_idea.md"
+    evaluation.write_bytes(evaluation.read_bytes().replace(b"\n", b"\r\n"))
+
+    app = create_app(fixtures_root=copied_fixtures)
+    health = _request(app, "/health")
+    assert health.status_code == 200
+    assert _request(app, "/api/v1/companies").status_code == 200
 
 
 def test_cors_allows_only_configured_origins(monkeypatch: pytest.MonkeyPatch) -> None:

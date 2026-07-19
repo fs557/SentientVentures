@@ -4,7 +4,6 @@ from __future__ import annotations
 from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import datetime
-from hashlib import sha256
 import json
 import math
 from pathlib import Path
@@ -16,6 +15,7 @@ from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, ConfigDict
 
 from ..core.markdown import document_to_contract_dict, parse_evaluation_document
+from ..core.integrity import fixture_sha256
 from ..core.registry import CATEGORIES, Category
 from ..core.scoring import category_scores, overall_score
 from ..core.storage import CompanyRef, StorageError
@@ -228,7 +228,7 @@ class FixtureRepository:
 
     def _validate_hashes(self, manifest: Mapping[str, str]) -> None:
         for relative, expected in manifest.items():
-            actual = sha256(self._safe_fixture_path(relative).read_bytes()).hexdigest()
+            actual = fixture_sha256(self._safe_fixture_path(relative))
             if actual != expected:
                 raise FixtureIndexError("Fixture artifact integrity validation failed")
 
