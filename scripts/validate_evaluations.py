@@ -41,8 +41,8 @@ def _valid_investment_terms(value: object) -> bool:
 def validate(root: Path) -> list[str]:
     failures: list[str] = []
     company_roots = sorted(path for path in root.iterdir() if path.is_dir())
-    if len(company_roots) != 2:
-        return [f"expected exactly two company directories, found {len(company_roots)}"]
+    if len(company_roots) != 3:
+        return [f"expected exactly three company directories, found {len(company_roots)}"]
     manifest_path = root / "manifest.json"
     if not manifest_path.is_file():
         failures.append("fixture manifest.json is missing")
@@ -50,7 +50,7 @@ def validate(root: Path) -> list[str]:
         try:
             expected_hashes = json.loads(manifest_path.read_text(encoding="utf-8"))["files"]
             actual_hashes = {
-                str(path.relative_to(root)): fixture_sha256(path)
+                path.relative_to(root).as_posix(): fixture_sha256(path)
                 for company in company_roots for path in company.rglob("*") if path.is_file()
             }
             if expected_hashes != dict(sorted(actual_hashes.items())):
@@ -101,7 +101,7 @@ def main() -> int:
     if failures:
         print("Evaluation validation failed:", *failures, sep="\n- ")
         return 1
-    print("Validated two companies with five complete v1 evaluation documents each.")
+    print("Validated three companies with five complete v1 evaluation documents each.")
     return 0
 
 

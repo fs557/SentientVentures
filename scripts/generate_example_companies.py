@@ -119,8 +119,8 @@ FACT_EVIDENCE_IDS = frozenset({
 def _load_facts(path: Path) -> list[dict[str, Any]]:
     parsed = json.loads(path.read_text(encoding="utf-8"))
     companies = parsed.get("companies")
-    if not isinstance(companies, list) or len(companies) != 2:
-        raise ValueError("Fixture facts must define exactly two companies")
+    if not isinstance(companies, list) or len(companies) != 3:
+        raise ValueError("Fixture facts must define exactly three companies")
     return companies
 
 
@@ -203,7 +203,7 @@ def generate(destination: Path, facts_path: Path) -> dict[str, str]:
         atomic_write_json(reference, "extracted/document-index.json", {"documents": [{"id": facts["documentId"], "kind": "pitch_deck"}]})
         atomic_write_json(reference, "metadata.json", _metadata(facts, documents))
         for path in sorted(company_root.rglob("*")):
-            if path.is_file(): hashes[str(path.relative_to(destination))] = fixture_sha256(path)
+            if path.is_file(): hashes[path.relative_to(destination).as_posix()] = fixture_sha256(path)
     manifest = {"generator": "v1", "files": dict(sorted(hashes.items()))}
     (destination / "manifest.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return hashes

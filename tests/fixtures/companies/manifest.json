@@ -15,7 +15,15 @@
     "harborloop/evaluation/harborloop_market.md": "f85244146d8758494fce726b16c174f9cff1020b3da64adce9a8f915d4fa53db",
     "harborloop/extracted/company-facts.json": "27109fd1ffa9ed1ee51b446a31eb8d26de3f907cff49e94ba475a232a8488edc",
     "harborloop/extracted/document-index.json": "b512d27218212e2ece0fd3ced1204e520272f77d8f188e914a8644b6dc1173b5",
-    "harborloop/metadata.json": "c1a2ce12a50f7b4dc1ea107bcfdbed53a1b67aa703e4d61fecae8ff0825be199"
+    "harborloop/metadata.json": "c1a2ce12a50f7b4dc1ea107bcfdbed53a1b67aa703e4d61fecae8ff0825be199",
+    "tidegrid/evaluation/tidegrid_financial.md": "3dd8aefdc7c55333be227501e42d5940bdaaffa8b69a4e44715f2c0954aa348b",
+    "tidegrid/evaluation/tidegrid_home.md": "b0878b8394121e3bbe822aaa11dd8fad318fbd15ae3e5c09299097dcdf2967f4",
+    "tidegrid/evaluation/tidegrid_idea.md": "0528869864e9b377149f65e29244800e17a2a5f25130f5a8c65e4c511a3fd7da",
+    "tidegrid/evaluation/tidegrid_management.md": "29db4f7ed0b40771988cf65b028eb6e399c01058a8f666d00f2e6c9ae6856800",
+    "tidegrid/evaluation/tidegrid_market.md": "27a8b5b2b6554c15b90282370f7d365f4d5f75831b92987b54b448dd7da20f94",
+    "tidegrid/extracted/company-facts.json": "6a1ce354f3888308d3997aba23746ee00552d5543bb3e21ecd708050eb194898",
+    "tidegrid/extracted/document-index.json": "79df203df71cd0a6e8f9a0137fe385df87a3b324295ea70e03e7c1adc02388ff",
+    "tidegrid/metadata.json": "c73f2edd2db86d21649780e5a7981468a98025af3aad1feb290e2cd04a31ccde"
   },
   "generator": "v1"
 }

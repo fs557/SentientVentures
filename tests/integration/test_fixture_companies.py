@@ -12,10 +12,10 @@ from src.core.registry import CATEGORIES, REGISTRY
 from src.core.scoring import PORTFOLIO_UNAVAILABLE_IDS, category_scores, overall_score
 
 
-def test_two_complete_fixture_companies_are_isolated_and_scored_from_artifacts() -> None:
+def test_fixture_companies_are_isolated_and_scored_from_artifacts() -> None:
     root = ROOT / "tests/fixtures/companies"
     summaries = {}
-    for company in ("aether-robotics", "harborloop"):
+    for company in ("aether-robotics", "harborloop", "tidegrid"):
         documents = {}
         for category in CATEGORIES:
             result = parse_evaluation_document((root / company / "evaluation" / f"{company}_{category}.md").read_text(encoding="utf-8"), company, category)
@@ -31,7 +31,7 @@ def test_two_complete_fixture_companies_are_isolated_and_scored_from_artifacts()
 def test_fixture_criteria_are_complete_specific_and_terms_are_consistent() -> None:
     root = ROOT / "tests/fixtures/companies"
     expected_ids = {entry.id for entry in REGISTRY}
-    for company in ("aether-robotics", "harborloop"):
+    for company in ("aether-robotics", "harborloop", "tidegrid"):
         metadata = json.loads((root / company / "metadata.json").read_text(encoding="utf-8"))
         terms = metadata["investment"]
         assert terms["amount"] == 100000

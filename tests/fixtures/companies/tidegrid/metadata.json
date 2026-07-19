@@ -1,0 +1,48 @@
+{
+  "category_scores": {
+    "financial": 67,
+    "home": null,
+    "idea": 68,
+    "management": 69,
+    "market": 65
+  },
+  "company_id": "33333333-3333-4333-8333-333333333333",
+  "created_at": "2026-07-19T12:00:00Z",
+  "display_name": "TideGrid",
+  "investment": {
+    "amount": 100000,
+    "currency": "EUR",
+    "equityPercentage": 4,
+    "impliedValuation": 2500000,
+    "postMoneyValuation": 2500000,
+    "preMoneyValuation": 2400000,
+    "useOfFunds": [
+      "monitoring prototype",
+      "site integrations",
+      "operator pilots"
+    ]
+  },
+  "overall_score": 67,
+  "registry_version": 1,
+  "schema_version": 1,
+  "slug": "tidegrid",
+  "source_documents": [
+    {
+      "id": "doc_33333333-3333-4333-8333-333333333333",
+      "media_type": "application/pdf",
+      "original_name": "fictional-pitch.pdf",
+      "role": "pitch_deck",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 0,
+      "stored_name": "fixture-facts.json",
+      "uploaded_at": "2026-07-19T12:00:00Z"
+    }
+  ],
+  "stage": "Pre-seed",
+  "state": "ready",
+  "submission": {
+    "founder_email": "fictional@example.invalid",
+    "founder_name": "Fictional Founder"
+  },
+  "validation_errors": []
+}

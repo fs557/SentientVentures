@@ -1382,7 +1382,7 @@ The final plan must include the selected model and explain major deviations.
 
 # Example Companies
 
-Create two complete fictional example companies for:
+Create three complete fictional example companies for:
 
 * visual demonstration
 * parser tests
@@ -1624,7 +1624,7 @@ Recommended sequence:
 * normalized data model
 * Markdown schema
 * score rules
-* two complete example companies
+* three complete example companies
 * parser fixtures
 
 ## Phase 2 – Markdown and Scoring Core
