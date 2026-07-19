@@ -60,7 +60,7 @@ export function DashboardApp() {
             {evaluation.error && <StatusNotice tone={evaluation.error.includes("identity check") ? "warning" : "error"} title="Evaluation unavailable"><p>{evaluation.error}</p><button className="retry-button" onClick={() => window.location.reload()}>Try again</button></StatusNotice>}
             {evaluation.value && (
               route.category === "home" 
-                ? <HomeOverview evaluation={evaluation.value} /> 
+                ? <HomeOverview evaluation={evaluation.value} onSelectPerson={setActivePersonId} /> 
                 : <CategoryPage evaluation={evaluation.value} category={route.category} onSelectPerson={setActivePersonId} />
             )}
           </>
