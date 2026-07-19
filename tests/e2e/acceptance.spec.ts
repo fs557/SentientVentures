@@ -51,6 +51,11 @@ test("api health, founder portal, and dashboard navigation", async ({ page, requ
   await expect(founderDbSection.getByText("Cambridge university")).toBeVisible();
   await expect(founderDbSection.getByText("OmniSkill Pathways: From Invisible Skills to Resilient Livelihoods")).toBeVisible();
 
+  // Verify that the verification buttons are disabled ("Verified") because they are consistent
+  const verifiedButtons = founderDbSection.getByRole("button", { name: "Verified" });
+  await expect(verifiedButtons.first()).toBeDisabled();
+  await expect(verifiedButtons.last()).toBeDisabled();
+
   // Test the Founder Network Graph tab
   await page.getByRole("button", { name: "Founder Network Graph" }).click();
   await expect(page.getByRole("heading", { name: "Founder Connection Network" })).toBeVisible();
@@ -61,5 +66,26 @@ test("api health, founder portal, and dashboard navigation", async ({ page, requ
   await expect(page.getByText("University", { exact: true })).toBeVisible();
   await expect(page.getByText("Project", { exact: true })).toBeVisible();
   await expect(page.getByText("Hackathon", { exact: true })).toBeVisible();
+
+  // Go back to the Criteria tab and switch to InconsistAI
+  await page.getByRole("button", { name: "Evaluation Criteria" }).click();
+  await page.getByLabel("Company under review").selectOption("inconsistai");
+  await expect(page.locator(".category-heading .eyebrow")).toHaveText("InconsistAI");
+
+  // Click Management evaluation link to see the new inconsistent founder details
+  await page.getByRole("link", { name: /^Management/ }).click();
+  await expect(page.getByRole("heading", { name: "Management evaluation" })).toBeVisible();
+
+  // Verify that the mismatching founder profiles are displayed
+  const inconsistDbSection = page.locator(".founder-db-profile");
+  await expect(inconsistDbSection.getByText("Moad Larabi")).toBeVisible();
+  await expect(inconsistDbSection.getByText("INSEAD")).toBeVisible();
+  await expect(inconsistDbSection.getByText("Elsa Nisa")).toBeVisible();
+  await expect(inconsistDbSection.getByText("Harvard University")).toBeVisible();
+
+  // Verify that the verification buttons are enabled ("Send Inquiry") due to the mismatch/inconsistency
+  const inquiryButtons = inconsistDbSection.getByRole("button", { name: "Send Inquiry" });
+  await expect(inquiryButtons.first()).toBeEnabled();
+  await expect(inquiryButtons.last()).toBeEnabled();
 });
 

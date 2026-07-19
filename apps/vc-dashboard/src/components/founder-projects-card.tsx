@@ -29,6 +29,13 @@ export function FounderProjectsCard({ evaluation }: { evaluation: CompanyEvaluat
   const home = evaluation.categories.home;
   const foundersText = home?.items.find((item) => item.id === "home.founders")?.assessment ?? "";
 
+  const mgmtCategory = evaluation.categories.management;
+  const academicItem = mgmtCategory?.items.find((item) => item.id === "management.academic_background");
+  const academicText = [
+    academicItem?.assessment,
+    ...(academicItem?.positiveArguments || [])
+  ].filter(Boolean).join(" ").toLowerCase();
+
   useEffect(() => {
     const names = extractNames(foundersText);
     if (names.length === 0) {
@@ -114,27 +121,59 @@ export function FounderProjectsCard({ evaluation }: { evaluation: CompanyEvaluat
             <h4 style={{ margin: "0 0 0.5rem 0", fontSize: "1.1rem", textTransform: "none", color: "var(--sv-ink)", letterSpacing: "normal" }}>
               {person.name}
             </h4>
-            <dl className="summary-grid dl" style={{ gridTemplateColumns: "1fr", gap: "0.4rem", marginBottom: "0.75rem" }}>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <span style={{ color: "var(--sv-muted)", fontSize: "0.82rem" }}>University</span>
-                <strong style={{ fontSize: "0.82rem", color: "var(--sv-ink)" }}>{person.university || "Not specified"}</strong>
-              </div>
-              {person.fieldOfStudy && (
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "var(--sv-muted)", fontSize: "0.82rem" }}>Field of Study</span>
-                  <strong style={{ fontSize: "0.82rem", color: "var(--sv-ink)" }}>{person.fieldOfStudy}</strong>
-                </div>
-              )}
-              {person.city && (
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "var(--sv-muted)", fontSize: "0.82rem" }}>Location</span>
-                  <strong style={{ fontSize: "0.82rem", color: "var(--sv-ink)" }}>
-                    {person.city}
-                    {person.country ? `, ${person.country}` : ""}
-                  </strong>
-                </div>
-              )}
-            </dl>
+            {(() => {
+              const uni = person.university || "";
+              // Check if university matches (is mentioned in) the academic background text
+              const isConsistent = !!(uni && uni.toLowerCase() !== "not specified" && academicText.includes(uni.toLowerCase()));
+
+              return (
+                <dl className="summary-grid dl" style={{ gridTemplateColumns: "1fr", gap: "0.4rem", marginBottom: "0.75rem" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ color: "var(--sv-muted)", fontSize: "0.82rem" }}>University</span>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      <strong style={{ fontSize: "0.82rem", color: "var(--sv-ink)" }}>{person.university || "Not specified"}</strong>
+                      {person.university && (
+                        <button
+                          type="button"
+                          disabled={isConsistent}
+                          onClick={() => alert(`Verification email inquiry prepared for ${person.name} (${person.university})`)}
+                          style={{
+                            background: isConsistent ? "rgba(255, 255, 255, 0.05)" : "#ffad72",
+                            color: isConsistent ? "var(--sv-muted)" : "#071c15",
+                            border: "1px solid " + (isConsistent ? "rgba(255, 255, 255, 0.1)" : "#ff9e59"),
+                            padding: "0.25rem 0.6rem",
+                            borderRadius: "6px",
+                            fontSize: "0.72rem",
+                            fontWeight: "bold",
+                            cursor: isConsistent ? "not-allowed" : "pointer",
+                            transition: "all 0.2s ease",
+                            boxShadow: isConsistent ? "none" : "0 2px 8px rgba(255, 173, 114, 0.22)"
+                          }}
+                          title={isConsistent ? "University verified against evaluation data." : "University mismatch or not found in evaluation data! Click to send inquiry email."}
+                        >
+                          {isConsistent ? "Verified" : "Send Inquiry"}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                  {person.fieldOfStudy && (
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "var(--sv-muted)", fontSize: "0.82rem" }}>Field of Study</span>
+                      <strong style={{ fontSize: "0.82rem", color: "var(--sv-ink)" }}>{person.fieldOfStudy}</strong>
+                    </div>
+                  )}
+                  {person.city && (
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "var(--sv-muted)", fontSize: "0.82rem" }}>Location</span>
+                      <strong style={{ fontSize: "0.82rem", color: "var(--sv-ink)" }}>
+                        {person.city}
+                        {person.country ? `, ${person.country}` : ""}
+                      </strong>
+                    </div>
+                  )}
+                </dl>
+              );
+            })()}
             <h5 style={{ margin: "0.75rem 0 0.4rem 0", fontSize: "0.85rem", color: "var(--sv-green-deep)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
               Projects
             </h5>

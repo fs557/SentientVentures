@@ -1,0 +1,48 @@
+{
+  "category_scores": {
+    "home": null,
+    "idea": 83,
+    "market": 80,
+    "financial": 82,
+    "management": 82
+  },
+  "company_id": "33333333-3333-4333-8333-333333333333",
+  "created_at": "2026-07-19T12:00:00Z",
+  "display_name": "InconsistAI",
+  "investment": {
+    "amount": 100000,
+    "currency": "EUR",
+    "equityPercentage": 1,
+    "impliedValuation": 10000000,
+    "postMoneyValuation": 10000000,
+    "preMoneyValuation": 9900000,
+    "useOfFunds": [
+      "robot fleet validation",
+      "industrial software integrations",
+      "enterprise sales"
+    ]
+  },
+  "overall_score": 82,
+  "registry_version": 1,
+  "schema_version": 1,
+  "slug": "inconsistai",
+  "source_documents": [
+    {
+      "id": "doc_33333333-3333-4333-8333-333333333333",
+      "media_type": "application/pdf",
+      "original_name": "fictional-pitch.pdf",
+      "role": "pitch_deck",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 0,
+      "stored_name": "fixture-facts.json",
+      "uploaded_at": "2026-07-19T12:00:00Z"
+    }
+  ],
+  "stage": "Seed",
+  "state": "ready",
+  "submission": {
+    "founder_email": "moad.larabi@example.invalid",
+    "founder_name": "Moad Larabi"
+  },
+  "validation_errors": []
+}

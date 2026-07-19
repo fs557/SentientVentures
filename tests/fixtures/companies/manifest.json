@@ -31,7 +31,15 @@
     "walletprofun/evaluation/walletprofun_market.md": "2f232080f87e3f33426a5fbf6d582d07801e592f802fb9ec3fb6e34ed9b6b925",
     "walletprofun/extracted/company-facts.json": "811f255071363058debfeae957e78fcf834a7a0ebe3e7b5eb2c819583d8d8f25",
     "walletprofun/extracted/document-index.json": "b512d27218212e2ece0fd3ced1204e520272f77d8f188e914a8644b6dc1173b5",
-    "walletprofun/metadata.json": "6bf882efa00cc4fc76ceb62a31f0e723bd9a6c1e7bd429d934815c61e4bb7a37"
+    "walletprofun/metadata.json": "6bf882efa00cc4fc76ceb62a31f0e723bd9a6c1e7bd429d934815c61e4bb7a37",
+    "inconsistai/evaluation/inconsistai_financial.md": "477cf7ce00172d3c20281114cc89841fff316721935131b4e2a8ef5a4ff0859c",
+    "inconsistai/evaluation/inconsistai_home.md": "9cd1a5a7617ec7f159089e571f98039d62becbbe7fae625b577fe23ee4a88288",
+    "inconsistai/evaluation/inconsistai_idea.md": "b97833e3c995778aab7d9df8e69226b32fa6eb46fe9276d219acc8828307841e",
+    "inconsistai/evaluation/inconsistai_management.md": "f66a728a37d7ccbd27ac2b4cb15a89f62c5a5e1fe4b2bc6ffccbe0818ef52e65",
+    "inconsistai/evaluation/inconsistai_market.md": "72739b7b576965baf045f8a0c0b056b0858020d0ec06b2b87919b567c015a8b1",
+    "inconsistai/extracted/company-facts.json": "5e995d9a4814f989b8ee408990ef72cbdfee0e98168cf73e1ec703d3e2b49f4a",
+    "inconsistai/extracted/document-index.json": "79df203df71cd0a6e8f9a0137fe385df87a3b324295ea70e03e7c1adc02388ff",
+    "inconsistai/metadata.json": "2ea6da02e5c7a7e6212f329aca8f7a7ebe77c6b55e9fea176c62112c210e4cb1"
   },
   "generator": "v1"
 }
