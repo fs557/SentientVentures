@@ -6,13 +6,14 @@ function EvidenceList({ title, entries }: { title: string; entries: EvaluationIt
 }
 export function EvaluationCard({ item }: { item: EvaluationItem }) {
   return <article className="evaluation-card" aria-labelledby={`${item.id}-title`}>
-    <header><div><p className="eyebrow">Criterion</p><h3 id={`${item.id}-title`}>{item.title}</h3></div><ScoreBadge score={item.score} /></header>
-    {item.confidence !== null && <p className="confidence">Confidence {item.confidence}/100</p>}
-    <section><h4>Assessment</h4><p>{item.assessment}</p></section>
-    <div className="argument-grid"><section><h4>Positive arguments</h4><ul>{item.positiveArguments.map((text, index) => <li key={index}>{text}</li>)}</ul></section><section><h4>Negative arguments and risks</h4><ul>{item.negativeArguments.map((text, index) => <li key={index}>{text}</li>)}</ul></section></div>
-    <EvidenceList title="Evidence" entries={item.evidence} />
-    {item.missingInformation.length > 0 && <section><h4>Missing information</h4><ul>{item.missingInformation.map((text, index) => <li key={index}>{text}</li>)}</ul></section>}
-    <EvidenceList title="Source references" entries={item.sourceReferences} />
-    {item.validationErrors.length > 0 && <section className="validation-errors"><h4>Data notes</h4><ul>{item.validationErrors.map((error, index) => <li key={index}>{error.message}</li>)}</ul></section>}
+    <div className="evaluation-card__content"><header><p className="eyebrow">Criterion</p><h3 id={`${item.id}-title`}>{item.title}</h3></header>
+      <section><h4>Assessment</h4><p>{item.assessment}</p></section>
+      <div className="argument-grid"><section><h4>Positive arguments</h4><ul>{item.positiveArguments.map((text, index) => <li key={index}>{text}</li>)}</ul></section><section><h4>Negative arguments and risks</h4><ul>{item.negativeArguments.map((text, index) => <li key={index}>{text}</li>)}</ul></section></div>
+      <EvidenceList title="Evidence" entries={item.evidence} />
+      {item.missingInformation.length > 0 && <section><h4>Missing information</h4><ul>{item.missingInformation.map((text, index) => <li key={index}>{text}</li>)}</ul></section>}
+      <EvidenceList title="Source references" entries={item.sourceReferences} />
+      {item.validationErrors.length > 0 && <section className="validation-errors"><h4>Data notes</h4><ul>{item.validationErrors.map((error, index) => <li key={index}>{error.message}</li>)}</ul></section>}
+    </div>
+    <aside className="evaluation-card__score" aria-label={`Criterion score: ${item.score ?? "unavailable"}`}><ScoreBadge score={item.score} />{item.confidence !== null && <p className="confidence">Confidence <strong>{item.confidence}/100</strong></p>}</aside>
   </article>;
 }
