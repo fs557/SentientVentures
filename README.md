@@ -86,6 +86,25 @@ Live processing currently supports the OpenAI Responses API when `SV_LLM_PROVIDE
 - **Safe local persistence** with atomic publication and retryable processing jobs
 - **Shared contracts** between the Python API and TypeScript applications
 
+## Database, web scraping, and future OSINT
+
+The current intelligence layer is backed by the local SQLite database at `assets/DATABASE/hack_nation_people.sqlite`. It connects people with profile details, universities, locations, projects, hackathons, collaboration relationships, and historical founder scores. The API opens the directory in read-only mode for search and investigation views, while the checked-in GeoNames-derived coordinate table powers the founder map. A custom database can be selected with `SV_PEOPLE_DATABASE`.
+
+The present dataset is a starting point rather than a complete source of truth. A future ingestion pipeline could continuously improve its coverage with permission-aware web scraping and public OSINT sources such as:
+
+- company websites, public team pages, press releases, and startup directories
+- public GitHub profiles, repositories, contribution history, and organization membership
+- public hackathon, accelerator, demo-day, grant, and competition records
+- university, research publication, patent, and professional registry data
+- public funding announcements, portfolio pages, and corporate registries
+- opt-in founder-provided LinkedIn or other professional profile URLs
+
+New records should not be written directly into trusted profiles. They should first enter a staging layer with the source URL, retrieval time, parser version, content hash, usage rights, and field-level confidence. Entity resolution can then deduplicate people and companies, flag conflicts, and send uncertain matches to human review before promotion into the main database.
+
+Future OSINT tooling could add scheduled source connectors, change detection, provenance-preserving crawlers, duplicate detection, relationship extraction, source reliability scoring, and alerts when a founder's public record changes. The LLM council should consume only normalized, cited facts from this pipeline—not arbitrary scraped pages—so every investment claim remains traceable.
+
+Any expansion must respect robots.txt, website terms, copyright, privacy and data-protection law, rate limits, and deletion or correction requests. Private, paywalled, access-controlled, or sensitive personal data should not be collected without a valid legal basis and explicit authorization. OSINT findings should support human diligence, not be treated as automatic proof.
+
 ## Architecture
 
 | Component | Port | Responsibility |
