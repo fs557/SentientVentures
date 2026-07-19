@@ -12,6 +12,8 @@ The root dev script launches:
 - founder portal on `8080`
 - VC dashboard on `8081`
 
+Open `http://localhost:8000/` for the API entry point, `http://localhost:8000/health` for a health check, or `http://localhost:8000/docs` for interactive API documentation.
+
 ## Local environment variables
 
 The API reads the environment keys listed in `packages/config/src/index.ts`. The most relevant ones are:

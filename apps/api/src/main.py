@@ -99,6 +99,15 @@ def create_app(*, fixtures_root: Path | None = None, data_root: Path | None = No
         message = str(exc.detail) if isinstance(exc.detail, str) else "Request failed"
         return _error_response(request, status_code, code, message, [{"path": "/", "code": code, "message": message}])
 
+    @app.get("/", include_in_schema=False)
+    async def service_index() -> dict[str, object]:
+        """Expose a small, browser-friendly API entry point."""
+        return {
+            "status": "ok",
+            "version": "v1",
+            "endpoints": {"health": "/health", "api": "/api/v1", "docs": "/docs"},
+        }
+
     app.include_router(health_router)
     app.include_router(companies_router)
     app.include_router(people_router)

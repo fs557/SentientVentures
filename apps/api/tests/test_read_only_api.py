@@ -72,6 +72,14 @@ def _validator(schema_name: str, definition: str) -> Draft202012Validator:
 
 
 def test_health_and_company_list_match_the_v1_contract(app: FastAPI) -> None:
+    service_index = _request(app, "/")
+    assert service_index.status_code == 200
+    assert service_index.json() == {
+        "status": "ok",
+        "version": "v1",
+        "endpoints": {"health": "/health", "api": "/api/v1", "docs": "/docs"},
+    }
+
     health = _request(app, "/health")
     assert health.status_code == 200
     assert health.json() == {"status": "ok", "version": "v1", "workerAvailable": False}
