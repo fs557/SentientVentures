@@ -1,0 +1,696 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sentientventures.local/contracts/question-registry.v1.json",
+  "schemaVersion": 1,
+  "registryVersion": 1,
+  "overallCategories": [
+    "idea",
+    "market",
+    "financial",
+    "management"
+  ],
+  "categories": [
+    "home",
+    "idea",
+    "market",
+    "financial",
+    "management"
+  ],
+  "entries": [
+    {
+      "id": "home.company_name",
+      "category": "home",
+      "title": "What is the company name?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 1,
+      "rubric": "Identify the submitted company."
+    },
+    {
+      "id": "home.current_valuation",
+      "category": "home",
+      "title": "What is the current valuation?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 2,
+      "rubric": "State valuation only when supplied."
+    },
+    {
+      "id": "home.company_idea",
+      "category": "home",
+      "title": "What is the company idea?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 3,
+      "rubric": "Summarize the stated idea."
+    },
+    {
+      "id": "home.sector",
+      "category": "home",
+      "title": "In which sector does the company operate?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 4,
+      "rubric": "Identify the stated sector."
+    },
+    {
+      "id": "home.what_company_does",
+      "category": "home",
+      "title": "What exactly does the company do?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 5,
+      "rubric": "Describe the product or service."
+    },
+    {
+      "id": "home.use_of_investment",
+      "category": "home",
+      "title": "What will the requested investment be used for?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 6,
+      "rubric": "Summarize stated use of funds."
+    },
+    {
+      "id": "home.equity_offered",
+      "category": "home",
+      "title": "How much equity is offered?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 7,
+      "rubric": "State offered equity only when supplied."
+    },
+    {
+      "id": "home.investment_requested",
+      "category": "home",
+      "title": "How much investment is requested?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 8,
+      "rubric": "State requested amount only when supplied."
+    },
+    {
+      "id": "home.implied_valuation",
+      "category": "home",
+      "title": "What implied valuation follows from the proposed terms?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 9,
+      "rubric": "Calculate only when terms are unambiguous."
+    },
+    {
+      "id": "home.founders",
+      "category": "home",
+      "title": "Who are the founders?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 10,
+      "rubric": "Name disclosed founders."
+    },
+    {
+      "id": "home.founder_facts",
+      "category": "home",
+      "title": "What are the most important founder facts?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 11,
+      "rubric": "Summarize cited founder facts."
+    },
+    {
+      "id": "home.company_facts",
+      "category": "home",
+      "title": "What are the most important company facts?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 12,
+      "rubric": "Summarize cited company facts."
+    },
+    {
+      "id": "home.missing_information",
+      "category": "home",
+      "title": "What important information is missing?",
+      "scoreRequired": false,
+      "portfolioRequired": false,
+      "displayOrder": 13,
+      "rubric": "List material unknowns."
+    },
+    {
+      "id": "idea.uniqueness",
+      "category": "idea",
+      "title": "How unique is the company idea?",
+      "displayOrder": 1,
+      "rubric": "Assess differentiation.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.copyability",
+      "category": "idea",
+      "title": "How easily can the idea be copied?",
+      "displayOrder": 2,
+      "rubric": "Assess ease of replication.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.defensibility",
+      "category": "idea",
+      "title": "How defensible is the idea?",
+      "displayOrder": 3,
+      "rubric": "Assess durable advantages.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.protectability",
+      "category": "idea",
+      "title": "Is the idea patentable or otherwise protectable?",
+      "displayOrder": 4,
+      "rubric": "Assess protectability.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.technical_execution_complexity",
+      "category": "idea",
+      "title": "How complex is the technical execution?",
+      "displayOrder": 5,
+      "rubric": "Assess technical delivery complexity.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.operational_execution_complexity",
+      "category": "idea",
+      "title": "How complex is the operational execution?",
+      "displayOrder": 6,
+      "rubric": "Assess operational delivery complexity.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.goal_effort",
+      "category": "idea",
+      "title": "How much effort is required to achieve the stated goal?",
+      "displayOrder": 7,
+      "rubric": "Assess effort versus goal.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.sustainability",
+      "category": "idea",
+      "title": "How sustainable or environmentally friendly is the idea?",
+      "displayOrder": 8,
+      "rubric": "Assess environmental considerations.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.fundamental_problems",
+      "category": "idea",
+      "title": "What fundamental problems exist with the idea?",
+      "displayOrder": 9,
+      "rubric": "Identify core risks.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.problem_solution_clarity",
+      "category": "idea",
+      "title": "How clearly does the idea solve a real problem?",
+      "displayOrder": 10,
+      "rubric": "Assess problem-solution fit.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.value_proposition",
+      "category": "idea",
+      "title": "How strong is the value proposition?",
+      "displayOrder": 11,
+      "rubric": "Assess customer value.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "idea.product_maturity",
+      "category": "idea",
+      "title": "How mature is the current product or prototype?",
+      "displayOrder": 12,
+      "rubric": "Assess product maturity.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.addressable_market",
+      "category": "market",
+      "title": "How large is the addressable market?",
+      "displayOrder": 1,
+      "rubric": "Assess addressable market.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.market_size_reliability",
+      "category": "market",
+      "title": "How reliable is the stated market-size estimate?",
+      "displayOrder": 2,
+      "rubric": "Assess market estimate evidence.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.sector_trend",
+      "category": "market",
+      "title": "Is the sector trending upward or downward?",
+      "displayOrder": 3,
+      "rubric": "Assess sector direction.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.expected_growth",
+      "category": "market",
+      "title": "What market growth can reasonably be expected?",
+      "displayOrder": 4,
+      "rubric": "Assess growth evidence.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.entry_timing",
+      "category": "market",
+      "title": "How strong is the timing for market entry?",
+      "displayOrder": 5,
+      "rubric": "Assess timing.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.competition",
+      "category": "market",
+      "title": "How strong is the competition?",
+      "displayOrder": 6,
+      "rubric": "Assess competition.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.entry_barriers",
+      "category": "market",
+      "title": "What barriers to entry exist?",
+      "displayOrder": 7,
+      "rubric": "Assess barriers.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.customer_adoption",
+      "category": "market",
+      "title": "How difficult will customer adoption be?",
+      "displayOrder": 8,
+      "rubric": "Assess adoption friction.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.market_problems",
+      "category": "market",
+      "title": "What problems exist in the target market?",
+      "displayOrder": 9,
+      "rubric": "Identify market risks.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.portfolio_fit",
+      "category": "market",
+      "title": "Does the company fit the VC portfolio?",
+      "displayOrder": 10,
+      "rubric": "Assess only supplied portfolio data.",
+      "scoreRequired": true,
+      "portfolioRequired": true
+    },
+    {
+      "id": "market.portfolio_synergies",
+      "category": "market",
+      "title": "Are there synergies with the existing portfolio?",
+      "displayOrder": 11,
+      "rubric": "Assess only supplied portfolio data.",
+      "scoreRequired": true,
+      "portfolioRequired": true
+    },
+    {
+      "id": "market.target_customer_clarity",
+      "category": "market",
+      "title": "Is the target customer clearly defined?",
+      "displayOrder": 12,
+      "rubric": "Assess customer specificity.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.gtm_plausibility",
+      "category": "market",
+      "title": "Is the go-to-market strategy plausible?",
+      "displayOrder": 13,
+      "rubric": "Assess GTM plausibility.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.customer_concentration",
+      "category": "market",
+      "title": "How concentrated is the customer base likely to be?",
+      "displayOrder": 14,
+      "rubric": "Assess concentration risk.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "market.regulatory_barriers",
+      "category": "market",
+      "title": "Are regulatory barriers relevant?",
+      "displayOrder": 15,
+      "rubric": "Assess regulation.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.current_revenue",
+      "category": "financial",
+      "title": "What is the current revenue?",
+      "displayOrder": 1,
+      "rubric": "Assess disclosed revenue.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.current_profit_loss",
+      "category": "financial",
+      "title": "What is the current profit or loss?",
+      "displayOrder": 2,
+      "rubric": "Assess disclosed profit or loss.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.projected_revenue",
+      "category": "financial",
+      "title": "What future revenue is projected?",
+      "displayOrder": 3,
+      "rubric": "Assess projections.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.projected_profit",
+      "category": "financial",
+      "title": "What future profit is projected?",
+      "displayOrder": 4,
+      "rubric": "Assess projected profit.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.projection_plausibility",
+      "category": "financial",
+      "title": "How plausible are the projections?",
+      "displayOrder": 5,
+      "rubric": "Assess projection assumptions.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.customer_acquisition_cost",
+      "category": "financial",
+      "title": "What is the customer acquisition cost?",
+      "displayOrder": 6,
+      "rubric": "Assess CAC evidence.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.recurring_customer_rate",
+      "category": "financial",
+      "title": "What is the recurring customer rate?",
+      "displayOrder": 7,
+      "rubric": "Assess recurring customers.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.customer_retention_rate",
+      "category": "financial",
+      "title": "What is the customer retention rate?",
+      "displayOrder": 8,
+      "rubric": "Assess retention.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.revenue_per_employee",
+      "category": "financial",
+      "title": "What is the revenue per employee?",
+      "displayOrder": 9,
+      "rubric": "Assess efficiency.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.profit_per_employee",
+      "category": "financial",
+      "title": "What is the profit per employee?",
+      "displayOrder": 10,
+      "rubric": "Assess profit efficiency.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.burn_rate",
+      "category": "financial",
+      "title": "What is the current burn rate?",
+      "displayOrder": 11,
+      "rubric": "Assess burn.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.runway",
+      "category": "financial",
+      "title": "What is the current runway?",
+      "displayOrder": 12,
+      "rubric": "Assess runway.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.funding_requirement_plausibility",
+      "category": "financial",
+      "title": "How plausible is the funding requirement?",
+      "displayOrder": 13,
+      "rubric": "Assess funding need.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.capital_allocation",
+      "category": "financial",
+      "title": "How will the requested capital be allocated?",
+      "displayOrder": 14,
+      "rubric": "Assess allocation.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.exit_strategy",
+      "category": "financial",
+      "title": "What is the proposed exit strategy?",
+      "displayOrder": 15,
+      "rubric": "Assess exit route.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.inconsistencies",
+      "category": "financial",
+      "title": "What financial inconsistencies exist?",
+      "displayOrder": 16,
+      "rubric": "Identify inconsistencies.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.risks",
+      "category": "financial",
+      "title": "What financial risks exist?",
+      "displayOrder": 17,
+      "rubric": "Identify risks.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.document_completeness_reliability",
+      "category": "financial",
+      "title": "How complete and reliable are the submitted financial documents?",
+      "displayOrder": 18,
+      "rubric": "Assess document quality.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "financial.forecast_drivers",
+      "category": "financial",
+      "title": "What assumptions have the largest influence on the forecast?",
+      "displayOrder": 19,
+      "rubric": "Identify forecast drivers.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.academic_background",
+      "category": "management",
+      "title": "How strong is the academic background?",
+      "displayOrder": 1,
+      "rubric": "Assess academic background.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.professional_background",
+      "category": "management",
+      "title": "How relevant is the professional background?",
+      "displayOrder": 2,
+      "rubric": "Assess professional relevance.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.domain_expertise",
+      "category": "management",
+      "title": "How deep is the domain expertise?",
+      "displayOrder": 3,
+      "rubric": "Assess domain expertise.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.technical_expertise",
+      "category": "management",
+      "title": "How strong is the technical expertise?",
+      "displayOrder": 4,
+      "rubric": "Assess technical expertise.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.commercial_expertise",
+      "category": "management",
+      "title": "How strong is the commercial expertise?",
+      "displayOrder": 5,
+      "rubric": "Assess commercial expertise.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.founder_market_fit",
+      "category": "management",
+      "title": "How strong is the founder-market fit?",
+      "displayOrder": 6,
+      "rubric": "Assess founder-market fit.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.professional_following",
+      "category": "management",
+      "title": "How large is the founder's professional following or influence?",
+      "displayOrder": 7,
+      "rubric": "Assess disclosed influence.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.controversies",
+      "category": "management",
+      "title": "Are there relevant controversies?",
+      "displayOrder": 8,
+      "rubric": "Assess disclosed controversies.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.creativity",
+      "category": "management",
+      "title": "How creative or innovative is the management team?",
+      "displayOrder": 9,
+      "rubric": "Assess creativity.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.strengths",
+      "category": "management",
+      "title": "What are the management team's greatest strengths?",
+      "displayOrder": 10,
+      "rubric": "Identify strengths.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.weaknesses",
+      "category": "management",
+      "title": "What are the management team's greatest weaknesses?",
+      "displayOrder": 11,
+      "rubric": "Identify weaknesses.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.missing_roles",
+      "category": "management",
+      "title": "Are important roles missing?",
+      "displayOrder": 12,
+      "rubric": "Assess role gaps.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.execution_ability",
+      "category": "management",
+      "title": "How strong is the team's ability to execute?",
+      "displayOrder": 13,
+      "rubric": "Assess execution.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.credibility",
+      "category": "management",
+      "title": "How credible and trustworthy does the team appear?",
+      "displayOrder": 14,
+      "rubric": "Assess credibility.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.team_balance",
+      "category": "management",
+      "title": "Is the team sufficiently balanced?",
+      "displayOrder": 15,
+      "rubric": "Assess team balance.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    },
+    {
+      "id": "management.prior_execution",
+      "category": "management",
+      "title": "Is there evidence of previous successful execution?",
+      "displayOrder": 16,
+      "rubric": "Assess prior execution.",
+      "scoreRequired": true,
+      "portfolioRequired": false
+    }
+  ]
+}

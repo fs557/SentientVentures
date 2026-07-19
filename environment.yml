@@ -13,6 +13,12 @@ dependencies:
   - requests
   - httpx
   - aiofiles
+  - jsonschema
+  - pyyaml
+  - python-multipart
+  - pymupdf
+  - pytesseract
+  - filetype
   - pip:
     # Frontend Frameworks für modernes UI (Tesla Style / Frosted Glass)
     - reflex

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sentientventures.local/contracts/score-vectors.v1.json",
+  "version": 1,
+  "vectors": [
+    {"name":"half-up-category","scores":[72,73],"expected":73},
+    {"name":"half-up-explicit","scores":[72,73],"mean":72.5,"expected":73},
+    {"name":"exclude-null","scores":[80,null,90],"expected":85},
+    {"name":"all-null","scores":[null,null],"expected":null},
+    {"name":"overall-equal-weight","scores":[80,70,60,50],"expected":65},
+    {"name":"overall-partial","scores":[80,null,70,null],"expected":75}
+  ]
+}

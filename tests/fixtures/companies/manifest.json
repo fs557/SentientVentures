@@ -1,0 +1,21 @@
+{
+  "files": {
+    "aether-robotics/evaluation/aether-robotics_financial.md": "4f368988fa201f3d5d2e4a9bf5e07555a3708c5c6b3cad6e6744db33761612a8",
+    "aether-robotics/evaluation/aether-robotics_home.md": "34cde1dae368aa5016f3a6103e2ac25464550def67f40a59ce8260d21af66ee3",
+    "aether-robotics/evaluation/aether-robotics_idea.md": "684118b018418d5498b23cae59009a097eae4353bad6a84e84e421d37cb37ebd",
+    "aether-robotics/evaluation/aether-robotics_management.md": "53c0530058698ae7a10b0c9727da167ac7109772723d1301fa1b36b4a0ca36b7",
+    "aether-robotics/evaluation/aether-robotics_market.md": "38974bd4bb57cb354b5938dee67a8d858bd817faeb2159730d16630d64f80aa2",
+    "aether-robotics/extracted/company-facts.json": "32eff0eac7342861cc76fbef118a8a29877dbff1437a1e0ab3b78b8e92bad15d",
+    "aether-robotics/extracted/document-index.json": "f4b09f09f07207f87d9fe5a6c445580f06e7d5d0b04c8dcb423d0c7c91cc56df",
+    "aether-robotics/metadata.json": "1f7081dc9778f127b2fa6b8573b0cc6c231895be5cba0078bd281ee3a59338fa",
+    "harborloop/evaluation/harborloop_financial.md": "06bf3ade8afa0fbb8bfb2fb25bb50e45b72b63331c3a1aeac16c343d6b293b40",
+    "harborloop/evaluation/harborloop_home.md": "d1848bcf70c581f9db03cb3b21d1bc221bcaddfddfee28ebe6036be359852a6d",
+    "harborloop/evaluation/harborloop_idea.md": "799a9327193e1e8441676f7c766d0d41e35551e1d6ef754a1db1f9ab4d77bd17",
+    "harborloop/evaluation/harborloop_management.md": "ac828c6d4712ad325745d02114bd38015881cd700fe961f2c4e0ad54947b7828",
+    "harborloop/evaluation/harborloop_market.md": "88028c9a3d432f433bac98b45e09682d4029a12036bc40853a0baf2870461f9c",
+    "harborloop/extracted/company-facts.json": "a94616746aace11aff67ecceb974436be3b06be32e8431946ca69a2fc7e43074",
+    "harborloop/extracted/document-index.json": "b512d27218212e2ece0fd3ced1204e520272f77d8f188e914a8644b6dc1173b5",
+    "harborloop/metadata.json": "80df749f247cfec627f236b3bede6c9faf42ea2abcec2d697526c65a69a37f78"
+  },
+  "generator": "v1"
+}

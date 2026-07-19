@@ -1,0 +1,9 @@
+:root { --sv-ink: #12201d; --sv-muted: #61706c; --sv-line: #d9e1dd; --sv-surface: rgba(255,255,255,.76); --sv-green: #1a6754; --sv-green-deep: #104739; --sv-focus: #e17d25; --sv-danger: #9b2d2d; }
+.sv-score-badge { align-items: baseline; display: inline-flex; gap: .42rem; white-space: nowrap; }
+.sv-score-badge__label { color: var(--sv-muted); font-size: .7rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+.sv-score-badge strong { color: var(--sv-green-deep); font-size: .92rem; }
+.sv-score-badge--unavailable strong { color: var(--sv-muted); }
+.sv-status { background: var(--sv-surface); border: 1px solid var(--sv-line); border-left: 4px solid var(--sv-green); border-radius: 10px; max-width: 50rem; padding: 1.25rem 1.4rem; }
+.sv-status h2 { font-size: 1rem; margin: 0 0 .35rem; }
+.sv-status p { color: var(--sv-muted); margin: 0; }
+.sv-status--error { border-left-color: var(--sv-danger); }.sv-status--warning { border-left-color: var(--sv-focus); }

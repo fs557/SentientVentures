@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sentientventures.local/contracts/evaluation.v1.json",
+  "type": "object",
+  "$defs": {
+    "evidenceReference": {"$ref": "common.v1.json#/$defs/evidenceReference"},
+    "validationIssue": {"$ref": "common.v1.json#/$defs/validationIssue"},
+    "evaluationItem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "category", "title", "score", "confidence", "assessment", "positiveArguments", "negativeArguments", "evidence", "missingInformation", "sourceReferences", "validationErrors"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^(home|idea|market|financial|management)\\.[a-z0-9_]+$"},
+        "category": {"$ref": "common.v1.json#/$defs/category"}, "title": {"type": "string", "minLength": 1},
+        "score": {"type": ["integer", "null"], "minimum": 1, "maximum": 100}, "confidence": {"type": ["integer", "null"], "minimum": 1, "maximum": 100},
+        "assessment": {"type": "string", "minLength": 1}, "positiveArguments": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "negativeArguments": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "evidence": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidenceReference"}},
+        "missingInformation": {"type": "array", "items": {"type": "string", "minLength": 1}}, "sourceReferences": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidenceReference"}},
+        "validationErrors": {"type": "array", "items": {"$ref": "#/$defs/validationIssue"}}
+      }
+    },
+    "evaluationDocument": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "registryVersion", "company", "slug", "category", "generatedAt", "sourceDocuments", "items", "validationErrors"],
+      "properties": {
+        "schemaVersion": {"const": 1}, "registryVersion": {"const": 1}, "company": {"type": "string", "minLength": 1, "maxLength": 120},
+        "slug": {"$ref": "common.v1.json#/$defs/slug"}, "category": {"$ref": "common.v1.json#/$defs/category"}, "generatedAt": {"$ref": "common.v1.json#/$defs/timestamp"},
+        "sourceDocuments": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^doc_[0-9a-fA-F-]{36}$"}},
+        "items": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evaluationItem"}}, "validationErrors": {"type": "array", "items": {"$ref": "#/$defs/validationIssue"}}
+      }
+    },
+    "investmentTerms": {"type": "object", "additionalProperties": false, "required": ["amount", "currency", "equityPercentage", "preMoneyValuation", "postMoneyValuation", "impliedValuation", "useOfFunds"], "properties": {"amount":{"type":["number","null"]},"currency":{"type":["string","null"],"pattern":"^[A-Z]{3}$"},"equityPercentage":{"type":["number","null"],"minimum":0,"maximum":100},"preMoneyValuation":{"type":["number","null"]},"postMoneyValuation":{"type":["number","null"]},"impliedValuation":{"type":["number","null"]},"useOfFunds":{"type":"array","items":{"type":"string","minLength":1}}}},
+    "companyEvaluation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["companyId", "company", "slug", "stage", "submissionDate", "investment", "categories", "categoryScores", "overallScore", "validationErrors"],
+      "properties": {"companyId":{"$ref":"common.v1.json#/$defs/uuid"},"company":{"type":"string","minLength":1,"maxLength":120},"slug":{"$ref":"common.v1.json#/$defs/slug"},"stage":{"type":["string","null"],"maxLength":80},"submissionDate":{"$ref":"common.v1.json#/$defs/timestamp"},"investment":{"$ref":"#/$defs/investmentTerms"},"categories":{"type":"object","additionalProperties":false,"properties":{"home":{"$ref":"#/$defs/evaluationDocument"},"idea":{"$ref":"#/$defs/evaluationDocument"},"market":{"$ref":"#/$defs/evaluationDocument"},"financial":{"$ref":"#/$defs/evaluationDocument"},"management":{"$ref":"#/$defs/evaluationDocument"}}},"categoryScores":{"$ref":"common.v1.json#/$defs/categoryScores"},"overallScore":{"type":["integer","null"],"minimum":1,"maximum":100},"validationErrors":{"type":"array","items":{"$ref":"#/$defs/validationIssue"}}}
+    },
+    "factRecord": {"type":"object","additionalProperties":false,"required":["id","subject","field","value","status","evidence","sourceDocumentIds"],"properties":{"id":{"type":"string","minLength":1},"subject":{"type":"string","enum":["company","founder","investment","market","financial"]},"field":{"type":"string","minLength":1},"value":{"type":["string","number","boolean","array","null"],"items":{"type":"string"}},"status":{"type":"string","enum":["fact","inference","missing_information"]},"evidence":{"type":"array","items":{"$ref":"#/$defs/evidenceReference"}},"missingReason":{"type":"string","minLength":1},"sourceDocumentIds":{"type":"array","uniqueItems":true,"items":{"type":"string","pattern":"^doc_[0-9a-fA-F-]{36}$"}}},"allOf":[{"if":{"properties":{"status":{"const":"missing_information"}}},"then":{"properties":{"value":{"const":null},"evidence":{"maxItems":0}},"required":["missingReason"]}}]}
+  }
+}

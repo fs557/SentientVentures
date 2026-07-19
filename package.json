@@ -1,0 +1,19 @@
+{
+  "name": "sentientventures",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names api,portal,dashboard \"conda run -n codex-agents uvicorn apps.api.src.main:app --host 0.0.0.0 --port 8000 --reload\" \"pnpm --filter @sv/founder-portal dev -- --port 8080\" \"pnpm --filter @sv/vc-dashboard dev -- --port 8081\"",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm test:web && pnpm test:contracts && conda run -n codex-agents pytest",
+    "test:e2e": "playwright test",
+    "test:web": "pnpm --filter @sv/founder-portal test && pnpm --filter @sv/vc-dashboard test",
+    "test:contracts": "pnpm --filter @sv/contracts test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  }
+}

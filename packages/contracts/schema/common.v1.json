@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sentientventures.local/contracts/common.v1.json",
+  "$defs": {
+    "category": {"type": "string", "enum": ["home", "idea", "market", "financial", "management"]},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 140},
+    "uuid": {"type": "string", "format": "uuid"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "score": {"type": "integer", "minimum": 1, "maximum": 100},
+    "validationIssue": {
+      "type": "object", "additionalProperties": false,
+      "required": ["code", "path", "message", "severity"],
+      "properties": {
+        "code": {"type": "string", "minLength": 1, "maxLength": 100},
+        "path": {"type": "string", "minLength": 1, "maxLength": 500},
+        "message": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "severity": {"type": "string", "enum": ["warning", "error"]}
+      }
+    },
+    "evidenceReference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "documentId", "text"],
+      "properties": {
+        "kind": {"type": "string", "enum": ["fact", "inference"]},
+        "documentId": {"type": "string", "pattern": "^(submission|doc_[0-9a-fA-F-]{36})$"},
+        "page": {"type": "integer", "minimum": 1},
+        "section": {"type": "string", "minLength": 1, "maxLength": 200},
+        "text": {"type": "string", "minLength": 1, "maxLength": 4000}
+      }
+    },
+    "categoryScores": {
+      "type": "object", "additionalProperties": false,
+      "required": ["home", "idea", "market", "financial", "management"],
+      "properties": {
+        "home": {"type": "null"},
+        "idea": {"type": ["integer", "null"], "minimum": 1, "maximum": 100},
+        "market": {"type": ["integer", "null"], "minimum": 1, "maximum": 100},
+        "financial": {"type": ["integer", "null"], "minimum": 1, "maximum": 100},
+        "management": {"type": ["integer", "null"], "minimum": 1, "maximum": 100}
+      }
+    }
+  }
+}

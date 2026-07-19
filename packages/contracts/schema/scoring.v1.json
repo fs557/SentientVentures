@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sentientventures.local/contracts/scoring.v1.json",
+  "version": 1,
+  "overallCategories": ["idea", "market", "financial", "management"],
+  "rounding": "half_up",
+  "scoreRange": {"minimum": 1, "maximum": 100},
+  "labels": [
+    {"minimum":1,"maximum":39,"label":"Critical"}, {"minimum":40,"maximum":59,"label":"Weak"},
+    {"minimum":60,"maximum":69,"label":"Mixed"}, {"minimum":70,"maximum":79,"label":"Promising"},
+    {"minimum":80,"maximum":89,"label":"Strong"}, {"minimum":90,"maximum":100,"label":"Exceptional"}
+  ],
+  "portfolioUnavailableIds": ["market.portfolio_fit", "market.portfolio_synergies"]
+}

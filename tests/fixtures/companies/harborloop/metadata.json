@@ -1,0 +1,35 @@
+{
+  "category_scores": {
+    "financial": 53,
+    "home": null,
+    "idea": 54,
+    "management": 55,
+    "market": 51
+  },
+  "company_id": "22222222-2222-4222-8222-222222222222",
+  "created_at": "2026-07-19T12:00:00Z",
+  "display_name": "HarborLoop",
+  "overall_score": 53,
+  "registry_version": 1,
+  "schema_version": 1,
+  "slug": "harborloop",
+  "source_documents": [
+    {
+      "id": "doc_22222222-2222-4222-8222-222222222222",
+      "media_type": "application/pdf",
+      "original_name": "fictional-pitch.pdf",
+      "role": "pitch_deck",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size_bytes": 0,
+      "stored_name": "fixture-facts.json",
+      "uploaded_at": "2026-07-19T12:00:00Z"
+    }
+  ],
+  "stage": "Pre-seed",
+  "state": "ready",
+  "submission": {
+    "founder_email": "fictional@example.invalid",
+    "founder_name": "Fictional Founder"
+  },
+  "validation_errors": []
+}
