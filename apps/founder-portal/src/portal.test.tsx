@@ -23,6 +23,12 @@ describe("FounderPortal", () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
+  it("rejects invalid supporting files immediately", () => {
+    render(<FounderPortal />);
+    fireEvent.change(screen.getByLabelText(/supporting documents/i), { target: { files: [new File(["notes"], "notes.txt", { type: "text/plain" })] } });
+    expect(screen.getByText("Supporting documents must be PDF files.")).toBeInTheDocument();
+  });
+
   it("submits the accepted multipart field names with a UUID key", async () => {
     fetchMock.mockResolvedValueOnce(new Response(JSON.stringify({ company: { id: "a", slug: "aster-labs", name: "Aster Labs" }, job: { id: "j", state: "queued", statusUrl: "/api/v1/jobs/aster-labs" }, acceptedAt: "2026-07-19T12:00:00Z" }), { status: 202 }));
     render(<FounderPortal />); addRequiredFields();

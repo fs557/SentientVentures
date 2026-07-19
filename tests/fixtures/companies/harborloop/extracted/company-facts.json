@@ -38,12 +38,12 @@
   "gtm": "founder-led outreach to a narrow local cluster of distributors and carriers",
   "inconsistency": "the broad market narrative is ahead of the narrow pilot evidence",
   "investment": {
-    "amount": 450000,
+    "amount": 100000,
     "currency": "EUR",
-    "equityPercentage": 15,
-    "impliedValuation": 3000000,
-    "postMoneyValuation": 3000000,
-    "preMoneyValuation": 2550000,
+    "equityPercentage": 4,
+    "impliedValuation": 2500000,
+    "postMoneyValuation": 2500000,
+    "preMoneyValuation": 2400000,
     "useOfFunds": [
       "marketplace prototype",
       "container pilot inventory",

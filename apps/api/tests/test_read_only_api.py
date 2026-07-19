@@ -113,12 +113,13 @@ def test_aggregate_reads_populated_investment_terms_from_isolated_metadata(app: 
     aether = _request(app, "/api/v1/companies/aether-robotics").json()["investment"]
     harbor = _request(app, "/api/v1/companies/harborloop").json()["investment"]
     assert aether == {
-        "amount": 2500000.0, "currency": "EUR", "equityPercentage": 20.0,
-        "preMoneyValuation": 10000000.0, "postMoneyValuation": 12500000.0,
-        "impliedValuation": 12500000.0,
+        "amount": 100000.0, "currency": "EUR", "equityPercentage": 1.0,
+        "preMoneyValuation": 9900000.0, "postMoneyValuation": 10000000.0,
+        "impliedValuation": 10000000.0,
         "useOfFunds": ["robot fleet validation", "industrial software integrations", "enterprise sales"],
     }
-    assert harbor["amount"] == 450000.0
+    assert harbor["amount"] == 100000.0
+    assert harbor["equityPercentage"] == 4.0
     assert harbor != aether
 
 

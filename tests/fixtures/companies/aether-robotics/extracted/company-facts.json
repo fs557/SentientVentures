@@ -38,12 +38,12 @@
   "gtm": "founder-led enterprise selling through design partners and inspection-service referrals",
   "inconsistency": "none identified in the internally consistent fictional plan",
   "investment": {
-    "amount": 2500000,
+    "amount": 100000,
     "currency": "EUR",
-    "equityPercentage": 20,
-    "impliedValuation": 12500000,
-    "postMoneyValuation": 12500000,
-    "preMoneyValuation": 10000000,
+    "equityPercentage": 1,
+    "impliedValuation": 10000000,
+    "postMoneyValuation": 10000000,
+    "preMoneyValuation": 9900000,
     "useOfFunds": [
       "robot fleet validation",
       "industrial software integrations",

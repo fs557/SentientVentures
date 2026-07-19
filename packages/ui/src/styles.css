@@ -1,9 +1,29 @@
-:root { --sv-ink: #12201d; --sv-muted: #61706c; --sv-line: #d9e1dd; --sv-surface: rgba(255,255,255,.76); --sv-green: #1a6754; --sv-green-deep: #104739; --sv-focus: #e17d25; --sv-danger: #9b2d2d; }
+:root { --sv-ink: #12201d; --sv-muted: #61706c; --sv-line: #d9e1dd; --sv-surface: rgba(255,255,255,.76); --sv-green: #1a6754; --sv-green-deep: #104739; --sv-focus: #e7aa5c; --sv-danger: #9b2d2d; }
+.sv-app-shell {
+  --sv-ink: #f5f8f6;
+  --sv-muted: #a8b8b1;
+  --sv-line: rgba(205, 231, 219, .15);
+  --sv-surface: rgba(18, 31, 28, .7);
+  --sv-surface-strong: rgba(23, 39, 35, .88);
+  --sv-green: #72d6b4;
+  --sv-green-deep: #baf2dc;
+  --sv-focus: #ffc477;
+  --sv-danger: #ff9e9e;
+  background: radial-gradient(circle at 8% -5%, rgba(52, 126, 103, .34), transparent 32rem), radial-gradient(circle at 92% 12%, rgba(33, 91, 78, .2), transparent 28rem), #09110f;
+  color-scheme: dark;
+  color: var(--sv-ink);
+  isolation: isolate;
+  min-height: 100vh;
+}
+.sv-navbar { align-items: center; background: rgba(8, 17, 15, .68); backdrop-filter: blur(22px) saturate(135%); -webkit-backdrop-filter: blur(22px) saturate(135%); border-bottom: 1px solid var(--sv-line); display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 20; }
+.sv-brand { align-items: center; color: var(--sv-ink); display: flex; font-weight: 800; gap: .6rem; letter-spacing: -.035em; line-height: .9; text-decoration: none; }
+.sv-brand img { filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .28)); height: 34px; width: 34px; }
+.sv-app-shell :is(a, button, input, select, summary):focus-visible { outline: 3px solid var(--sv-focus); outline-offset: 3px; }
 .sv-score-badge { align-items: baseline; display: inline-flex; gap: .42rem; white-space: nowrap; }
 .sv-score-badge__label { color: var(--sv-muted); font-size: .7rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
 .sv-score-badge strong { color: var(--sv-green-deep); font-size: .92rem; }
 .sv-score-badge--unavailable strong { color: var(--sv-muted); }
-.sv-status { background: var(--sv-surface); border: 1px solid var(--sv-line); border-left: 4px solid var(--sv-green); border-radius: 10px; max-width: 50rem; padding: 1.25rem 1.4rem; }
+.sv-status { background: var(--sv-surface); backdrop-filter: blur(18px); border: 1px solid var(--sv-line); border-left: 3px solid var(--sv-green); border-radius: 14px; box-shadow: 0 20px 60px rgba(0, 0, 0, .2); max-width: 50rem; padding: 1.25rem 1.4rem; }
 .sv-status h2 { font-size: 1rem; margin: 0 0 .35rem; }
 .sv-status p { color: var(--sv-muted); margin: 0; }
 .sv-status--error { border-left-color: var(--sv-danger); }.sv-status--warning { border-left-color: var(--sv-focus); }

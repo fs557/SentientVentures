@@ -78,6 +78,8 @@ def validate(root: Path) -> list[str]:
         terms = metadata.get("investment")
         if not _valid_investment_terms(terms):
             failures.append(f"{company.name}: investment terms are malformed")
+        elif terms["amount"] != 100000:
+            failures.append(f"{company.name}: example investment amount must be 100000")
         elif (terms["postMoneyValuation"] != terms["preMoneyValuation"] + terms["amount"]
               or terms["impliedValuation"] != terms["postMoneyValuation"]
               or terms["postMoneyValuation"] == 0

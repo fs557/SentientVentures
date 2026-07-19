@@ -132,6 +132,15 @@ def _score(facts: dict[str, Any], category: str, order: int, item_id: str) -> in
     return max(1, min(100, int(facts["scoreBase"]) + category_offset + ((order * 7) % 9) - 4))
 
 
+def _confidence(facts: dict[str, Any], category: str, order: int, item_id: str) -> int | None:
+    if item_id in PORTFOLIO_UNAVAILABLE_IDS:
+        return None
+    category_offset = {"home": 3, "idea": 1, "market": -2, "financial": 0, "management": 2}[category]
+    evidence_offset = 4 if item_id in FACT_EVIDENCE_IDS else -2
+    criterion_variation = ((order * 5 + len(item_id)) % 11) - 5
+    return max(1, min(100, int(facts["scoreBase"]) + category_offset + evidence_offset + criterion_variation))
+
+
 def _document(facts: dict[str, Any], category: str) -> EvaluationDocument:
     source = str(facts["documentId"])
     investment = facts["investment"]
@@ -153,13 +162,13 @@ def _document(facts: dict[str, Any], category: str) -> EvaluationDocument:
             score = None
         items.append(EvaluationItem(
             id=entry.id, category=category, title=entry.title, score=score,
-            confidence=None if unavailable else max(1, min(100, int(facts["scoreBase"]) + 5)),
+            confidence=_confidence(facts, category, entry.display_order, entry.id),
             assessment=assessment,
-            positive_arguments=[f"{entry.title} is supported by the fictional fact pattern: {assessment}"],
+            positive_arguments=[f"The submitted company profile supports this assessment: {assessment}"],
             negative_arguments=[caveat],
-            evidence=[EvidenceReference(evidence_kind, source, f"{entry.id}: {assessment}", page=1, section=entry.id)],
+            evidence=[EvidenceReference(evidence_kind, source, assessment, page=1)],
             missing_information=[],
-            source_references=[EvidenceReference(evidence_kind, source, f"Structured {evidence_kind} for {entry.id}", page=1, section=entry.id)],
+            source_references=[EvidenceReference(evidence_kind, source, f"Submitted company profile: {entry.title}", page=1)],
         ))
     return EvaluationDocument(1, 1, str(facts["company"]), str(facts["slug"]), category, str(facts["generatedAt"]), [source], items)
 

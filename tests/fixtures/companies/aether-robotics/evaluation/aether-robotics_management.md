@@ -14,222 +14,222 @@ source_documents:
 ## management.academic_background | How strong is the academic background?
 
 **Score:** 87
-**Confidence:** 87
+**Confidence:** 85
 
 ### Assessment
 Academic background is engineering and computer-science degrees relevant to robotics.
 
 ### Positive Arguments
-- How strong is the academic background? is supported by the fictional fact pattern: Academic background is engineering and computer-science degrees relevant to robotics.
+- The submitted company profile supports this assessment: Academic background is engineering and computer-science degrees relevant to robotics.
 
 ### Negative Arguments and Risks
 - Credentials do not by themselves prove operating execution.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.academic_background | management.academic_background: Academic background is engineering and computer-science degrees relevant to robotics.
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Academic background is engineering and computer-science degrees relevant to robotics.
 
 ### Missing Information
 
 ### Source References
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.academic_background | Structured fact for management.academic_background
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How strong is the academic background?
 
 ## management.professional_background | How relevant is the professional background?
 
 **Score:** 85
-**Confidence:** 87
+**Confidence:** 83
 
 ### Assessment
 Professional background is robotics product leadership and industrial software implementation.
 
 ### Positive Arguments
-- How relevant is the professional background? is supported by the fictional fact pattern: Professional background is robotics product leadership and industrial software implementation.
+- The submitted company profile supports this assessment: Professional background is robotics product leadership and industrial software implementation.
 
 ### Negative Arguments and Risks
 - Prior roles should be reference-checked.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.professional_background | management.professional_background: Professional background is robotics product leadership and industrial software implementation.
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Professional background is robotics product leadership and industrial software implementation.
 
 ### Missing Information
 
 ### Source References
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.professional_background | Structured fact for management.professional_background
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How relevant is the professional background?
 
 ## management.domain_expertise | How deep is the domain expertise?
 
 **Score:** 83
-**Confidence:** 87
+**Confidence:** 92
 
 ### Assessment
 Domain expertise is direct experience with inspection workflows and industrial operators.
 
 ### Positive Arguments
-- How deep is the domain expertise? is supported by the fictional fact pattern: Domain expertise is direct experience with inspection workflows and industrial operators.
+- The submitted company profile supports this assessment: Domain expertise is direct experience with inspection workflows and industrial operators.
 
 ### Negative Arguments and Risks
 - The team still needs ongoing customer learning.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.domain_expertise | management.domain_expertise: Domain expertise is direct experience with inspection workflows and industrial operators.
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Domain expertise is direct experience with inspection workflows and industrial operators.
 
 ### Missing Information
 
 ### Source References
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.domain_expertise | Structured fact for management.domain_expertise
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How deep is the domain expertise?
 
 ## management.technical_expertise | How strong is the technical expertise?
 
 **Score:** 81
-**Confidence:** 87
+**Confidence:** 89
 
 ### Assessment
 Technical expertise is strong in sensing, autonomy integration, and review software.
 
 ### Positive Arguments
-- How strong is the technical expertise? is supported by the fictional fact pattern: Technical expertise is strong in sensing, autonomy integration, and review software.
+- The submitted company profile supports this assessment: Technical expertise is strong in sensing, autonomy integration, and review software.
 
 ### Negative Arguments and Risks
 - Technical depth must translate into reliable delivery.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.technical_expertise | management.technical_expertise: Technical expertise is strong in sensing, autonomy integration, and review software.
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Technical expertise is strong in sensing, autonomy integration, and review software.
 
 ### Missing Information
 
 ### Source References
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.technical_expertise | Structured fact for management.technical_expertise
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How strong is the technical expertise?
 
 ## management.commercial_expertise | How strong is the commercial expertise?
 
 **Score:** 88
-**Confidence:** 87
+**Confidence:** 84
 
 ### Assessment
 Commercial expertise is credible founder-led selling with enterprise support still to add.
 
 ### Positive Arguments
-- How strong is the commercial expertise? is supported by the fictional fact pattern: Commercial expertise is credible founder-led selling with enterprise support still to add.
+- The submitted company profile supports this assessment: Commercial expertise is credible founder-led selling with enterprise support still to add.
 
 ### Negative Arguments and Risks
 - Enterprise sales capability may need reinforcement.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.commercial_expertise | management.commercial_expertise: Commercial expertise is credible founder-led selling with enterprise support still to add.
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Commercial expertise is credible founder-led selling with enterprise support still to add.
 
 ### Missing Information
 
 ### Source References
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.commercial_expertise | Structured fact for management.commercial_expertise
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How strong is the commercial expertise?
 
 ## management.founder_market_fit | How strong is the founder-market fit?
 
 **Score:** 86
-**Confidence:** 87
+**Confidence:** 81
 
 ### Assessment
 Founder-market fit is strong because the founders have worked with the target operating environment.
 
 ### Positive Arguments
-- How strong is the founder-market fit? is supported by the fictional fact pattern: Founder-market fit is strong because the founders have worked with the target operating environment.
+- The submitted company profile supports this assessment: Founder-market fit is strong because the founders have worked with the target operating environment.
 
 ### Negative Arguments and Risks
 - The fit should be tested through sustained customer access.
 
 ### Evidence
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.founder_market_fit | management.founder_market_fit: Founder-market fit is strong because the founders have worked with the target operating environment.
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Founder-market fit is strong because the founders have worked with the target operating environment.
 
 ### Missing Information
 
 ### Source References
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.founder_market_fit | Structured inference for management.founder_market_fit
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How strong is the founder-market fit?
 
 ## management.professional_following | How large is the founder's professional following or influence?
 
 **Score:** 84
-**Confidence:** 87
+**Confidence:** 85
 
 ### Assessment
 Professional influence is a focused network of industrial operators and robotics practitioners.
 
 ### Positive Arguments
-- How large is the founder's professional following or influence? is supported by the fictional fact pattern: Professional influence is a focused network of industrial operators and robotics practitioners.
+- The submitted company profile supports this assessment: Professional influence is a focused network of industrial operators and robotics practitioners.
 
 ### Negative Arguments and Risks
 - Audience reach is not a proxy for purchase intent.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.professional_following | management.professional_following: Professional influence is a focused network of industrial operators and robotics practitioners.
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Professional influence is a focused network of industrial operators and robotics practitioners.
 
 ### Missing Information
 
 ### Source References
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.professional_following | Structured fact for management.professional_following
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How large is the founder's professional following or influence?
 
 ## management.controversies | Are there relevant controversies?
 
 **Score:** 82
-**Confidence:** 87
+**Confidence:** 92
 
 ### Assessment
 The fixture reports no relevant controversies in the fictional record.
 
 ### Positive Arguments
-- Are there relevant controversies? is supported by the fictional fact pattern: The fixture reports no relevant controversies in the fictional record.
+- The submitted company profile supports this assessment: The fixture reports no relevant controversies in the fictional record.
 
 ### Negative Arguments and Risks
 - Background checks remain part of real diligence.
 
 ### Evidence
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.controversies | management.controversies: The fixture reports no relevant controversies in the fictional record.
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | The fixture reports no relevant controversies in the fictional record.
 
 ### Missing Information
 
 ### Source References
-- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.controversies | Structured fact for management.controversies
+- fact | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: Are there relevant controversies?
 
 ## management.creativity | How creative or innovative is the management team?
 
 **Score:** 80
-**Confidence:** 87
+**Confidence:** 77
 
 ### Assessment
 Team creativity appears in combining robotic data capture with an engineer-first review workflow.
 
 ### Positive Arguments
-- How creative or innovative is the management team? is supported by the fictional fact pattern: Team creativity appears in combining robotic data capture with an engineer-first review workflow.
+- The submitted company profile supports this assessment: Team creativity appears in combining robotic data capture with an engineer-first review workflow.
 
 ### Negative Arguments and Risks
 - Novel approaches need disciplined prioritization.
 
 ### Evidence
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.creativity | management.creativity: Team creativity appears in combining robotic data capture with an engineer-first review workflow.
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Team creativity appears in combining robotic data capture with an engineer-first review workflow.
 
 ### Missing Information
 
 ### Source References
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.creativity | Structured inference for management.creativity
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How creative or innovative is the management team?
 
 ## management.strengths | What are the management team's greatest strengths?
 
 **Score:** 87
-**Confidence:** 87
+**Confidence:** 81
 
 ### Assessment
 Core team strengths are deep technical delivery, industrial context, and design-partner access.
 
 ### Positive Arguments
-- What are the management team's greatest strengths? is supported by the fictional fact pattern: Core team strengths are deep technical delivery, industrial context, and design-partner access.
+- The submitted company profile supports this assessment: Core team strengths are deep technical delivery, industrial context, and design-partner access.
 
 ### Negative Arguments and Risks
 - Strengths must be maintained as the organization grows.
 
 ### Evidence
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.strengths | management.strengths: Core team strengths are deep technical delivery, industrial context, and design-partner access.
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Core team strengths are deep technical delivery, industrial context, and design-partner access.
 
 ### Missing Information
 
 ### Source References
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.strengths | Structured inference for management.strengths
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: What are the management team's greatest strengths?
 
 ## management.weaknesses | What are the management team's greatest weaknesses?
 
@@ -240,84 +240,84 @@ Core team strengths are deep technical delivery, industrial context, and design-
 Current weaknesses are limited dedicated sales capacity and limited long-term fleet operations history.
 
 ### Positive Arguments
-- What are the management team's greatest weaknesses? is supported by the fictional fact pattern: Current weaknesses are limited dedicated sales capacity and limited long-term fleet operations history.
+- The submitted company profile supports this assessment: Current weaknesses are limited dedicated sales capacity and limited long-term fleet operations history.
 
 ### Negative Arguments and Risks
 - Unaddressed gaps can slow execution.
 
 ### Evidence
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.weaknesses | management.weaknesses: Current weaknesses are limited dedicated sales capacity and limited long-term fleet operations history.
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Current weaknesses are limited dedicated sales capacity and limited long-term fleet operations history.
 
 ### Missing Information
 
 ### Source References
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.weaknesses | Structured inference for management.weaknesses
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: What are the management team's greatest weaknesses?
 
 ## management.missing_roles | Are important roles missing?
 
 **Score:** 83
-**Confidence:** 87
+**Confidence:** 84
 
 ### Assessment
 The key role gap is an enterprise account executive and field-operations lead.
 
 ### Positive Arguments
-- Are important roles missing? is supported by the fictional fact pattern: The key role gap is an enterprise account executive and field-operations lead.
+- The submitted company profile supports this assessment: The key role gap is an enterprise account executive and field-operations lead.
 
 ### Negative Arguments and Risks
 - Hiring timing and quality are material risks.
 
 ### Evidence
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.missing_roles | management.missing_roles: The key role gap is an enterprise account executive and field-operations lead.
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | The key role gap is an enterprise account executive and field-operations lead.
 
 ### Missing Information
 
 ### Source References
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.missing_roles | Structured inference for management.missing_roles
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: Are important roles missing?
 
 ## management.execution_ability | How strong is the team's ability to execute?
 
 **Score:** 81
-**Confidence:** 87
+**Confidence:** 82
 
 ### Assessment
 Execution evidence is a prototype deployed with two paid design partners.
 
 ### Positive Arguments
-- How strong is the team's ability to execute? is supported by the fictional fact pattern: Execution evidence is a prototype deployed with two paid design partners.
+- The submitted company profile supports this assessment: Execution evidence is a prototype deployed with two paid design partners.
 
 ### Negative Arguments and Risks
 - Future execution includes challenges not yet encountered.
 
 ### Evidence
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.execution_ability | management.execution_ability: Execution evidence is a prototype deployed with two paid design partners.
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Execution evidence is a prototype deployed with two paid design partners.
 
 ### Missing Information
 
 ### Source References
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.execution_ability | Structured inference for management.execution_ability
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How strong is the team's ability to execute?
 
 ## management.credibility | How credible and trustworthy does the team appear?
 
 **Score:** 88
-**Confidence:** 87
+**Confidence:** 81
 
 ### Assessment
 Credibility rests on specific deployment facts and relevant prior roles.
 
 ### Positive Arguments
-- How credible and trustworthy does the team appear? is supported by the fictional fact pattern: Credibility rests on specific deployment facts and relevant prior roles.
+- The submitted company profile supports this assessment: Credibility rests on specific deployment facts and relevant prior roles.
 
 ### Negative Arguments and Risks
 - Claims should be verified with customers and references.
 
 ### Evidence
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.credibility | management.credibility: Credibility rests on specific deployment facts and relevant prior roles.
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Credibility rests on specific deployment facts and relevant prior roles.
 
 ### Missing Information
 
 ### Source References
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.credibility | Structured inference for management.credibility
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: How credible and trustworthy does the team appear?
 
 ## management.team_balance | Is the team sufficiently balanced?
 
@@ -328,37 +328,37 @@ Credibility rests on specific deployment facts and relevant prior roles.
 Team balance is good technical and domain balance, with commercial hiring still needed.
 
 ### Positive Arguments
-- Is the team sufficiently balanced? is supported by the fictional fact pattern: Team balance is good technical and domain balance, with commercial hiring still needed.
+- The submitted company profile supports this assessment: Team balance is good technical and domain balance, with commercial hiring still needed.
 
 ### Negative Arguments and Risks
 - The balance can change as commercial demands grow.
 
 ### Evidence
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.team_balance | management.team_balance: Team balance is good technical and domain balance, with commercial hiring still needed.
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Team balance is good technical and domain balance, with commercial hiring still needed.
 
 ### Missing Information
 
 ### Source References
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.team_balance | Structured inference for management.team_balance
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: Is the team sufficiently balanced?
 
 ## management.prior_execution | Is there evidence of previous successful execution?
 
 **Score:** 84
-**Confidence:** 87
+**Confidence:** 84
 
 ### Assessment
 Prior execution evidence is previous delivery of robotics and industrial software programs.
 
 ### Positive Arguments
-- Is there evidence of previous successful execution? is supported by the fictional fact pattern: Prior execution evidence is previous delivery of robotics and industrial software programs.
+- The submitted company profile supports this assessment: Prior execution evidence is previous delivery of robotics and industrial software programs.
 
 ### Negative Arguments and Risks
 - Past success reduces but does not remove venture risk.
 
 ### Evidence
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.prior_execution | management.prior_execution: Prior execution evidence is previous delivery of robotics and industrial software programs.
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Prior execution evidence is previous delivery of robotics and industrial software programs.
 
 ### Missing Information
 
 ### Source References
-- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | management.prior_execution | Structured inference for management.prior_execution
+- inference | doc_11111111-1111-4111-8111-111111111111 | p. 1 | Submitted company profile: Is there evidence of previous successful execution?

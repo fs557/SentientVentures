@@ -34,6 +34,7 @@ def test_fixture_criteria_are_complete_specific_and_terms_are_consistent() -> No
     for company in ("aether-robotics", "harborloop"):
         metadata = json.loads((root / company / "metadata.json").read_text(encoding="utf-8"))
         terms = metadata["investment"]
+        assert terms["amount"] == 100000
         assert terms["postMoneyValuation"] == terms["preMoneyValuation"] + terms["amount"]
         assert terms["impliedValuation"] == terms["postMoneyValuation"]
         assert terms["equityPercentage"] == terms["amount"] / terms["postMoneyValuation"] * 100
@@ -66,8 +67,10 @@ def test_fixture_criteria_are_complete_specific_and_terms_are_consistent() -> No
             assert all("Not provided:" not in value for value in item.missing_information)
             assert item.assessment and item.positive_arguments and item.negative_arguments and item.evidence
             assert item.missing_information == []
+            assert not item.evidence[0].text.startswith(item.id)
+            assert "Structured fact" not in item.source_references[0].text
             if item.id in PORTFOLIO_UNAVAILABLE_IDS:
                 assert item.score is None
                 assert "portfolio" in item.assessment.lower()
-            else:
-                assert item.id in item.evidence[0].text
+        confidences = {item.confidence for item in items if item.confidence is not None}
+        assert len(confidences) >= 8
